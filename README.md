@@ -58,4 +58,3 @@ Up to 150 kids-session summaries are retained per account/guest store. Classic h
 ## Validation
 
 18 automated tests cover generation across grades/stages, answer correctness, scoring, evidence thresholds, isolation, progression, and authentication integration with mocked provider responses. Live email delivery and Google consent require the owner's configured service and authorised test accounts. The exercises have not been psychometrically validated.
-
