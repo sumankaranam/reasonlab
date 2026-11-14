@@ -8,3 +8,6 @@
   Referrer-Policy: no-referrer
 /auth-config.js
   Cache-Control: no-cache
+/account
+  Cache-Control: no-store
+  Referrer-Policy: no-referrer

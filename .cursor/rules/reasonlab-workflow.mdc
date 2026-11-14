@@ -1,0 +1,10 @@
+---
+description: ReasonLab checkpoint and handoff workflow for all project work
+alwaysApply: true
+---
+
+Read and follow the repository-root `AGENTS.md` before making changes.
+Keep `docs/STATUS.md`, `docs/ARCHITECTURE.md` and `docs/CHANGELOG.md` aligned with code.
+Make tested, reviewed commits and normal fast-forward pushes at meaningful working milestones.
+Never push secrets, runtime data, unrelated changes, or unverified completion claims.
+Do not schedule autonomous periodic Git pushes; checkpoint during active authorised work.
