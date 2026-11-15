@@ -63,3 +63,7 @@ Local history is not encrypted and is accessible to someone with browser/device 
 CI: Node 22, locked install, tests, SDK build, generated-bundle diff check.
 
 UI files are currently large imperative modules. Before major new features, consider extracting state/storage and view renderers into small modules while preserving tested flows. Add cloud storage only with explicitly designed ownership and migration. A credible IQ assessment remains a separate licensed/validated measurement project.
+
+## Discovery extension
+
+`discover.html`, `discovery.js`, `discovery-engine.js`, `discovery-data.js` and `discovery.css` implement separate original interest/preference questionnaires, career exploration and family guidance. See `DISCOVERY-DESIGN.md` for scoring, module ownership, storage and safeguards. `signin-setup.html` exposes the owner activation guide from the unconfigured account screen.

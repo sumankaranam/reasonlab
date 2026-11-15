@@ -16,6 +16,10 @@ Grade 1–10 × three stages; daily and targeted practice; 20-item check-ins; br
 
 Adult authentication integration: Google OAuth with PKCE, email OTP, adult declaration, local sign-out, verified identity before account-history selection, separate guest/account stores. SDK bundled locally. No inbox scopes, child email collection, cloud progress or backend database.
 
+## Discovery extension (feature checkpoint, pending browser verification/deployment)
+
+Original 32-question MBTI-style reflection for self-declared ages 16+, 18/36 activity-interest questions by grade, transparent skip-aware scoring, local reports, 24 searchable career families and a detailed family guide. Career ordering uses interests only; practice feedback is separate. See `DISCOVERY-DESIGN.md`. New public email activation walkthrough: `/signin-setup.html`. User chose to finish the app and provide setup steps rather than configure a provider now.
+
 ## Not active / blockers
 
 **Google/email login cannot complete yet.** No Supabase project, SMTP delivery or Google OAuth client has been configured. `public/auth-config.js` is deliberately empty and the live account page must disclose that state. Follow `AUTH-SETUP.md` to activate. Never describe mock-backed tests as a live login verification.
@@ -24,7 +28,7 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 
 ## Verification recorded
 
-- 18 automated tests pass locally (Classic, Kids, auth adapter).
+- 24 automated tests pass locally (Classic, Kids, auth adapter).
 - Auth SDK build succeeds; npm reported zero known vulnerabilities at install time.
 - Kids live mobile check-in completed: 20 answers, memory removal verified, correct result aggregation and saved feedback.
 - History survived reload and switching learner slots did not mix records.

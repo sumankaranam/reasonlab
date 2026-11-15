@@ -23,3 +23,11 @@ Dates use Asia/Kolkata. Update this log at tested feature/fix checkpoints, along
 - Built and deployed mobile-friendly number, visual and deductive reasoning exercises.
 - Added practice/check-in modes, explanations, JSON export and local history.
 - Explicitly reported exercise scores rather than inventing unvalidated IQ scores.
+
+## 2026-11-15 — Discovery feature checkpoint
+
+- Added original personality-preference and activity-interest questionnaires, balanced visible poles, skip-aware scoring and minimum-response rules.
+- Added 24 career exploration families with projects, subject examples and reflection prompts, plus age-aware family guide and four-week plan.
+- Added account/learner/grade-separated local reports, JSON/print exports, response review, deletion and unsaved-navigation guards.
+- Linked Discovery from Kids and added a public email activation walkthrough. Owner elected to defer provider creation; no live email sign-in claim.
+- Validation: 24 automated tests pass, including all 16 preference combinations and missing-data/identity isolation. Browser validation and deployment pending.

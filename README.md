@@ -62,3 +62,7 @@ Up to 150 kids-session summaries are retained per account/guest store. Classic h
 ## For coding agents
 
 Start with [AGENTS.md](AGENTS.md), then [current status](docs/STATUS.md), [architecture](docs/ARCHITECTURE.md), and [milestone history](docs/CHANGELOG.md). The user requests tested, reviewed checkpoint commits/pushes and Markdown updates during active work.
+
+## Interests, preferences and family guidance
+
+Open [Discovery](https://reasonlab.simstart.workers.dev/discover.html) for original activity-interest questionnaires, an age-16+ MBTI-style reflection, 24 career families and a printable family guide. These are exploratory exercises, not official MBTI/O*NET assessments, IQ tests or career suitability measures. Read [Discovery design](docs/DISCOVERY-DESIGN.md) for scoring and data handling. Email login awaits owner configuration; [activation guide](docs/AUTH-SETUP.md).
