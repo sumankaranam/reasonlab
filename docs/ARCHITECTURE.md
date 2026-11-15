@@ -66,7 +66,7 @@ UI files are currently large imperative modules. Before major new features, cons
 
 ## Discovery extension
 
-`discover.html`, `discovery.js`, `discovery-engine.js`, `discovery-data.js` and `discovery.css` implement separate original interest/preference questionnaires, career exploration and family guidance. See `DISCOVERY-DESIGN.md` for scoring, module ownership, storage and safeguards. `signin-setup.html` exposes the owner activation guide from the unconfigured account screen.
+`discover.html`, `discovery.js`, `discovery-engine.js`, `discovery-data.js` and `discovery.css` implement separate original interest/preference questionnaires, career exploration and family guidance. See `DISCOVERY-DESIGN.md` for scoring, module ownership, storage and safeguards. Owner setup instructions are in `docs/AUTH-SETUP.md` and `docs/TECHNICAL-HANDOFF.md` only; the former public setup page was removed at the owner's request.
 
 ## Authentication activation handoff
 
@@ -75,3 +75,15 @@ Google sign-in is the first activation target. Supabase project `krbuoncrksahcrn
 ## Google activation boundary (2026-11-16)
 
 The dedicated Google Cloud project `reasonlab` now has an External / Testing registration and a Web OAuth client. Its server callback terminates at Supabase, which holds the Google client secret; the static app receives no provider secret. The client has been created, but provider credentials and redirect configuration have not been saved in Supabase. Both public provider flags remain false until configuration and verification. Owner action is required for dashboard security settings under the available Windows automation policy.
+
+## French learning extension
+
+`french.html`, `french.js` and `french.css` own the responsive course, lesson/quiz state, role plays, stories, searchable phrasebook, reference shelf, voice studio and family reports. `french-data.js` owns original curriculum with stable IDs. `french-engine.js` owns scoring, content generation, validation and review scheduling; `french-audio.js` owns browser audio lifecycles. See `FRENCH-DESIGN.md`.
+
+French keys use `reasonlab-french[:verified-user-id]:learner-N`. French selection preferences use the existing settings key plus `:french`, with Kids settings only as an initial fallback. School grade is context, not a language placement. Completed mixed/text lessons update best stars and latest accuracy; listening-only sets, checkpoints, stories and conversations add activity evidence without claiming whole-lesson completion. Only the first response counts, helped answers are excluded from independent correct totals, and unfinished activities are discarded after an exit confirmation.
+
+Review intervals are 1/3/7/14/30 days after successful due reviews (80% threshold). Early repeated success cannot advance the interval box; lower scores return to one day. The latest ten completed activities feed reading/listening/writing/conversation feedback; fewer than ten items in an area yields an exploration label. Thresholds are product choices, not calibrated language levels. History is capped at 100 summaries per learner.
+
+Browser synthesis uses an available French voice only. Record/replay uses `getUserMedia` and `MediaRecorder`, temporary blob URLs and no network upload. Recognition is optional, separately explained/gated and may use the browser provider's server; transcripts are ephemeral. Generation tokens prevent late streams or callbacks from restarting a cancelled activity. All tracks stop on timeout, navigation and hidden tabs. `media-src 'self' blob:` allows temporary playback; French routes permit only same-origin microphone use and deny camera use. No API keys or backend resources added.
+
+Cloudflare explicitly serves a `404.html` for missing assets, including both old setup-page paths. The local preview server's root-path check was fixed to allow `/` on Windows while preserving path traversal rejection.

@@ -1,5 +1,7 @@
 # Activate adult sign-in
 
+Owner-only project documentation: these steps are not deployed on the public learning website. The public setup walkthrough and owner activation link were removed on 2026-11-16. Only `public/` is uploaded to Cloudflare. These files remain available locally in this checkout (and as documentation in the source repository).
+
 The app includes Supabase client integration for Google OAuth (PKCE) and email one-time codes. Production authentication stays disabled until a provider is configured. There is no mock login or hard-coded account. Guest practice remains available.
 
 Updated 2026-11-15: The current decision is Google sign-in first. Supabase project `krbuoncrksahcrnufprg` has public URL/publishable-key configuration saved and deployed. Its Auth settings endpoint returned HTTP 200: email enabled, signups enabled (`signupDisabled=false`), Google disabled. Both app provider flags remain false. The email sender/domain decision is deferred; do not purchase a domain or start a paid plan as part of Google setup. See `TECHNICAL-HANDOFF.md` for exact next steps.

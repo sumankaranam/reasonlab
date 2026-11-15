@@ -1,6 +1,6 @@
 # ReasonLab
 
-Mobile-friendly reasoning practice for Grades 1–10. Live: https://reasonlab.simstart.workers.dev
+Mobile-friendly reasoning, French learning and interest exploration for Grades 1–10. Live: https://reasonlab.simstart.workers.dev
 
 ## Features
 
@@ -10,10 +10,12 @@ Mobile-friendly reasoning practice for Grades 1–10. Live: https://reasonlab.si
 - Explanations, downloadable feedback, three anonymous learner slots, learning map and stage suggestions.
 - Optional adult Google sign-in and email one-time code integration through Supabase.
 - Guest access; original app and its history remain at `/classic.html`.
+- French learning: 36 lessons in six stages, vocabulary, grammar, sentence building, listening, 12 guided conversations, six stories, a phrasebook and reference shelf. Local review reminders and learner progress. Open `/french.html`.
+- French speech playback, temporary local record/replay and separately opted-in browser recognition. Device/browser support varies; recognition is not a pronunciation grade.
 
 ## Authentication status
 
-**Production sign-in is disabled until the owner connects a Supabase project and configures email/Google providers.** The public configuration is deliberately empty; there is no fake login. Follow [the activation guide](docs/AUTH-SETUP.md).
+**Production sign-in is disabled until provider configuration is complete.** The public Supabase project configuration is connected and the Google OAuth client is created; Google activation and email sender setup remain incomplete. There is no fake login. Owner instructions stay in [the project activation guide](docs/AUTH-SETUP.md), outside deployed public assets. There is no public setup page.
 
 Google sign-in requests only basic identity scopes, never inbox access. Email codes support Gmail, Outlook, Yahoo and other receiving addresses once custom SMTP is configured.
 
@@ -57,7 +59,7 @@ Up to 150 kids-session summaries are retained per account/guest store. Classic h
 
 ## Validation
 
-18 automated tests cover generation across grades/stages, answer correctness, scoring, evidence thresholds, isolation, progression, and authentication integration with mocked provider responses. Live email delivery and Google consent require the owner's configured service and authorised test accounts. The exercises have not been psychometrically validated.
+46 automated tests cover generation across grades/stages, answer correctness, scoring, evidence thresholds, isolation, progression, French content/review/audio lifecycle, and authentication integration with mocked provider responses. Mobile French browser checks cover activity flows, saved state, speaking gates, denial handling, reports and 320/390px layouts. Audio hardware is simulated in automated checks. Live email delivery and Google consent require the owner's configured service and authorised test accounts. The exercises have not been psychometrically validated.
 
 ## For coding agents
 
@@ -66,3 +68,9 @@ Start with [AGENTS.md](AGENTS.md), then [current status](docs/STATUS.md), [archi
 ## Interests, preferences and family guidance
 
 Open [Discovery](https://reasonlab.simstart.workers.dev/discover.html) for original activity-interest questionnaires, an age-16+ MBTI-style reflection, 24 career families and a printable family guide. These are exploratory exercises, not official MBTI/O*NET assessments, IQ tests or career suitability measures. Read [Discovery design](docs/DISCOVERY-DESIGN.md) for scoring and data handling. Email login awaits owner configuration; [activation guide](docs/AUTH-SETUP.md).
+
+## French learning and speech privacy
+
+Read [French design](docs/FRENCH-DESIGN.md) for curriculum, first-answer scoring, module contracts and review scheduling. The course introduces beginner through intermediate themes; completing it is not a CEFR certificate or proof of conversational fluency. School grade changes family guidance, not assumed French skill.
+
+Each anonymous learner has local French progress under the verified adult account or guest context, with up to 100 activity summaries. No audio or transcripts are stored in progress or exports. Local record-and-replay uses a temporary in-memory recording (15 seconds maximum), with no app upload. Optional browser recognition may send audio to the browser provider; it needs a separate grown-up opt-in. Text and listen-only learning never require a microphone. No paid speech or LLM API is used.

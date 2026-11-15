@@ -1,2 +1,12 @@
 import http from 'node:http';import {readFile} from 'node:fs/promises';import path from 'node:path';import {fileURLToPath} from 'node:url';
-const root=fileURLToPath(new URL('./public/',import.meta.url));http.createServer(async(req,res)=>{try{const p=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(!p.startsWith(root)){res.writeHead(403);res.end();return;}const f=p===root.slice(0,-1)||p===root?path.join(root,'index.html'):p;const data=await readFile(f);res.writeHead(200,{'Content-Type':({'.html':'text/html','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml'})[path.extname(f)]||'application/octet-stream'});res.end(data);}catch{res.writeHead(404);res.end('Not found');}}).listen(5188,'127.0.0.1',()=>console.log('ReasonLab: http://127.0.0.1:5188'));
+const root=path.resolve(fileURLToPath(new URL('./public/',import.meta.url)));
+http.createServer(async(req,res)=>{
+ try{
+  const p=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));
+  const relative=path.relative(root,p);
+  if(relative==='..'||relative.startsWith('..'+path.sep)||path.isAbsolute(relative)){res.writeHead(403);res.end();return;}
+  const f=p===root?path.join(root,'index.html'):p;
+  const data=await readFile(f);
+  res.writeHead(200,{'Content-Type':({'.html':'text/html','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml'})[path.extname(f)]||'application/octet-stream'});res.end(data);
+ }catch{res.writeHead(404);res.end('Not found');}
+}).listen(5188,'127.0.0.1',()=>console.log('ReasonLab: http://127.0.0.1:5188'));

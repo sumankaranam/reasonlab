@@ -65,3 +65,12 @@ Dates use Asia/Kolkata. Update this log at tested feature/fix checkpoints, along
 - Kept client credentials out of repository files and app configuration.
 - Verified Supabase dashboard still reports Google DISABLED. Provider configuration and redirect settings require owner action under the Windows automation security-settings restriction.
 - Updated status, architecture and technical handoff; both app flags remain false. Documentation-only checkpoint: no runtime changes, new deployment or live Google-login claim.
+
+## 2026-11-16 — French learning and public setup cleanup
+
+- Added a separate original French course: six stages, 36 lessons, 257 vocabulary entries, 216 authored tasks, 12 guided conversations, six bilingual stories, eight reference sections and ten sound tips.
+- Added reading/listening/writing practice, sentence building, daily mixes, due review, checkpoints, phrase search, family reports and per-learner local progress. First answers remain the score after retries; helped listening is not independent listening evidence.
+- Added French-only browser voice playback, temporary local 15-second recording/replay, and separately gated browser recognition with explicit provider-processing disclosure. No paid API, voice retention or server upload by the app.
+- Removed the public owner activation link and setup walkthrough on request; retained project-only setup docs. Added an explicit missing-page response. Sign-in remains disabled.
+- Fixed the Windows local-preview root route while preserving path-boundary checks.
+- Validation: 46 unit tests pass; local mobile browser and edge checks pass. Voice hardware is simulated in checks. Runtime deployment pending at this checkpoint.

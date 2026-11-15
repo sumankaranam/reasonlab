@@ -1,5 +1,7 @@
 # Technical handoff: Google sign-in first
 
+Public owner-setup UI was removed on 2026-11-16 at the user's request. Continue configuration from this local document and `AUTH-SETUP.md`; there is no configuration page in the deployed learner app. French learning is a separate guest-compatible feature; see `FRENCH-DESIGN.md` and `STATUS.md` for its implementation and validation.
+
 Current state (2026-11-16): Supabase project `krbuoncrksahcrnufprg` is configured in the public app and deployed. Supabase Auth settings were read successfully (HTTP 200): email enabled, signups enabled (`signupDisabled=false`), Google disabled. Both app provider flags are false. Prior account smoke passed before this setup attempt; the current real Google consent/account smoke is pending. Google Cloud project `reasonlab` has a successfully created External / Testing Auth app registration. The Web OAuth client `Web client 1` was created successfully with explicit user approval on 2026-11-16. Its origin is `https://reasonlab.simstart.workers.dev`; its callback is `https://krbuoncrksahcrnufprg.supabase.co/auth/v1/callback`. Google returned an OAuth-client-created confirmation. Credentials are not in the repository. Supabase still displays Google DISABLED. The owner must complete provider and redirect configuration: the available Windows automation skill prohibits changing in-app security settings. No live login verification or new deployment occurred at this checkpoint.
 
 ## Exact setup sequence

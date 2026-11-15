@@ -18,7 +18,17 @@ Adult authentication integration: Google OAuth with PKCE, email OTP, adult decla
 
 ## Discovery extension (live and verified)
 
-Original 32-question MBTI-style reflection for self-declared ages 16+, 18/36 activity-interest questions by grade, transparent skip-aware scoring, local reports, 24 searchable career families and a detailed family guide. Career ordering uses interests only; practice feedback is separate. See `DISCOVERY-DESIGN.md`. New public email activation walkthrough: `/signin-setup.html`.
+Original 32-question MBTI-style reflection for self-declared ages 16+, 18/36 activity-interest questions by grade, transparent skip-aware scoring, local reports, 24 searchable career families and a detailed family guide. Career ordering uses interests only; practice feedback is separate. See `DISCOVERY-DESIGN.md`. Owner setup documentation is kept outside the deployed public directory.
+
+## French learning milestone (tested; deployment pending)
+
+`/french.html` adds six stages and 36 original lessons, 257 vocabulary entries (250 distinct phrase/meaning pairs), 216 authored tasks plus generated reading/listening questions, 12 guided conversations (48 turns), six bilingual stories, ten sound tips and eight reference sections. Mixed/text practice, listening, sentence building, constrained writing, daily practice, due review, stage checkpoints, phrase search, family reports and anonymous learner progress are implemented.
+
+Speaker playback uses an available French device/browser voice. Local record/replay and separately gated browser recognition are optional. Microphone data is not retained in app progress; browser recognition may send speech to its provider. The course covers beginner through intermediate themes without claiming certification or guaranteed fluency. Both sign-in flags remain false; guest French learning works.
+
+The public owner activation link and `signin-setup.html` have been removed. Owner steps remain in local `docs/AUTH-SETUP.md` and `docs/TECHNICAL-HANDOFF.md`, which are not deployed. Old walkthrough URLs will return 404 after this deployment.
+
+Validation: 46 automated tests pass; local browser checks pass at 390px and 320px for lesson/retry/skip, correct scoring, assisted-listening exclusion, writing/token building, review/checkpoint/role-play/story UI, saved-state isolation, phrase search, studio gates/denial, export/print/delete, blocked storage, exit guards and home navigation. Audio lifecycle is simulated; real hardware quality remains unverified. See `FRENCH-DESIGN.md` for architecture and reproduction.
 
 ## Not active / blockers
 
@@ -67,4 +77,4 @@ npm run deploy
 
 Use existing Cloudflare authentication or the normal Wrangler login. Do not copy machine-local auth files into the repository. Read `docs/ARCHITECTURE.md` before changing scoring, identity or memory timing.
 
-Connection checkpoint: 24 automated tests pass. Live browser verified connected/pending account UI and guest-practice navigation. Supabase project and public config are in place; email enabled, `signupDisabled=false`, Google disabled, and both app flags false. Google-first is the current decision. Google Auth app registration is complete; Web OAuth client creation and consent/account smoke are pending. No domain purchase or sender setup has started. See `docs/TECHNICAL-HANDOFF.md`.
+Connection checkpoint: 24 automated tests pass. Live browser verified connected/pending account UI and guest-practice navigation. Supabase project and public config are in place; email enabled, `signupDisabled=false`, Google disabled, and both app flags false. Google-first is the current decision. Google Auth app registration and Web OAuth client creation are complete; Supabase provider activation and consent/account smoke are pending. No domain purchase or sender setup has started. See `docs/TECHNICAL-HANDOFF.md`.
