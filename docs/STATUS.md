@@ -12,7 +12,7 @@ Updated: 2026-11-16 (Asia/Kolkata).
 
 ## Implemented
 
-Grade 1–10 × three stages; daily and targeted practice; 20-item check-ins; brief digit and reverse-position memory; explanations; local learner separation; learning-map feedback; stage suggestions; downloadable feedback; Classic preserved.
+Grade 1â€“10 Ã— three stages; daily and targeted practice; 20-item check-ins; brief digit and reverse-position memory; explanations; local learner separation; learning-map feedback; stage suggestions; downloadable feedback; Classic preserved.
 
 Adult authentication integration: Google OAuth with PKCE, email OTP, adult declaration, local sign-out, verified identity before account-history selection, separate guest/account stores. SDK bundled locally. No inbox scopes, child email collection, cloud progress or backend database.
 
@@ -22,9 +22,9 @@ Original 32-question MBTI-style reflection for self-declared ages 16+, 18/36 act
 
 ## Not active / blockers
 
-**Google sign-in is the first activation target and remains incomplete.** Supabase project `krbuoncrksahcrnufprg` exists. Its public URL and publishable key are configured and deployed. Auth settings were verified with HTTP 200: email enabled, signups enabled (`signupDisabled=false`); Google disabled. Both public app provider flags are false. Google Auth app registration was created successfully in Google Cloud project `reasonlab` (External / Testing). A Web OAuth client is not yet created. Its form is prepared with origin `https://reasonlab.simstart.workers.dev` and callback `https://krbuoncrksahcrnufprg.supabase.co/auth/v1/callback`; it is awaiting action-time permission. After client creation, configure the credentials in Supabase, then enable only the Google flag and deploy. Exact steps are in `AUTH-SETUP.md` and `TECHNICAL-HANDOFF.md`.
+**Google sign-in is the first activation target and remains incomplete.** Supabase project `krbuoncrksahcrnufprg` exists. Its public URL and publishable key are configured and deployed. Auth settings were verified with HTTP 200: email enabled, signups enabled (`signupDisabled=false`); Google disabled. Both public app provider flags are false. Google Auth app registration was created successfully in Google Cloud project `reasonlab` (External / Testing). The Web OAuth client `Web client 1` was created successfully after explicit approval on 2026-11-16, with origin `https://reasonlab.simstart.workers.dev` and callback `https://krbuoncrksahcrnufprg.supabase.co/auth/v1/callback`. Credentials were not written to repository files. Supabase still displays Google DISABLED. The owner must configure the Google provider and redirect settings manually; the available Windows automation skill prohibits changing in-app security settings. After configuration, enable only the Google app flag and deploy. Exact steps are in `AUTH-SETUP.md` and `TECHNICAL-HANDOFF.md`.
 
-No domain purchase, sender domain, SMTP service or email-sender setup is in scope yet. Email remains disabled pending a separate decision. Never describe mock-backed tests as a live login verification. Google Cloud project `reasonlab` and its External / Testing Auth app registration are created. The Web OAuth client form is prepared with the production origin and Supabase callback, but the client has not been created. Google consent/account smoke is still pending.
+No domain purchase, sender domain, SMTP service or email-sender setup is in scope yet. Email remains disabled pending a separate decision. Never describe mock-backed tests as a live login verification. Google Cloud project `reasonlab` and its External / Testing Auth app registration are created. The Web OAuth client is created; Supabase provider configuration remains incomplete. Google consent/account smoke is still pending.
 
 No IQ calculator or validated age/grade/peer comparison exists. Feedback thresholds and grade mappings are product design choices. No cross-device learning sync. No verified age/consent mechanism. Local history is not encrypted.
 
@@ -50,7 +50,7 @@ The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf
 
 ## Next actions
 
-1. Create the prepared Web OAuth client when authorized, then configure its credentials in Supabase. Keep the public Google flag false until configuration is ready.
+1. Owner: configure the existing Web OAuth client credentials in Supabase and verify redirect URLs. Check the Google test-user list. Keep the public Google flag false until configuration is ready.
 2. Enable Google only, deploy, and verify a real consent, callback, signed-in account and cancellation recovery flow.
 3. Decide separately whether to purchase/use a sender domain and configure SMTP/email OTP.
 4. If requested, separately design cloud progress sync and consent/data-deletion controls.
