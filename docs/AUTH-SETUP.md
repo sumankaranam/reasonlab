@@ -1,8 +1,8 @@
 # Activate adult sign-in
 
-The app includes working Supabase client integration for Google OAuth (PKCE) and email one-time codes. Production authentication is **disabled until a project and providers are configured**. There is no mock login or hard-coded account. Guest practice remains available.
+The app includes Supabase client integration for Google OAuth (PKCE) and email one-time codes. Production authentication stays disabled until a provider is configured. There is no mock login or hard-coded account. Guest practice remains available.
 
-Owner decision on 2026-11-15: finish the app and provide setup steps; no project has been created yet. A readable walkthrough is also live at https://reasonlab.simstart.workers.dev/signin-setup. Email can be enabled independently using only `--email`; Google is optional.
+Updated 2026-11-15: The current decision is Google sign-in first. Supabase project `krbuoncrksahcrnufprg` has public URL/publishable-key configuration saved and deployed. Its Auth settings endpoint returned HTTP 200: email enabled, signups enabled (`signupDisabled=false`), Google disabled. Both app provider flags remain false. The email sender/domain decision is deferred; do not purchase a domain or start a paid plan as part of Google setup. See `TECHNICAL-HANDOFF.md` for exact next steps.
 
 ## 1. Create your Supabase project
 
@@ -20,53 +20,42 @@ In Authentication → URL Configuration:
 
 Use exact redirect paths, not broad wildcard production redirects. OAuth returns to a fixed same-origin URL and does not accept a redirect supplied by a user/query string.
 
-## 3. Enable email codes
+## 3. Enable email codes (deferred)
 
-Enable the Email provider and allow new signups. Configure custom SMTP with a verified sending domain. Supabase's default mail delivery is restricted and is not suitable for general public registration. Gmail/Outlook/Yahoo addresses can receive the code; no inbox integration is involved.
-
-Under Authentication → Email Templates → Magic Link, use a code-based template containing `{{ .Token }}` rather than a magic link. For example:
-
-```html
-<h2>Your ReasonLab sign-in code</h2>
-<p>Enter this one-time code in the tab where you requested it:</p>
-<p><strong>{{ .Token }}</strong></p>
-<p>If you did not request this code, you can ignore this email.</p>
-```
-
-Set an appropriate OTP expiry (for example 10 minutes) and rate limits in the Supabase dashboard. The UI has a 60-second resend delay, but provider-side rate limits enforce abuse protection. Configure CAPTCHA with supported client handling before opening high-volume public registration if needed; it is not implemented in this release.
+Email OTP requires a verified sender domain and custom SMTP for general public registration. Setup is deliberately deferred while Google is the first target. Do not enable the email app flag yet. When email setup is authorized, configure the Magic Link template to include `{{ .Token }}`, appropriate OTP expiry and provider-side rate limits. Gmail/Outlook/Yahoo addresses can receive the code; no inbox integration is involved.
 
 ## 4. Enable Google
 
-In Google Cloud Console, configure OAuth branding/consent and a Web application OAuth client. Set the authorised redirect URI to the **Supabase callback shown in the Google provider panel**, typically:
+In Google Cloud Console, configure OAuth branding/consent and create a Web application OAuth client. Add the callback URL below as an authorized redirect URI:
 
-`https://YOUR_PROJECT_REF.supabase.co/auth/v1/callback`
+`https://krbuoncrksahcrnufprg.supabase.co/auth/v1/callback`
 
-Enter the Google client ID and secret directly in Supabase Authentication → Providers → Google. Do not put them in ReasonLab. Only identity scopes (`openid email profile`) are requested; no Gmail, Drive, Calendar, or contacts permissions are requested. Configure test users while your Google app is in testing, then complete Google's applicable publishing requirements before general use.
+In Supabase Authentication → Providers → Google, enable the provider and enter the Google client ID and secret directly in Supabase. Never put either value in ReasonLab or its Git history. Request only identity scopes (`openid email profile`); no Gmail, Drive, Calendar or contacts permissions are requested. Configure test users while the Google app is in testing, then complete Google's applicable publishing requirements before general use.
 
-## 5. Set the public configuration
+Also set Supabase Authentication → URL Configuration to the production Site URL and exact allowed redirect URL in section 2. Follow the operational sequence in `TECHNICAL-HANDOFF.md`.
 
-From the repository root:
+## 5. Public app configuration
+
+From the repository root, use the helper only after Google provider setup is ready:
 
 ```powershell
-node scripts/configure-auth.mjs --url https://YOUR_PROJECT_REF.supabase.co --key YOUR_PUBLIC_PUBLISHABLE_KEY --email --google
+node scripts/configure-auth.mjs --url https://YOUR_PROJECT_REF.supabase.co --key YOUR_PUBLIC_PUBLISHABLE_KEY --google
 npm ci
 npm run build:auth
 npm test
 npm run deploy
 ```
 
-The helper rejects secret/service-role keys and non-Supabase endpoints. Both URL and publishable key are public configuration, not credentials. Omit `--google` or `--email` to leave that method disabled until configured. Commit `public/auth-config.js` after updating it; it contains public values only.
+The helper rejects secret/service-role keys and non-Supabase endpoints. The URL and publishable key are public configuration, not credentials. Do not pass `--email` until a sender is configured and email activation is separately decided. `public/auth-config.js` contains public values only; never place provider secrets there.
 
 ## Acceptance checks after setup
 
-1. Sign in with a test adult email, receive an actual code, verify it, and confirm My account appears.
-2. Verify wrong/expired codes fail; provider rate limits remain enabled.
-3. Sign out; guest history should reappear. Sign back in to see only that adult account's local history.
-4. Complete Google sign-in in the same browser tab. Confirm the account and return to practice.
-5. Cancel Google consent and verify the app recovers without treating the visitor as signed in.
-6. Check Gmail and at least one non-Gmail receiving address using authorised test accounts.
+1. Complete Google consent with an authorized adult test account and return to `/account.html` in the same browser tab.
+2. Confirm the account appears, sign out, and verify guest history reappears. Sign back in to see only that adult account's local history.
+3. Cancel Google consent and verify the app recovers without treating the visitor as signed in.
+4. Confirm no child account or child email is used. Repeat in a fresh browser session if the first test is affected by an existing session.
 
-These live-provider checks cannot be completed before you create/configure the service. Automated tests currently exercise integration logic with an injected mock client, not real email delivery or Google consent.
+These live-provider checks cannot be established by automated tests with an injected mock client. Record live consent and account smoke results only after completing them.
 
 ## Data handling and limits
 
@@ -84,3 +73,11 @@ These live-provider checks cannot be completed before you create/configure the s
 - https://supabase.com/docs/guides/auth/social-sign-in/auth-google
 - https://supabase.com/docs/guides/auth/auth-smtp
 - https://supabase.com/docs/guides/auth/sessions/pkce-flow
+
+## Suggested sender: Resend (deferred)
+
+Email sender setup is outside the current Google-first activation. The owner has not chosen or purchased a domain. Do not buy a domain or start a paid plan without explicit approval.
+
+If later authorized and a domain is available: verify a sending subdomain such as `auth.example.com` with the exact DNS records supplied by the mail provider, preserve existing mail records, then enter SMTP credentials directly in Supabase. Never store SMTP/API secrets in this repository. Resend supports SMTP and requires a domain owned by the sender.
+
+References: https://resend.com/docs/send-with-smtp and https://resend.com/docs/dashboard/domains/introduction . No email has been sent or live sign-in verified at this checkpoint.

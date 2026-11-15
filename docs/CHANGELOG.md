@@ -39,3 +39,16 @@ Dates use Asia/Kolkata. Update this log at tested feature/fix checkpoints, along
 - Verified live 18-question interest and 32-question preference flows, neutral/mixed scoring, back/review, saved history, learner separation, 24-family search/filter, JSON exports, family age bands and 320/390px layouts.
 - Verified all-skipped questionnaires do not produce profiles, local deletion, blocked-storage recovery, and Kids exit confirmation when navigating to Discovery. Print expansion and generated PDF checked functionally; no claim of formal accessibility certification.
 - All 24 automated tests pass. Feature CI succeeded. Real email/Google activation remains explicitly deferred by owner; exact steps are in `AUTH-SETUP.md` and live `/signin-setup`.
+
+## 2026-11-15 — Supabase project connection checkpoint
+
+- Read the owner-created ReasonLab project in the signed-in dashboard and configured only its public URL/publishable key. No secret key was read or stored.
+- Verified HTTP 200 from the public Auth settings endpoint: email/signups enabled, Google disabled. This is connection verification, not email-delivery verification.
+- Kept app provider flags disabled while the sender domain, SMTP service, code template and redirects are pending. Added an explicit connected-but-pending account screen.
+- Owner requested help choosing a sender; documented Resend configuration and the outstanding domain choice.
+
+## 2026-11-15 — Resume Google-first setup and efficient model workflow
+
+- Confirmed the owner wants Google sign-in first, with no domain purchase. Created dedicated Google Cloud project `reasonlab`; OAuth onboarding remains in progress.
+- Added technical handoff and persistent preference for stronger-model planning/review with lighter-model bounded tasks. A GPT-6 Luna subagent handled documentation; primary review corrected unsupported claims and push instructions.
+- Checkpoint includes previously verified public Supabase configuration and connected/pending UI deployed as `395ae257-72d1-49ab-ba22-81cf23b7272a`. All 24 tests and live account/guest smoke passed for that runtime. No new runtime edits in this resume checkpoint.

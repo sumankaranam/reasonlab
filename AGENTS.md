@@ -9,6 +9,12 @@ Applies to the entire ReasonLab repository. Read this file first in every sessio
 3. Read `docs/CHANGELOG.md` for recent milestones and `docs/AUTH-SETUP.md` for login setup.
 4. Inspect the current Git branch, status and remote head before changing anything.
 
+## Planning, review and task sizing
+
+- Use a stronger model for repository-level planning, architecture decisions and final review; use a lighter model for clearly bounded implementation or testing tasks when suitable.
+- Avoid unnecessary agents, full-history context and repeated checks. Delegate only when work is meaningfully separable and the benefit justifies the overhead.
+- Model choice is a workflow preference; actual billing savings have not been measured or verified.
+
 ## User-requested checkpoint workflow
 
 - Make small, coherent commits at working milestones, and push them periodically during active work.

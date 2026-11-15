@@ -18,11 +18,13 @@ Adult authentication integration: Google OAuth with PKCE, email OTP, adult decla
 
 ## Discovery extension (live and verified)
 
-Original 32-question MBTI-style reflection for self-declared ages 16+, 18/36 activity-interest questions by grade, transparent skip-aware scoring, local reports, 24 searchable career families and a detailed family guide. Career ordering uses interests only; practice feedback is separate. See `DISCOVERY-DESIGN.md`. New public email activation walkthrough: `/signin-setup.html`. User chose to finish the app and provide setup steps rather than configure a provider now.
+Original 32-question MBTI-style reflection for self-declared ages 16+, 18/36 activity-interest questions by grade, transparent skip-aware scoring, local reports, 24 searchable career families and a detailed family guide. Career ordering uses interests only; practice feedback is separate. See `DISCOVERY-DESIGN.md`. New public email activation walkthrough: `/signin-setup.html`.
 
 ## Not active / blockers
 
-**Google/email login cannot complete yet.** No Supabase project, SMTP delivery or Google OAuth client has been configured. `public/auth-config.js` is deliberately empty and the live account page must disclose that state. Follow `AUTH-SETUP.md` to activate. Never describe mock-backed tests as a live login verification.
+**Google sign-in is the first activation target and remains incomplete.** Supabase project `krbuoncrksahcrnufprg` exists. Its public URL and publishable key are configured and deployed. Auth settings were verified with HTTP 200: email enabled, signups enabled (`signupDisabled=false`); Google disabled. Both public app provider flags are false. Next configure Google OAuth in Supabase and the Google Cloud Console, then enable only the Google flag and deploy. Exact steps are in `AUTH-SETUP.md` and `TECHNICAL-HANDOFF.md`.
+
+No domain purchase, sender domain, SMTP service or email-sender setup is in scope yet. Email remains disabled pending a separate decision. Never describe mock-backed tests as a live login verification. Google Cloud project `reasonlab` (display name ReasonLab) has been created. OAuth onboarding is open; no OAuth client has been created yet. Google consent/account smoke is still pending.
 
 No IQ calculator or validated age/grade/peer comparison exists. Feedback thresholds and grade mappings are product design choices. No cross-device learning sync. No verified age/consent mechanism. Local history is not encrypted.
 
@@ -34,8 +36,7 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 - History survived reload and switching learner slots did not mix records.
 - Grade 10 memory display fits the mobile viewport. Post-auth mobile smoke tests pass: guest return, number practice/feedback, and unsaved-session confirmation before account navigation. The account-unconfigured state is explicit.
 - GitHub CI passed for code commit `18a8d76f3cf6786abdad7961619ec297653a9312`: https://github.com/sumankaranam/reasonlab/actions/runs/43637893517
-- Real Google consent/email delivery remains untested until provider setup.
-
+- Real Google consent/account smoke remains pending; prior account smoke passed before this setup attempt.
 - Discovery mobile browser checks pass at 390px and 320px: complete interest/preference flows, back/edit, navigation guards, reload persistence, learner separation, search/filter, reports and family exports.
 - Additional browser checks pass: all-skipped/no-profile state, deletion, blocked storage, Kids-to-Discovery exit guard, print expansion/restoration and PDF generation. Mobile screenshots inspected.
 - GitHub CI passed for Discovery feature checkpoint `c3099da9730cffca267657c4652003c8b628d466`: https://github.com/sumankaranam/reasonlab/actions/runs/43682768019
@@ -43,15 +44,16 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 
 ## Deployment
 
-Current recorded Cloudflare version: `6e683736-e11f-4129-8ded-215b11c98e64`.
+Current recorded Cloudflare version: `395ae257-72d1-49ab-ba22-81cf23b7272a`.
 Hosting is static assets, Worker name `reasonlab`; no new paid resources created.
 The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf6786abdad7961619ec297653a9312` (verify current main before work).
 
 ## Next actions
 
-1. Owner creates/configures Supabase, SMTP and Google OAuth; supply only public URL/publishable key to the app.
-2. Activate provider flags, deploy, test actual email/Google login with authorised adult test accounts.
-3. If requested, separately design cloud progress sync and consent/data-deletion controls.
+1. Complete Google OAuth setup and adult account smoke using the exact handoff steps. Keep public Google flag false until configuration is ready.
+2. Enable Google only, deploy, and verify a real consent, callback, signed-in account and cancellation recovery flow.
+3. Decide separately whether to purchase/use a sender domain and configure SMTP/email OTP.
+4. If requested, separately design cloud progress sync and consent/data-deletion controls.
 
 ## Commands
 
@@ -64,3 +66,5 @@ npm run deploy
 ```
 
 Use existing Cloudflare authentication or the normal Wrangler login. Do not copy machine-local auth files into the repository. Read `docs/ARCHITECTURE.md` before changing scoring, identity or memory timing.
+
+Connection checkpoint: 24 automated tests pass. Live browser verified connected/pending account UI and guest-practice navigation. Supabase project and public config are in place; email enabled, `signupDisabled=false`, Google disabled, and both app flags false. Google-first is the current decision. No Google consent/account smoke completed in this setup attempt; no domain purchase or sender setup has started. See `docs/TECHNICAL-HANDOFF.md`.

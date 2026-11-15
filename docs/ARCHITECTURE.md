@@ -16,7 +16,7 @@ Buildless HTML/CSS/ES modules served by Cloudflare Workers Static Assets. No cus
 | `public/account.html`, `public/account.js` | Adult sign-in/account screens |
 | `public/auth-core.js` | Pure config validation, progress keys, injected auth-service adapter |
 | `public/auth-client.js` | Conditional SDK loading, PKCE client, verified current user |
-| `public/auth-config.js` | Public project URL/key and provider-enabled flags; currently empty |
+| `public/auth-config.js` | Public project URL/key and provider-enabled flags; project configured, providers disabled pending sender setup |
 | `public/vendor/` | Reproducible official SDK bundle and licence |
 | `public/_headers` | CSP, referrer and MIME policies; no-store account page |
 | `scripts/configure-auth.mjs` | Validate and write public auth configuration |
@@ -67,3 +67,7 @@ UI files are currently large imperative modules. Before major new features, cons
 ## Discovery extension
 
 `discover.html`, `discovery.js`, `discovery-engine.js`, `discovery-data.js` and `discovery.css` implement separate original interest/preference questionnaires, career exploration and family guidance. See `DISCOVERY-DESIGN.md` for scoring, module ownership, storage and safeguards. `signin-setup.html` exposes the owner activation guide from the unconfigured account screen.
+
+## Authentication activation handoff
+
+Google sign-in is the first activation target. Supabase project `krbuoncrksahcrnufprg` is connected with public configuration, and Google Cloud project `reasonlab` is created. Provider flags remain disabled until OAuth configuration and real consent/callback verification. Read `TECHNICAL-HANDOFF.md` for the exact URLs and remaining steps.
