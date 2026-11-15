@@ -2,6 +2,8 @@
 
 The app includes working Supabase client integration for Google OAuth (PKCE) and email one-time codes. Production authentication is **disabled until a project and providers are configured**. There is no mock login or hard-coded account. Guest practice remains available.
 
+Owner decision on 2026-11-15: finish the app and provide setup steps; no project has been created yet. A readable walkthrough is also live at https://reasonlab.simstart.workers.dev/signin-setup. Email can be enabled independently using only `--email`; Google is optional.
+
 ## 1. Create your Supabase project
 
 Create a project in your own Supabase account. Keep its database password private; ReasonLab does not need that password. No database tables are required for this authentication-only release.

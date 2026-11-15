@@ -31,3 +31,11 @@ Dates use Asia/Kolkata. Update this log at tested feature/fix checkpoints, along
 - Added account/learner/grade-separated local reports, JSON/print exports, response review, deletion and unsaved-navigation guards.
 - Linked Discovery from Kids and added a public email activation walkthrough. Owner elected to defer provider creation; no live email sign-in claim.
 - Validation: 24 automated tests pass, including all 16 preference combinations and missing-data/identity isolation. Browser validation and deployment pending.
+
+## 2026-11-15 — Discovery browser verification and deployment
+
+- Deployed Discovery, career explorer, family guidance and owner email setup guide to the existing Cloudflare Worker. Final runtime version: `6e683736-e11f-4129-8ded-215b11c98e64`.
+- Fixed narrow-screen wrapping of setup URLs and code tokens. Added before/after-print handling so collapsed guide sections print completely and return to their prior state.
+- Verified live 18-question interest and 32-question preference flows, neutral/mixed scoring, back/review, saved history, learner separation, 24-family search/filter, JSON exports, family age bands and 320/390px layouts.
+- Verified all-skipped questionnaires do not produce profiles, local deletion, blocked-storage recovery, and Kids exit confirmation when navigating to Discovery. Print expansion and generated PDF checked functionally; no claim of formal accessibility certification.
+- All 24 automated tests pass. Feature CI succeeded. Real email/Google activation remains explicitly deferred by owner; exact steps are in `AUTH-SETUP.md` and live `/signin-setup`.

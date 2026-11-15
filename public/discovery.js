@@ -80,5 +80,9 @@ document.addEventListener('click',e=>{
  if(b.id==='export-report')exportReport();if(b.id==='export-guide')exportGuide();if(b.id==='print')window.print();
 });
 window.addEventListener('beforeunload',e=>{if(session){e.preventDefault();e.returnValue='';}});
+// Closed native details can remain hidden in print despite CSS. Expand temporarily.
+let printDetails=[];
+window.addEventListener('beforeprint',()=>{printDetails=[...app.querySelectorAll('details:not([open])')];printDetails.forEach(d=>d.open=true);});
+window.addEventListener('afterprint',()=>{printDetails.forEach(d=>d.open=false);printDetails=[];});
 onAccountChange(()=>setTimeout(async()=>{let next=null;try{next=await service.user();}catch{identityWarning='Your account could not be verified. Guest mode is active.';}if((next?.id||null)!==(user?.id||null)){user=next;key=discoveryKey(next?.id||null);session=null;report=null;pending=null;$('#exit').close();load();home();}},0));
 load();route(location.hash.slice(1));

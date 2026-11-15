@@ -16,7 +16,7 @@ Grade 1–10 × three stages; daily and targeted practice; 20-item check-ins; br
 
 Adult authentication integration: Google OAuth with PKCE, email OTP, adult declaration, local sign-out, verified identity before account-history selection, separate guest/account stores. SDK bundled locally. No inbox scopes, child email collection, cloud progress or backend database.
 
-## Discovery extension (feature checkpoint, pending browser verification/deployment)
+## Discovery extension (live and verified)
 
 Original 32-question MBTI-style reflection for self-declared ages 16+, 18/36 activity-interest questions by grade, transparent skip-aware scoring, local reports, 24 searchable career families and a detailed family guide. Career ordering uses interests only; practice feedback is separate. See `DISCOVERY-DESIGN.md`. New public email activation walkthrough: `/signin-setup.html`. User chose to finish the app and provide setup steps rather than configure a provider now.
 
@@ -36,9 +36,14 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 - GitHub CI passed for code commit `18a8d76f3cf6786abdad7961619ec297653a9312`: https://github.com/sumankaranam/reasonlab/actions/runs/43637893517
 - Real Google consent/email delivery remains untested until provider setup.
 
+- Discovery mobile browser checks pass at 390px and 320px: complete interest/preference flows, back/edit, navigation guards, reload persistence, learner separation, search/filter, reports and family exports.
+- Additional browser checks pass: all-skipped/no-profile state, deletion, blocked storage, Kids-to-Discovery exit guard, print expansion/restoration and PDF generation. Mobile screenshots inspected.
+- GitHub CI passed for Discovery feature checkpoint `c3099da9730cffca267657c4652003c8b628d466`: https://github.com/sumankaranam/reasonlab/actions/runs/43682768019
+- Fixed a 320px overflow in the public email setup guide and ensured closed details expand for printing.
+
 ## Deployment
 
-Current recorded Cloudflare version: `005a73e2-83db-4eff-b84b-152b1c3646db`.
+Current recorded Cloudflare version: `6e683736-e11f-4129-8ded-215b11c98e64`.
 Hosting is static assets, Worker name `reasonlab`; no new paid resources created.
 The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf6786abdad7961619ec297653a9312` (verify current main before work).
 
