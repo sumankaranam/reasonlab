@@ -26,6 +26,7 @@ Applies to the entire ReasonLab repository. Read this file first in every sessio
 - Default new multi-step work to a descriptive branch when concurrent work or review is expected. Follow explicit user instructions about main/PRs.
 - Record an honest incomplete checkpoint when blocked; do not claim tests, deployment or login work that were not verified.
 - Do not create scheduled automations for Git pushes. Checkpoints happen while working on the task.
+- Deploy coherent, tested milestones periodically to the existing Cloudflare Worker, as requested by the owner. Verify the live affected flows, record the deployment version and keep Git/docs aligned. Do not deploy incomplete changes merely because time has passed.
 
 ## Documentation with code
 

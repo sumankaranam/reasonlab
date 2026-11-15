@@ -73,4 +73,4 @@ Dates use Asia/Kolkata. Update this log at tested feature/fix checkpoints, along
 - Added French-only browser voice playback, temporary local 15-second recording/replay, and separately gated browser recognition with explicit provider-processing disclosure. No paid API, voice retention or server upload by the app.
 - Removed the public owner activation link and setup walkthrough on request; retained project-only setup docs. Added an explicit missing-page response. Sign-in remains disabled.
 - Fixed the Windows local-preview root route while preserving path-boundary checks.
-- Validation: 46 unit tests pass; local mobile browser and edge checks pass. Voice hardware is simulated in checks. Runtime deployment pending at this checkpoint.
+- Validation: 46 unit tests pass; local mobile browser and edge checks pass. Voice hardware is simulated in checks. Deployed to Cloudflare version `c3aac00a-7a21-4df1-9adb-fef255e5fefe`; both deployed browser suites passed. Runtime commit `782be4214ca57dab880b88e0f41ca15590c23a5c` passed GitHub CI.

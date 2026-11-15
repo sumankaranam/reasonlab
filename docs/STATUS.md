@@ -20,15 +20,15 @@ Adult authentication integration: Google OAuth with PKCE, email OTP, adult decla
 
 Original 32-question MBTI-style reflection for self-declared ages 16+, 18/36 activity-interest questions by grade, transparent skip-aware scoring, local reports, 24 searchable career families and a detailed family guide. Career ordering uses interests only; practice feedback is separate. See `DISCOVERY-DESIGN.md`. Owner setup documentation is kept outside the deployed public directory.
 
-## French learning milestone (tested; deployment pending)
+## French learning milestone (live and verified)
 
 `/french.html` adds six stages and 36 original lessons, 257 vocabulary entries (250 distinct phrase/meaning pairs), 216 authored tasks plus generated reading/listening questions, 12 guided conversations (48 turns), six bilingual stories, ten sound tips and eight reference sections. Mixed/text practice, listening, sentence building, constrained writing, daily practice, due review, stage checkpoints, phrase search, family reports and anonymous learner progress are implemented.
 
 Speaker playback uses an available French device/browser voice. Local record/replay and separately gated browser recognition are optional. Microphone data is not retained in app progress; browser recognition may send speech to its provider. The course covers beginner through intermediate themes without claiming certification or guaranteed fluency. Both sign-in flags remain false; guest French learning works.
 
-The public owner activation link and `signin-setup.html` have been removed. Owner steps remain in local `docs/AUTH-SETUP.md` and `docs/TECHNICAL-HANDOFF.md`, which are not deployed. Old walkthrough URLs will return 404 after this deployment.
+The public owner activation link and `signin-setup.html` have been removed. Owner steps remain in local `docs/AUTH-SETUP.md` and `docs/TECHNICAL-HANDOFF.md`, which are not deployed. Both old walkthrough URLs return HTTP 404 on the live site.
 
-Validation: 46 automated tests pass; local browser checks pass at 390px and 320px for lesson/retry/skip, correct scoring, assisted-listening exclusion, writing/token building, review/checkpoint/role-play/story UI, saved-state isolation, phrase search, studio gates/denial, export/print/delete, blocked storage, exit guards and home navigation. Audio lifecycle is simulated; real hardware quality remains unverified. See `FRENCH-DESIGN.md` for architecture and reproduction.
+Validation: 46 automated tests pass; local and deployed browser checks pass at 390px and 320px for lesson/retry/skip, correct scoring, assisted-listening exclusion, writing/token building, review/checkpoint/role-play/story UI, saved-state isolation, phrase search, studio gates/denial, export/print/delete, blocked storage, exit guards and home navigation. Audio lifecycle is simulated; real hardware quality remains unverified. See `FRENCH-DESIGN.md` for architecture and reproduction.
 
 ## Not active / blockers
 
@@ -54,7 +54,7 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 
 ## Deployment
 
-Current recorded Cloudflare version: `395ae257-72d1-49ab-ba22-81cf23b7272a`.
+Current recorded Cloudflare version: `c3aac00a-7a21-4df1-9adb-fef255e5fefe` (French learning and public setup cleanup). Runtime code commit: `782be4214ca57dab880b88e0f41ca15590c23a5c`. GitHub CI passed: https://github.com/sumankaranam/reasonlab/actions/runs/43755637641 .
 Hosting is static assets, Worker name `reasonlab`; no new paid resources created.
 The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf6786abdad7961619ec297653a9312` (verify current main before work).
 

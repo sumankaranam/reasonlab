@@ -1,6 +1,6 @@
 # French learning design
 
-Implemented and locally tested 2026-11-16. See STATUS.md for verified deployment state.
+Implemented, deployed and verified 2026-11-16. See STATUS.md for verified deployment state.
 
 ## Experience
 
@@ -31,7 +31,7 @@ Test all lesson answer keys and distractors; normalization, review intervals, du
 
 ## Verification at implementation checkpoint
 
-46 automated tests pass (24 existing, 22 French/audio). Local mobile browser checks pass at 320px and 390px, including first-answer retry preservation, assisted-listening exclusions, constrained writing/accents, token ordering, completion persistence, learner selection across reload, conversations/stories/checkpoints, phrase search, studio opt-ins and denial, export, print, deletion, blocked storage and unsaved navigation. Automated audio tests use simulated speech/microphone devices; real hardware quality was not tested.
+46 automated tests pass (24 existing, 22 French/audio). Local and deployed mobile browser checks pass at 320px and 390px, including first-answer retry preservation, assisted-listening exclusions, constrained writing/accents, token ordering, completion persistence, learner selection across reload, conversations/stories/checkpoints, phrase search, studio opt-ins and denial, export, print, deletion, blocked storage and unsaved navigation. Automated audio tests use simulated speech/microphone devices; real hardware quality was not tested.
 
 No runtime LLM or paid speech service is introduced. A stronger primary model planned/reviewed and integrated the feature; bounded content and audio/test tasks used GPT-6 Luna. Actual cost savings are not measured.
 
@@ -45,3 +45,5 @@ node tests/browser/french-edge.mjs
 ```
 
 `FR_BASE` overrides the default local URL for deployed checks. `PLAYWRIGHT_EXECUTABLE_PATH` selects an existing Chromium executable. `PLAYWRIGHT_MODULE` optionally selects a different installed Playwright module. QA outputs go to ignored `work/`; the dependency directory already creates that folder. The edge check injects simulated voice/mic adapters and never requests access to real hardware. Some Windows sandbox profiles require running the local server and browser outside the sandbox to allow loopback traffic.
+
+Deployment: `c3aac00a-7a21-4df1-9adb-fef255e5fefe`. Runtime source: `782be4214ca57dab880b88e0f41ca15590c23a5c`; GitHub CI succeeded. Both public setup paths and the non-public documentation path return 404.
