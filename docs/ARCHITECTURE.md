@@ -26,11 +26,11 @@ Buildless HTML/CSS/ES modules served by Cloudflare Workers Static Assets. No cus
 
 ## Session and scoring flow
 
-Choose anonymous learner slot (1â€“3), grade (1â€“10), and stage (1â€“3). Daily sets are seeded by browser-local date plus learner/grade/stage. Check-ins and practice use cryptographic random seeds as input to deterministic generators. Questions are unique within a session; templates and questions can recur between sessions.
+Choose anonymous learner slot (1–3), grade (1–10), and stage (1–3). Daily sets are seeded by browser-local date plus learner/grade/stage. Check-ins and practice use cryptographic random seeds as input to deterministic generators. Questions are unique within a session; templates and questions can recur between sessions.
 
 Modes: daily = 12 mixed questions, check-in = 20 mixed (5/domain), practice = 8/12/20 with optional area filter. Areas: numbers, visual repeating groups, logic and memory. Grade/stage parameters increase construction complexity; they are not validated curriculum/age norms.
 
-Memory state: `ready â†’ showing â†’ hidden`. A readiness click starts a wall-clock timeout. Digits are removed from the rendered DOM before options appear. Back/next are disabled during display. Hidden-tab interruption or leaving during display marks assistance/interruption. Practice can generate a new number; check-ins cannot replay. Full browser suspension can still affect timing; no scientific timing precision is claimed.
+Memory state: `ready → showing → hidden`. A readiness click starts a wall-clock timeout. Digits are removed from the rendered DOM before options appear. Back/next are disabled during display. Hidden-tab interruption or leaving during display marks assistance/interruption. Practice can generate a new number; check-ins cannot replay. Full browser suspension can still affect timing; no scientific timing precision is claimed.
 
 Scoring counts exact keyed answers, with skips counted incorrect. Learning-map evidence filters by version, learner, grade, stage, complete check-in, no assistance/interruption, and unique seed; then selects the latest five. Per-domain categories require two check-ins and ten questions. Thresholds are explicit product rules (80% / 50%), not normative or validated cutoffs. Stage suggestions require all four areas strong at preceding stages; levels remain selectable.
 
