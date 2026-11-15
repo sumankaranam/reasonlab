@@ -1,14 +1,14 @@
 # Technical handoff: Google sign-in first
 
-Current state (2026-11-15): Supabase project `krbuoncrksahcrnufprg` is configured in the public app and deployed. Supabase Auth settings were read successfully (HTTP 200): email enabled, signups enabled (`signupDisabled=false`), Google disabled. Both app provider flags are false. Prior account smoke passed before this setup attempt; the current real Google consent/account smoke is pending. Google Cloud project `reasonlab` (display name ReasonLab) has been created. OAuth onboarding is open; no OAuth client has been created yet. Continue from the setup steps below.
+Current state (2026-11-16): Supabase project `krbuoncrksahcrnufprg` is configured in the public app and deployed. Supabase Auth settings were read successfully (HTTP 200): email enabled, signups enabled (`signupDisabled=false`), Google disabled. Both app provider flags are false. Prior account smoke passed before this setup attempt; the current real Google consent/account smoke is pending. Google Cloud project `reasonlab` has a successfully created External / Testing Auth app registration. The Web OAuth client form is prepared with authorized origin `https://reasonlab.simstart.workers.dev` and authorized redirect URI `https://krbuoncrksahcrnufprg.supabase.co/auth/v1/callback`. The client itself has not been created; creation is awaiting action-time permission. Continue from the prepared form when authorized.
 
 ## Exact setup sequence
 
-1. In Google Cloud Console, configure the OAuth consent screen/branding and create a Web application OAuth client. Add this exact authorized redirect URI:
+1. In Google Cloud Console project `reasonlab`, continue from the prepared Web application OAuth client form. The authorized origin and callback are already entered:
 
    `https://krbuoncrksahcrnufprg.supabase.co/auth/v1/callback`
 
-   Add an adult test account to the test users list if the app remains in testing. Request identity scopes only (`openid email profile`).
+   Create the client when authorized. The app is External / Testing; the support/developer contact was approved, but the test-user list has not been configured or verified. Add an authorised adult test user if required. Request identity scopes only (`openid email profile`).
 
 2. In Supabase project `krbuoncrksahcrnufprg`, open Authentication → Providers → Google. Enable Google and enter the OAuth client ID and client secret in Supabase only. Never copy the client secret into repository files, browser config, shell history, screenshots, or Git.
 

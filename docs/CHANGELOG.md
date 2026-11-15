@@ -52,3 +52,9 @@ Dates use Asia/Kolkata. Update this log at tested feature/fix checkpoints, along
 - Confirmed the owner wants Google sign-in first, with no domain purchase. Created dedicated Google Cloud project `reasonlab`; OAuth onboarding remains in progress.
 - Added technical handoff and persistent preference for stronger-model planning/review with lighter-model bounded tasks. A GPT-6 Luna subagent handled documentation; primary review corrected unsupported claims and push instructions.
 - Checkpoint includes previously verified public Supabase configuration and connected/pending UI deployed as `395ae257-72d1-49ab-ba22-81cf23b7272a`. All 24 tests and live account/guest smoke passed for that runtime. No new runtime edits in this resume checkpoint.
+
+## 2026-11-16 — Google Auth app registration checkpoint
+
+- Successfully created the Google Auth app registration in project `reasonlab` with External / Testing audience.
+- Prepared the Web OAuth client form with origin `https://reasonlab.simstart.workers.dev` and callback `https://krbuoncrksahcrnufprg.supabase.co/auth/v1/callback`; the OAuth client itself is not yet created and awaits action-time permission.
+- Public app provider flags remain false. No code or runtime deployment changed; last recorded deployment is `395ae257-72d1-49ab-ba22-81cf23b7272a`. Google consent/account smoke remains pending.

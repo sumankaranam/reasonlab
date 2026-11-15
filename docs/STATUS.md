@@ -1,6 +1,6 @@
 # Current status and handoff
 
-Updated: 2026-11-15 (Asia/Kolkata).
+Updated: 2026-11-16 (Asia/Kolkata).
 
 ## Entry points
 
@@ -22,9 +22,9 @@ Original 32-question MBTI-style reflection for self-declared ages 16+, 18/36 act
 
 ## Not active / blockers
 
-**Google sign-in is the first activation target and remains incomplete.** Supabase project `krbuoncrksahcrnufprg` exists. Its public URL and publishable key are configured and deployed. Auth settings were verified with HTTP 200: email enabled, signups enabled (`signupDisabled=false`); Google disabled. Both public app provider flags are false. Next configure Google OAuth in Supabase and the Google Cloud Console, then enable only the Google flag and deploy. Exact steps are in `AUTH-SETUP.md` and `TECHNICAL-HANDOFF.md`.
+**Google sign-in is the first activation target and remains incomplete.** Supabase project `krbuoncrksahcrnufprg` exists. Its public URL and publishable key are configured and deployed. Auth settings were verified with HTTP 200: email enabled, signups enabled (`signupDisabled=false`); Google disabled. Both public app provider flags are false. Google Auth app registration was created successfully in Google Cloud project `reasonlab` (External / Testing). A Web OAuth client is not yet created. Its form is prepared with origin `https://reasonlab.simstart.workers.dev` and callback `https://krbuoncrksahcrnufprg.supabase.co/auth/v1/callback`; it is awaiting action-time permission. After client creation, configure the credentials in Supabase, then enable only the Google flag and deploy. Exact steps are in `AUTH-SETUP.md` and `TECHNICAL-HANDOFF.md`.
 
-No domain purchase, sender domain, SMTP service or email-sender setup is in scope yet. Email remains disabled pending a separate decision. Never describe mock-backed tests as a live login verification. Google Cloud project `reasonlab` (display name ReasonLab) has been created. OAuth onboarding is open; no OAuth client has been created yet. Google consent/account smoke is still pending.
+No domain purchase, sender domain, SMTP service or email-sender setup is in scope yet. Email remains disabled pending a separate decision. Never describe mock-backed tests as a live login verification. Google Cloud project `reasonlab` and its External / Testing Auth app registration are created. The Web OAuth client form is prepared with the production origin and Supabase callback, but the client has not been created. Google consent/account smoke is still pending.
 
 No IQ calculator or validated age/grade/peer comparison exists. Feedback thresholds and grade mappings are product design choices. No cross-device learning sync. No verified age/consent mechanism. Local history is not encrypted.
 
@@ -50,7 +50,7 @@ The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf
 
 ## Next actions
 
-1. Complete Google OAuth setup and adult account smoke using the exact handoff steps. Keep public Google flag false until configuration is ready.
+1. Create the prepared Web OAuth client when authorized, then configure its credentials in Supabase. Keep the public Google flag false until configuration is ready.
 2. Enable Google only, deploy, and verify a real consent, callback, signed-in account and cancellation recovery flow.
 3. Decide separately whether to purchase/use a sender domain and configure SMTP/email OTP.
 4. If requested, separately design cloud progress sync and consent/data-deletion controls.
@@ -67,4 +67,4 @@ npm run deploy
 
 Use existing Cloudflare authentication or the normal Wrangler login. Do not copy machine-local auth files into the repository. Read `docs/ARCHITECTURE.md` before changing scoring, identity or memory timing.
 
-Connection checkpoint: 24 automated tests pass. Live browser verified connected/pending account UI and guest-practice navigation. Supabase project and public config are in place; email enabled, `signupDisabled=false`, Google disabled, and both app flags false. Google-first is the current decision. No Google consent/account smoke completed in this setup attempt; no domain purchase or sender setup has started. See `docs/TECHNICAL-HANDOFF.md`.
+Connection checkpoint: 24 automated tests pass. Live browser verified connected/pending account UI and guest-practice navigation. Supabase project and public config are in place; email enabled, `signupDisabled=false`, Google disabled, and both app flags false. Google-first is the current decision. Google Auth app registration is complete; Web OAuth client creation and consent/account smoke are pending. No domain purchase or sender setup has started. See `docs/TECHNICAL-HANDOFF.md`.
