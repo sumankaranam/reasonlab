@@ -156,3 +156,11 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - Added deterministic original templates for patterns, logic, visual reasoning and memory, with three difficulty levels and explanations.
 - Added bounded summary validation, isolated storage keys, independent weekly evidence, practice suggestions and completion badges.
 - Nine engine tests pass, including independent answer checks across many seeds and rejection of assisted/interrupted/repeated evidence. UI integration/browser validation is in progress.
+
+## 2026-11-17 — Illustrated Reasoning Adventures
+
+- Added four illustrated worlds, worked-example lessons, daily quests, weekly check-ins and focused practice at three difficulty levels.
+- Added a browser-local learner dashboard with evidence thresholds, first-attempt weekly protection, level suggestions, earned badges and parent activities.
+- Preserved active puzzles during same-account authentication refresh; account changes discard active work and reload the correct local history. Memory stimuli are hidden before answering; interruptions cannot supply independent evidence.
+- Integrated the hub and legacy grade practice links; adventures share existing reasoning aggregate counters. Updated architecture and handoff documentation.
+- 92 automated tests and dedicated mobile, landing/navigation and expanded six-theme contrast checks pass. Browser account identities and clock are mocked.

@@ -4,6 +4,8 @@ Mobile-friendly reasoning, French/Tamil/Kannada learning and interest exploratio
 
 ## Features
 
+- Reasoning Adventures: four illustrated puzzle worlds, three difficulty levels, five-puzzle daily sets, twelve-puzzle weekly challenges, focused practice, explanations, achievements and a learner progress dashboard at `/adventures.html`. Existing grade practice remains at `/kids.html`.
+
 - Ten grade starting points, three stages each: Discover, Build and Stretch.
 - Daily discovery (12 questions), skill check-ins (20), targeted practice (8/12/20).
 - Number patterns, visual patterns, logical thinking and briefly displayed digit recall; higher levels include reverse recall.

@@ -119,3 +119,9 @@ Added 12 beginner lessons per language, in three stages: picture-symbol cards, n
 ## Reasoning Adventures — 2026-11-17 checkpoint
 
 The new pure engine provides four areas, three levels, daily/weekly/focused sets, validated local summaries, first-attempt weekly evidence, suggestions and badges. Nine new engine tests pass (92 total), including independent solution checks across 80 seeds, all levels and all modes/areas. UI is implemented and under browser verification; not yet deployed. See `REASONING-ADVENTURES.md`.
+
+## Reasoning Adventures — completed local verification
+
+Four illustrated worlds now provide worked examples, six-puzzle practice, daily five-puzzle quests and balanced twelve-puzzle weekly check-ins. Three levels use grade starting points and optional practice suggestions. First answers, hint use and interrupted memory trials remain distinct. The dashboard shows qualifying weekly evidence, supportive skill labels, badges and parent activities. Existing Kids/Classic histories and routes remain available.
+
+All 92 automated tests pass. Dedicated 320px browser checks pass for first-answer locking, hints, memory display/tab/suspension/navigation interruptions, weekly repeats and two-week evidence, account/slot isolation, same-account token refresh, history clearing and blocked storage. Identity and clock are mocked in these tests. Shared landing/navigation checks pass; six-theme contrast checks include map, lesson, question, answer feedback and progress. Screenshots reviewed. Deployment verification will be recorded below.

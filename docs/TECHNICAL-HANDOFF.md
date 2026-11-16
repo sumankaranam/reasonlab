@@ -42,3 +42,7 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 ## Tamil/Kannada extension
 
 See `LANGUAGE-COURSES.md` for scope and review limitations. Keep French data/engine independent. For more languages, extend the shared Indic course engine only after adding authored data, script-compatible layout checks and explicit voice locale support. Update the hub, global course selector, usage allowlist/schema/view, retention and tests together. Do not store child audio or claim pronunciation/fluency scores.
+
+## Reasoning Adventures extension
+
+Entry `/adventures.html`; existing grade-specific `/kids.html` retained. Read `REASONING-ADVENTURES.md` before changing generation, scoring, memory timing or evidence rules. Main tests: `tests/adventure.test.mjs`, `tests/browser/adventures.mjs`, shared landing and theme-contrast suites. No runtime AI dependency or new provider setup. Histories are local and separate from legacy Kids. Owner email reports continue to require the deferred sender setup.

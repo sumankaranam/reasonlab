@@ -10,7 +10,7 @@ The landing-page reasoning card opens `/adventures.html`. Existing grade practic
 
 ## Scoring and feedback contract
 
-First answers are retained. Hints mark assistance; an interrupted memory display marks interruption. Daily/practice exercises give explanatory feedback. Weekly summaries provide evidence only when complete, without assistance or interruption. Only the first completed attempt at a given week's challenge and level can supply independent evidence. A later retry cannot replace an earlier score or turn an assisted first attempt into independent evidence.
+First answers are retained. Hints mark assistance; an interrupted memory display marks interruption. Daily/practice exercises give explanatory feedback. Weekly summaries provide evidence only when complete, without assistance or interruption. Only the first completed attempt at a given week's challenge and level can supply independent evidence. The UI allows one completed check-in per week and level, then directs learners to practice. The engine also protects against duplicate attempts from separate tabs: a later retry cannot replace an earlier score or turn an assisted first attempt into independent evidence.
 
 Skill feedback uses recent eligible weekly challenges at the selected level, requiring at least two distinct weeks and six questions per area. With sufficient evidence, 80% or higher is Doing well, 50–79% Developing, and below 50% Needs more practice. These are transparent product thresholds, not validated norms. The UI must explain why evidence is insufficient and must not infer a fixed intelligence or learning style.
 

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore patterns, logic, shapes and memory through short reasoning adventures.">
+  <title>ReasonLab · Reasoning Adventures</title>
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="child-profiles.css">
+  <link rel="stylesheet" href="themes.css">
+  <link rel="stylesheet" href="adventures.css">
+  <script type="module" src="adventures.js"></script>
+</head>
+<body class="adventures-page">
+  <a class="adv-skip" href="#adventures">Skip to adventures</a>
+  <header>
+    <a class="brand" href="/"><span class="logo">r.</span>ReasonLab</a>
+    <nav aria-label="Adventure navigation">
+      <a data-hub href="/#explore">Activity hub</a>
+      <button id="adventure-map" disabled>Adventure map</button>
+      <button id="adventure-progress" disabled>Progress</button>
+      <a id="account-link" href="/account.html">Adult sign in</a>
+    </nav>
+  </header>
+  <main id="adventures" tabindex="-1"><p>Getting your adventures ready…</p></main>
+  <p id="adventure-save-status" role="status" hidden></p>
+  <footer><a href="/kids.html">Original reasoning practice</a><a href="/usage-privacy.html">Visit statistics &amp; opt out</a></footer>
+  <dialog id="adventure-confirm" aria-labelledby="adventure-confirm-title" aria-describedby="adventure-confirm-text">
+    <h2 id="adventure-confirm-title"></h2>
+    <p id="adventure-confirm-text"></p>
+    <div class="actions">
+      <button class="secondary" id="adventure-cancel" autofocus>Cancel</button>
+      <button class="primary" id="adventure-confirm-action"></button>
+    </div>
+  </dialog>
+  <noscript>Enable JavaScript to play Reasoning Adventures.</noscript>
+</body>
+</html>

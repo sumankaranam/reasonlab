@@ -146,3 +146,11 @@ Usage now categorizes root as `hub` and `/kids[.html]` as `kids`. Migration `000
 Shared adult identity, child slots and themes are reused. Course progress is separate by verified adult/guest, language and learner slot; it remains browser-local. Native voice playback requires a matching device voice; availability is not guaranteed. No microphone recording or speech grading is added for these courses.
 
 Migration `0003_language_usage.sql` adds fixed Tamil/Kannada aggregate counters in `language_usage` and extends `usage_totals` without modifying historical counts. The report retention job cleans this table too. Sender setup remains deferred.
+
+## Reasoning Adventures
+
+`adventures.html`, `adventures.js` and `adventures.css` add four original illustrated puzzle worlds. `adventure-engine.js` implements deterministic, seed-based templates, three difficulty levels, question scoring, bounded summary validation, weekly evidence selection and practice suggestions. The hub reasoning CTA opens this page; the original Kids UI is still available through a guarded link in both directions. Legacy histories remain untouched.
+
+New summary keys derive from the existing account/guest history namespace with `:adventure:<slot>`. Only summaries are persisted, not active answers or memory stimuli. Active work uses a discard guard. Shared adult authentication, profile avatars and global themes are reused. Page counts aggregate under the existing `kids` category, so no database migration is needed.
+
+Evidence is restricted to first completed weekly attempts per period and level, independent of hints/interruption; later retries cannot replace earlier results. Feedback requires two eligible weeks/six answers per area. See `REASONING-ADVENTURES.md` for product thresholds, timing limitations and extension rules.
