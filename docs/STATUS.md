@@ -24,7 +24,7 @@ Original 32-question MBTI-style reflection for self-declared ages 16+, 18/36 act
 
 `/french.html` adds six stages and 36 original lessons, 257 vocabulary entries (250 distinct phrase/meaning pairs), 216 authored tasks plus generated reading/listening questions, 12 guided conversations (48 turns), six bilingual stories, ten sound tips and eight reference sections. Mixed/text practice, listening, sentence building, constrained writing, daily practice, due review, stage checkpoints, phrase search, family reports and anonymous learner progress are implemented.
 
-Speaker playback uses an available French device/browser voice. Local record/replay and separately gated browser recognition are optional. Microphone data is not retained in app progress; browser recognition may send speech to its provider. The course covers beginner through intermediate themes without claiming certification or guaranteed fluency. Both sign-in flags remain false; guest French learning works.
+Speaker playback uses an available French device/browser voice. Local record/replay and separately gated browser recognition are optional. Microphone data is not retained in app progress; browser recognition may send speech to its provider. The course covers beginner through intermediate themes without claiming certification or guaranteed fluency. Google is enabled in app configuration; email remains disabled. Guest French learning works.
 
 The public owner activation link and `signin-setup.html` have been removed. Owner steps remain in local `docs/AUTH-SETUP.md` and `docs/TECHNICAL-HANDOFF.md`, which are not deployed. Both old walkthrough URLs return HTTP 404 on the live site.
 
@@ -34,15 +34,13 @@ Validation: 46 automated tests pass; local and deployed browser checks pass at 3
 
 Added six ordered conversation chapters, 25 illustrated picture topics and scene art for every lesson, reversible flashcards, six new conversation missions, a flexible weekly plan, and a recommended next step. An active lesson/deck auto-saves its place, typed answer, token choices and first-answer/retry state. Returning learners see their resume control before the long course map. Ten derived achievements include six chapter stamps and a final passport; all-skip attempts cannot satisfy lesson/mission requirements.
 
-Existing French progress migrates without losing results. Plans, checkpoints, cards and mission records share the existing account/guest + learner isolation. Same-device resume works without registration. Actual Google/email activation and cloud sync remain incomplete; account isolation is tested with a mocked verified identity, not real provider login.
+Existing French progress migrates without losing results. Plans, checkpoints, cards and mission records share the existing account/guest + learner isolation. Same-device resume works without registration. Google provider activation is verified; real consent/callback verification, email activation and cloud sync remain incomplete; account isolation is tested with a mocked verified identity, not real provider login.
 
 Validation: 62 automated tests pass. The new journey browser suite and adapted existing mobile/edge suites pass locally and on the deployed site, including picture cards, reload/resume, typed/token/first-answer preservation, learner/account separation, achievements, old progress, 320/390px layouts and storage-failure behavior. No new backend or paid API was added.
 
 ## Not active / blockers
 
-**Google sign-in is the first activation target and remains incomplete.** Supabase project `krbuoncrksahcrnufprg` exists. Its public URL and publishable key are configured and deployed. Auth settings were verified with HTTP 200: email enabled, signups enabled (`signupDisabled=false`); Google disabled. Both public app provider flags are false. Google Auth app registration was created successfully in Google Cloud project `reasonlab` (External / Testing). The Web OAuth client `Web client 1` was created successfully after explicit approval on 2026-11-16, with origin `https://reasonlab.simstart.workers.dev` and callback `https://krbuoncrksahcrnufprg.supabase.co/auth/v1/callback`. Credentials were not written to repository files. Supabase still displays Google DISABLED. The owner must configure the Google provider and redirect settings manually; the available Windows automation skill prohibits changing in-app security settings. After configuration, enable only the Google app flag and deploy. Exact steps are in `AUTH-SETUP.md` and `TECHNICAL-HANDOFF.md`.
-
-No domain purchase, sender domain, SMTP service or email-sender setup is in scope yet. Email remains disabled pending a separate decision. Never describe mock-backed tests as a live login verification. Google Cloud project `reasonlab` and its External / Testing Auth app registration are created. The Web OAuth client is created; Supabase provider configuration remains incomplete. Google consent/account smoke is still pending.
+**Google provider configuration is verified.** On 2026-11-16 the owner completed setup and the public Supabase settings endpoint returned HTTP 200 with Google enabled and signups enabled. The app now enables Google only; email remains disabled without SMTP. Google OAuth remains the existing External / Testing registration and Web client. Real user consent, callback, signed-in identity and sign-out verification are still pending. No provider secrets entered the repository.
 
 No IQ calculator or validated age/grade/peer comparison exists. Feedback thresholds and grade mappings are product design choices. No cross-device learning sync. No verified age/consent mechanism. Local history is not encrypted.
 
@@ -62,14 +60,15 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 
 ## Deployment
 
-Current recorded Cloudflare version: `8f991798-c434-49c4-80fa-2553e27c6ba1` (resumable French journey, picture flashcards and conversation achievements). Runtime code commit: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`. GitHub CI passed: https://github.com/sumankaranam/reasonlab/actions/runs/43794807883 .
+Current recorded Cloudflare version: `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac` (Google sign-in activation). Runtime matches the Google activation checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
+Validation: all 62 tests and reproducible auth build pass. Live mobile smoke confirms enabled Google button, adult gate, disabled email, actual Supabase redirect to accounts.google.com, cancellation-error display and French guest navigation. No consent or actual login was completed.
 Hosting is static assets, Worker name `reasonlab`; no new paid resources created.
 The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf6786abdad7961619ec297653a9312` (verify current main before work).
 
 ## Next actions
 
-1. Owner: configure the existing Web OAuth client credentials in Supabase and verify redirect URLs. Check the Google test-user list. Keep the public Google flag false until configuration is ready.
-2. Enable Google only, deploy, and verify a real consent, callback, signed-in account and cancellation recovery flow.
+1. Completed: deployed Google-enabled app and verified live UI and redirect to Google.
+2. Owner: complete Google sign-in in the same tab, confirm account identity, visit French, then verify sign-out. Check Google audience/test-user settings if access is denied.
 3. Decide separately whether to purchase/use a sender domain and configure SMTP/email OTP.
 4. If requested, separately design cloud progress sync and consent/data-deletion controls.
 
@@ -85,4 +84,4 @@ npm run deploy
 
 Use existing Cloudflare authentication or the normal Wrangler login. Do not copy machine-local auth files into the repository. Read `docs/ARCHITECTURE.md` before changing scoring, identity or memory timing.
 
-Connection checkpoint: 24 automated tests pass. Live browser verified connected/pending account UI and guest-practice navigation. Supabase project and public config are in place; email enabled, `signupDisabled=false`, Google disabled, and both app flags false. Google-first is the current decision. Google Auth app registration and Web OAuth client creation are complete; Supabase provider activation and consent/account smoke are pending. No domain purchase or sender setup has started. See `docs/TECHNICAL-HANDOFF.md`.
+Current authentication checkpoint: Google provider verified enabled; app Google flag true, email flag false. Real consent/callback validation remains pending. See `docs/TECHNICAL-HANDOFF.md`.

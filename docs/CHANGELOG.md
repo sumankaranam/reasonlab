@@ -82,3 +82,10 @@ Dates use Asia/Kolkata. Update this log at tested feature/fix checkpoints, along
 - Added automatic same-device checkpoints for lessons, cards, daily practice, stories, conversations and checkpoints. Restores typed/token/first-response/retry/help state; preserves legacy completed progress and account/learner isolation. Partial answers are omitted from exports; no audio is stored.
 - Added distinct achievements with explicit lesson and mission criteria; no duplicate retry rewards or all-skip mastery. Returning users see resume promptly.
 - 62 tests and all three browser suites pass locally and on the deployed site. Sign-in providers and cross-device sync remain unactivated; identity tests use a mock adapter. Deployed Cloudflare version `8f991798-c434-49c4-80fa-2553e27c6ba1`, runtime commit `4a94cc80c4f461acf8f298312c12b75ec9ee7950`; GitHub CI passed.
+
+## 2026-11-16 — Enable configured Google sign-in
+
+- Owner completed Google provider setup; public Supabase settings confirm Google enabled and signups allowed. Enabled Google only in the shared adult account configuration, including French; email stays disabled.
+- No credentials or storage changes. Real consent/callback and signed-in account verification remain pending.
+
+Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 tests and auth SDK build pass; vendor bundle unchanged. Live mobile smoke passed Google button/adult gate, disabled email, real redirect to Google, cancellation error UI and French guest navigation. Actual Google consent/callback and signed-in identity remain user-verification steps.

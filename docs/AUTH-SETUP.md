@@ -83,3 +83,7 @@ Email sender setup is outside the current Google-first activation. The owner has
 If later authorized and a domain is available: verify a sending subdomain such as `auth.example.com` with the exact DNS records supplied by the mail provider, preserve existing mail records, then enter SMTP credentials directly in Supabase. Never store SMTP/API secrets in this repository. Resend supports SMTP and requires a domain owned by the sender.
 
 References: https://resend.com/docs/send-with-smtp and https://resend.com/docs/dashboard/domains/introduction . No email has been sent or live sign-in verified at this checkpoint.
+
+## Google activation update — 2026-11-16
+
+Owner reports provider configured. Public Supabase settings verified HTTP 200, Google enabled, signups enabled. App configuration now enables Google only; email stays disabled. Complete a real Google login in the same tab and verify account identity, French account progress, sign-out and cancellation. Prior setup-pending descriptions above document historical steps. No cross-device sync or guest-data import is enabled.

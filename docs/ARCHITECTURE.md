@@ -16,7 +16,7 @@ Buildless HTML/CSS/ES modules served by Cloudflare Workers Static Assets. No cus
 | `public/account.html`, `public/account.js` | Adult sign-in/account screens |
 | `public/auth-core.js` | Pure config validation, progress keys, injected auth-service adapter |
 | `public/auth-client.js` | Conditional SDK loading, PKCE client, verified current user |
-| `public/auth-config.js` | Public project URL/key and provider-enabled flags; project configured, providers disabled pending Google provider activation; email sender setup deferred |
+| `public/auth-config.js` | Public project URL/key and provider-enabled flags; Google enabled after public provider-settings verification; email sender setup deferred |
 | `public/vendor/` | Reproducible official SDK bundle and licence |
 | `public/_headers` | CSP, referrer and MIME policies; no-store account page |
 | `scripts/configure-auth.mjs` | Validate and write public auth configuration |
@@ -70,11 +70,11 @@ UI files are currently large imperative modules. Before major new features, cons
 
 ## Authentication activation handoff
 
-Google sign-in is the first activation target. Supabase project `krbuoncrksahcrnufprg` is connected with public configuration, and Google Cloud project `reasonlab` is created. Provider flags remain disabled until OAuth configuration and real consent/callback verification. Read `TECHNICAL-HANDOFF.md` for the exact URLs and remaining steps.
+Google sign-in is the first activation target. Supabase project `krbuoncrksahcrnufprg` is connected with public configuration, and Google Cloud project `reasonlab` is created. Google provider is verified enabled and the app Google flag is true; email remains disabled. Real consent/callback verification is pending. Read `TECHNICAL-HANDOFF.md` for the exact URLs and remaining steps.
 
 ## Google activation boundary (2026-11-16)
 
-The dedicated Google Cloud project `reasonlab` now has an External / Testing registration and a Web OAuth client. Its server callback terminates at Supabase, which holds the Google client secret; the static app receives no provider secret. The client has been created, but provider credentials and redirect configuration have not been saved in Supabase. Both public provider flags remain false until configuration and verification. Owner action is required for dashboard security settings under the available Windows automation policy.
+The dedicated Google Cloud project `reasonlab` now has an External / Testing registration and a Web OAuth client. Its server callback terminates at Supabase, which holds the Google client secret; the static app receives no provider secret. The owner reported completing provider setup, and the public Supabase settings endpoint now confirms Google enabled. The app enables Google only. Real user consent and callback remain to be verified; provider credentials remain confined to dashboards.
 
 ## French learning extension
 
