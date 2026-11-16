@@ -74,3 +74,11 @@ Dates use Asia/Kolkata. Update this log at tested feature/fix checkpoints, along
 - Removed the public owner activation link and setup walkthrough on request; retained project-only setup docs. Added an explicit missing-page response. Sign-in remains disabled.
 - Fixed the Windows local-preview root route while preserving path-boundary checks.
 - Validation: 46 unit tests pass; local mobile browser and edge checks pass. Voice hardware is simulated in checks. Deployed to Cloudflare version `c3aac00a-7a21-4df1-9adb-fef255e5fefe`; both deployed browser suites passed. Runtime commit `782be4214ca57dab880b88e0f41ca15590c23a5c` passed GitHub CI.
+
+## 2026-11-16 — French conversation path, visual cards and resume
+
+- Replaced the flat French home with six guided chapters, 36 ordered lessons, explicit next steps, a saved weekly rhythm and a conversation passport.
+- Added original bright SVG pictures (25 topics plus number/color cards and all lesson scenes), flip-style memory cards, model conversations and six additional guided missions.
+- Added automatic same-device checkpoints for lessons, cards, daily practice, stories, conversations and checkpoints. Restores typed/token/first-response/retry/help state; preserves legacy completed progress and account/learner isolation. Partial answers are omitted from exports; no audio is stored.
+- Added distinct achievements with explicit lesson and mission criteria; no duplicate retry rewards or all-skip mastery. Returning users see resume promptly.
+- 62 tests and three local browser suites pass. Sign-in providers and cross-device sync remain unactivated; identity tests use a mock adapter. Deployment pending at this checkpoint.

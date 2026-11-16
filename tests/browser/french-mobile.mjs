@@ -19,10 +19,10 @@ async function finishActivity({wrongFirst=false,helpFirst=false}={}){
 }
 try{
  await page.goto(base+'/french.html');await page.locator('[data-lesson]').first().waitFor();await overflow();
- assert.equal(await page.locator('.fr-lesson').count(),36);
+ assert.equal(await page.locator('.path-lesson').count(),36);
  await page.screenshot({path:'work/french-mobile.png',fullPage:false});
- await page.locator('#stage-filter').selectOption('conversation');assert.equal(await page.locator('.fr-lesson').count(),6);await page.locator('#stage-filter').selectOption('');
- await page.locator('[data-lesson="sound-hello"]').click();await page.locator('[data-start][data-mode="reading"]').click();
+ assert.equal(await page.locator('.journey-chapter').count(),6);
+ await page.locator('[data-lesson="sound-hello"]').first().click();await page.locator('[data-start][data-mode="reading"]').click();
  await clickNav('home');await page.locator('#exit').waitFor({state:'visible'});await page.locator('#stay').click();
  const count=await finishActivity({wrongFirst:true});assert.ok(count>=12);
  await clickNav('progress');assert.ok(await page.getByText('1 of 36 lessons explored',{exact:false}).count());
@@ -31,7 +31,7 @@ try{
  await page.locator('#learner').selectOption('2');assert.ok(await page.getByText('0 of 36 lessons explored',{exact:false}).count());await page.reload();await page.locator('#learner').waitFor();assert.equal(await page.locator('#learner').inputValue(),'2');await clickNav('progress');await page.locator('#learner').selectOption('1');
  await clickNav('library');assert.equal(await page.locator('[data-chat]').count(),12);assert.equal(await page.locator('[data-story]').count(),6);await page.locator('[data-chat]').last().click();assert.equal(await finishActivity(),4);
  await clickNav('library');await page.locator('[data-story]').last().click();await page.locator('[data-story-quiz]').click();assert.equal(await finishActivity(),3);
- await clickNav('home');await page.locator('[data-checkpoint]').first().click();assert.equal(await finishActivity(),12);
+ await clickNav('library');await page.locator('[data-checkpoint]').first().click();assert.equal(await finishActivity(),12);
  await clickNav('phrasebook');await page.locator('#word-search').fill('école');assert.ok((await page.locator('.fr-word').count())>=1);await page.locator('#word-search').fill('zzzzzz');assert.equal(await page.locator('.fr-word').count(),0);await page.locator('#word-search').fill('bonjour');await page.locator('[data-studio-phrase]').first().click();
  assert.equal(await page.locator('#record').isDisabled(),true);assert.equal(await page.locator('#recognize').isDisabled(),true);assert.equal(await page.locator('#recording').isVisible(),false);await page.locator('#studio-select').selectOption('merci');await page.locator('[data-say]').first().click();await page.waitForTimeout(1400);assert.ok((await page.locator('#audio-status').textContent()).length>0);
  for(const view of ['home','library','phrasebook','studio','progress']){await page.setViewportSize({width:320,height:740});await clickNav(view);await overflow();}

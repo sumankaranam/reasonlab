@@ -47,3 +47,15 @@ node tests/browser/french-edge.mjs
 `FR_BASE` overrides the default local URL for deployed checks. `PLAYWRIGHT_EXECUTABLE_PATH` selects an existing Chromium executable. `PLAYWRIGHT_MODULE` optionally selects a different installed Playwright module. QA outputs go to ignored `work/`; the dependency directory already creates that folder. The edge check injects simulated voice/mic adapters and never requests access to real hardware. Some Windows sandbox profiles require running the local server and browser outside the sandbox to allow loopback traffic.
 
 Deployment: `c3aac00a-7a21-4df1-9adb-fef255e5fefe`. Runtime source: `782be4214ca57dab880b88e0f41ca15590c23a5c`; GitHub CI succeeded. Both public setup paths and the non-public documentation path return 404.
+
+## Guided journey upgrade (2026-11-16)
+
+The learner home now prioritizes an unfinished checkpoint, otherwise the earliest lesson goal or chapter mission not yet achieved. The initial sequence begins with greetings, introductions and feelings. Six colorful chapters each specify six lessons, three can-do aims, a conversation mission and an off-screen activity. Learners choose 5/10/15-minute visits on 2/3/5/7 days weekly; this is a flexible rhythm, not a completion/fluency promise.
+
+Picture flashcards have a French front, listen/slow controls, a revealed English meaning, and learner ratings of remembered/meet-again. They auto-save mid-deck. Original SVG illustrations show concrete vocabulary, actual quantities and colors; abstract phrases receive a clearly described lesson scene. Six additional conversation missions offer a model dialogue and a guided reply check.
+
+62 automated tests pass, including 16 new picture, journey, achievement and deterministic-resume tests. The new `tests/browser/french-journey.mjs` verifies automatic reload/pause checkpoints, typed/token/retry state, learner/verified-account scoping with a mocked auth adapter, weekly-plan persistence, a completed flashcard deck, first conversation and chapter stamps, and mobile layouts. Existing mobile/edge browser suites were adapted and pass. Account tests do not activate or verify Google/email sign-in.
+
+One active checkpoint per learner is saved atomically alongside completed progress. Resume never restarts microphone/recognition or retains audio. Exported progress includes the plan, mission records and flashcard summary, but omits unfinished typed responses. To reproduce journey QA, use the same environment overrides as the other browser scripts and run `node tests/browser/french-journey.mjs`.
+
+See `FRENCH-LEARNING-PATH.md` for the full chapter/lesson map and exact stamp rules. Live deployment status remains in `STATUS.md`.

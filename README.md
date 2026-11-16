@@ -59,7 +59,7 @@ Up to 150 kids-session summaries are retained per account/guest store. Classic h
 
 ## Validation
 
-46 automated tests cover generation across grades/stages, answer correctness, scoring, evidence thresholds, isolation, progression, French content/review/audio lifecycle, and authentication integration with mocked provider responses. Mobile French browser checks cover activity flows, saved state, speaking gates, denial handling, reports and 320/390px layouts. Audio hardware is simulated in automated checks. Live email delivery and Google consent require the owner's configured service and authorised test accounts. The exercises have not been psychometrically validated.
+62 automated tests cover generation across grades/stages, answer correctness, scoring, evidence thresholds, isolation, progression, French content/review/audio lifecycle, and authentication integration with mocked provider responses. Mobile French browser checks cover activity flows, saved state, speaking gates, denial handling, reports and 320/390px layouts. Audio hardware is simulated in automated checks. Live email delivery and Google consent require the owner's configured service and authorised test accounts. The exercises have not been psychometrically validated.
 
 ## For coding agents
 
@@ -74,3 +74,9 @@ Open [Discovery](https://reasonlab.simstart.workers.dev/discover.html) for origi
 Read [French design](docs/FRENCH-DESIGN.md) for curriculum, first-answer scoring, module contracts and review scheduling. The course introduces beginner through intermediate themes; completing it is not a CEFR certificate or proof of conversational fluency. School grade changes family guidance, not assumed French skill.
 
 Each anonymous learner has local French progress under the verified adult account or guest context, with up to 100 activity summaries. No audio or transcripts are stored in progress or exports. Local record-and-replay uses a temporary in-memory recording (15 seconds maximum), with no app upload. Optional browser recognition may send audio to the browser provider; it needs a separate grown-up opt-in. Text and listen-only learning never require a microphone. No paid speech or LLM API is used.
+
+## Guided French learning path
+
+French now has six ordered chapters, a saved weekly plan, a recommended next step, bright picture flashcards and a conversation passport. Pause or close an activity and resume the saved question/card on the same device. Six additional conversation missions connect the lessons to simple exchanges; achievements have explicit lesson/mission requirements rather than rewarding skipped questions. Read [the learning path](docs/FRENCH-LEARNING-PATH.md).
+
+Checkpoint, plan and progress are separate for each anonymous learner within the verified adult account or guest context. Existing progress is retained. This does not activate Google/email providers or add cross-device sync. Audio is not saved, and microphone permission is never resumed automatically.

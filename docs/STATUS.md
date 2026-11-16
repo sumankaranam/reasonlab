@@ -30,6 +30,14 @@ The public owner activation link and `signin-setup.html` have been removed. Owne
 
 Validation: 46 automated tests pass; local and deployed browser checks pass at 390px and 320px for lesson/retry/skip, correct scoring, assisted-listening exclusion, writing/token building, review/checkpoint/role-play/story UI, saved-state isolation, phrase search, studio gates/denial, export/print/delete, blocked storage, exit guards and home navigation. Audio lifecycle is simulated; real hardware quality remains unverified. See `FRENCH-DESIGN.md` for architecture and reproduction.
 
+## French guided journey upgrade (tested; deployment pending)
+
+Added six ordered conversation chapters, 25 illustrated picture topics and scene art for every lesson, reversible flashcards, six new conversation missions, a flexible weekly plan, and a recommended next step. An active lesson/deck auto-saves its place, typed answer, token choices and first-answer/retry state. Returning learners see their resume control before the long course map. Ten derived achievements include six chapter stamps and a final passport; all-skip attempts cannot satisfy lesson/mission requirements.
+
+Existing French progress migrates without losing results. Plans, checkpoints, cards and mission records share the existing account/guest + learner isolation. Same-device resume works without registration. Actual Google/email activation and cloud sync remain incomplete; account isolation is tested with a mocked verified identity, not real provider login.
+
+Validation: 62 automated tests pass. The new journey browser suite and adapted existing mobile/edge suites pass locally, including picture cards, reload/resume, typed/token/first-answer preservation, learner/account separation, achievements, old progress, 320/390px layouts and storage-failure behavior. No new backend or paid API was added.
+
 ## Not active / blockers
 
 **Google sign-in is the first activation target and remains incomplete.** Supabase project `krbuoncrksahcrnufprg` exists. Its public URL and publishable key are configured and deployed. Auth settings were verified with HTTP 200: email enabled, signups enabled (`signupDisabled=false`); Google disabled. Both public app provider flags are false. Google Auth app registration was created successfully in Google Cloud project `reasonlab` (External / Testing). The Web OAuth client `Web client 1` was created successfully after explicit approval on 2026-11-16, with origin `https://reasonlab.simstart.workers.dev` and callback `https://krbuoncrksahcrnufprg.supabase.co/auth/v1/callback`. Credentials were not written to repository files. Supabase still displays Google DISABLED. The owner must configure the Google provider and redirect settings manually; the available Windows automation skill prohibits changing in-app security settings. After configuration, enable only the Google app flag and deploy. Exact steps are in `AUTH-SETUP.md` and `TECHNICAL-HANDOFF.md`.
