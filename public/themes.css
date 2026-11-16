@@ -28,3 +28,17 @@ html[data-theme]:not([data-theme=classic]) .card,html[data-theme]:not([data-them
 html[data-theme]:not([data-theme=classic]) .learner-bar,html[data-theme]:not([data-theme=classic]) .fr-context,html[data-theme]:not([data-theme=classic]) .notice,html[data-theme]:not([data-theme=classic]) .next-adventure,html[data-theme]:not([data-theme=classic]) .learning-plan{background:var(--theme-soft);color:var(--theme-ink)}
 html[data-theme]:not([data-theme=classic]) nav .active,html[data-theme]:not([data-theme=classic]) .text-btn{color:var(--theme-accent)}
 @media(max-width:700px){.language-choice{display:block}.language-choice button{margin-top:8px}.language-choice small{display:block;margin-top:8px}}
+
+/* Featured cards switch from dark to pastel: reset inherited light text too. */
+html[data-theme]:not([data-theme=classic]) .card.featured{color:var(--theme-ink)}
+html[data-theme]:not([data-theme=classic]) .card.featured p,html[data-theme]:not([data-theme=classic]) .card.featured .meta,html[data-theme]:not([data-theme=classic]) .card.featured .tag{color:var(--theme-ink)}
+
+/* Shared secondary copy must remain readable on pastel surfaces. */
+html[data-theme]{--muted:#4d6257}
+html[data-theme] .eyebrow{color:#426137}
+html[data-theme] footer,html[data-theme] .art-note,html[data-theme] .notice,html[data-theme] .pills{color:#495e43}
+html[data-theme] .art-grid span{color:#344e2b}
+
+html[data-theme] .art-grid>span:last-child{color:#fff}
+html[data-theme] .learning-plan p,html[data-theme] .fr-meta,html[data-theme] .auth-divider,html[data-theme] .article p,html[data-theme] .article li{color:#495e43}
+html[data-theme] .learning-plan small{color:#495e43}

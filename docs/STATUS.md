@@ -60,7 +60,7 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 
 ## Deployment
 
-Current recorded Cloudflare version: `0be0321c-c29d-465b-b742-08be6c6dd78b` (website-wide themes and language selection). Runtime matches the global-theme checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
+Current recorded Cloudflare version: `d5407829-9de8-407c-9c0a-8b53b33cfc38` (all-theme text contrast corrections). Runtime matches the contrast checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
 Validation: all 62 tests and reproducible auth build pass. Live mobile smoke confirms enabled Google button, adult gate, disabled email, actual Supabase redirect to accounts.google.com, cancellation-error display and French guest navigation. No consent or actual login was completed.
 Hosting is static assets, Worker name `reasonlab`; no new paid resources created.
 The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf6786abdad7961619ec297653a9312` (verify current main before work).
@@ -93,3 +93,7 @@ Adult account onboarding now offers a nickname and ten colorful original avatars
 ## Website-wide themes and language selector
 
 Six original illustrated themes now use one device-wide preference across Kids, French, Discovery, Account, Classic and the 404 screen. Switching learners/accounts does not reset the theme. Profile setup no longer has a separate theme choice. A course selector shows French available now, with Spanish/German/Hindi/Japanese Coming soon; interface instructions remain English. 69 unit tests and local/deployed all-page theme/navigation checks pass. Deployment: `0be0321c-c29d-465b-b742-08be6c6dd78b`.
+
+## Theme contrast and launch planning
+
+Daily Discovery contrast fixed; shared captions and navigation text darkened. Local rendered solid-background text checks pass on six page surfaces across all six themes (not a full accessibility audit). See `LAUNCH-AND-MONETIZATION.md` for proposed beta/monetization steps; no advertising or payments are integrated. Deployed `d5407829-9de8-407c-9c0a-8b53b33cfc38`; live contrast suite passes.

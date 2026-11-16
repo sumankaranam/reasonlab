@@ -113,3 +113,11 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - 69 unit tests and local all-page theme/mobile/navigation checks pass. Child learning history remains scoped and unchanged.
 
 - Cloudflare release `0be0321c-c29d-465b-b742-08be6c6dd78b`; deployed all-page theme/navigation suite passes.
+
+## 2026-11-16 — Theme text contrast and launch planning
+
+- Fixed Daily Discovery pale-on-pale text inherited from the original dark featured card. Darkened secondary text and planning captions across themes.
+- Added rendered contrast regression for six themes across six page surfaces. Local check passes with documented exclusions.
+- Added `LAUNCH-AND-MONETIZATION.md` with beta launch, parent-paid options, advertising constraints and scaling guidance. No ads, tracking or billing added.
+
+- Cloudflare deployment `d5407829-9de8-407c-9c0a-8b53b33cfc38`; deployed contrast suite passes across all six themes and six main page surfaces.

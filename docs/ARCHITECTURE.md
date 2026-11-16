@@ -115,3 +115,7 @@ Kids, French, Discovery and Account mount the dock through `child-profile-ui.js`
 The language-to-learn selector offers French and visibly disabled Coming soon entries for Spanish, German, Hindi and Japanese. The Learn French button uses each learning page's existing unfinished-session navigation guard. This is a course selector, not interface translation; instructions remain English. No other language curriculum or release dates are promised.
 
 69 unit tests pass. `tests/browser/themes.mjs` covers all six page surfaces, global continuity across identity/learner changes, course availability labels, French navigation, guarded Classic exit, activity preservation, 320px layouts and failed storage. Auth identity is mocked. Local missing routes are plain text, so QA opens `/404.html`; deployed Cloudflare serves that document for missing routes.
+
+## Contrast regression coverage
+
+Pastel featured cards explicitly reset the original dark-card white heading/body text. Shared muted text, eyebrow labels, footer copy, hero captions and French plan captions use darker colors. `tests/browser/theme-contrast.mjs` measures visible rendered text against opaque ancestor backgrounds on six page surfaces × six themes, using 4.5:1 normal and 3:1 large-text thresholds. It excludes gradients/transparency, SVG and native select rendering; this is a targeted regression test, not a full accessibility certification. Saves findings and a Daily Discovery screenshot in ignored `work/`.
