@@ -147,3 +147,6 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - Added non-destructive language usage aggregation; daily email sender configuration remains pending.
 
 - Verified 83 automated tests, local mobile course flows, shared landing/theme navigation and six-theme contrast checks. Auth identities and unavailable voice behavior mocked. Remote aggregate migration applied.
+
+- Released as Cloudflare `68994e5e-ccc4-4b8e-808e-3cf192c54ccc`. Live Tamil/Kannada mobile and landing/navigation suites pass; account identities and missing speech voices are mocked. Production voice availability remains device-dependent.
+- Deployed six-theme solid-background contrast regression suite also passes, including both new courses.
