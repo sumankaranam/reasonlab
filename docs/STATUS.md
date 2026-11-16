@@ -106,3 +106,9 @@ Aggregate visit/page-view collection, privacy opt-out and a cloud-scheduled prev
 ## Welcome and activity navigation
 
 Root is now a welcome screen with Adult sign in / Explore as a guest. Returning guests in the same tab and verified adults see a three-path hub. Language learning has a French/Coming soon picker; reasoning has its own `/kids.html` route; Discovery preserves the 16+ personality gate. Activity hub links respect unfinished-session guards. Existing storage/profile data unchanged. Aggregate hub counts are separated with a non-destructive D1 migration. 78 automated tests and local landing, contrast, French mobile/edge, profiles, themes and usage suites pass. Screenshots reviewed at 320/390px. Deployed `8470712f-05df-4248-adf8-4f371368bb24`; live landing and all-theme contrast suites pass. Provider identities are mocked in authenticated browser tests.
+
+## Tamil and Kannada courses
+
+Added 12 beginner lessons per language, in three stages: picture-symbol cards, native script/roman reading aids, ten separate number cards, first-answer meaning quizzes, stage badges, short dialogues, and saved activity checkpoints. Hub and global picker offer all three live courses. Existing adult login/profile slots and themes are reused; progress remains browser-local and separate per course/account/slot. Voice playback requires a matching device voice; no microphone/recognition for these new courses.
+
+83 automated tests pass. Local mobile Indic flow tests cover score/first-answer persistence, badges, pause/replacement/resume, no-voice fallback and mocked account/slot isolation; shared landing/themes/contrast checks pass. Screenshot reviewed at 320px. Remote additive language counter migration applied; existing data preserved. Deployment verification follows in the release note. Native educator review and real-device voice testing remain follow-up work.

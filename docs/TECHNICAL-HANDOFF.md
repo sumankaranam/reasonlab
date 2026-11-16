@@ -38,3 +38,7 @@ Google client ID/secret and any SMTP/API credential belong only in their provide
 Owner reports provider configured. Public Supabase settings verified HTTP 200, Google enabled, signups enabled. App configuration now enables Google only; email stays disabled. Complete a real Google login in the same tab and verify account identity, French account progress, sign-out and cancellation. Prior setup-pending descriptions above document historical steps. No cross-device sync or guest-data import is enabled.
 
 Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 tests and auth SDK build pass; vendor bundle unchanged. Live mobile smoke passed Google button/adult gate, disabled email, real redirect to Google, cancellation error UI and French guest navigation. Actual Google consent/callback and signed-in identity remain user-verification steps.
+
+## Tamil/Kannada extension
+
+See `LANGUAGE-COURSES.md` for scope and review limitations. Keep French data/engine independent. For more languages, extend the shared Indic course engine only after adding authored data, script-compatible layout checks and explicit voice locale support. Update the hub, global course selector, usage allowlist/schema/view, retention and tests together. Do not store child audio or claim pronunciation/fluency scores.

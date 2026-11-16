@@ -1,6 +1,6 @@
 # ReasonLab
 
-Mobile-friendly reasoning, French learning and interest exploration for Grades 1–10. Live: https://reasonlab.simstart.workers.dev
+Mobile-friendly reasoning, French/Tamil/Kannada learning and interest exploration for Grades 1–10. Live: https://reasonlab.simstart.workers.dev
 
 ## Features
 
@@ -11,11 +11,12 @@ Mobile-friendly reasoning, French learning and interest exploration for Grades 1
 - Optional adult Google sign-in and email one-time code integration through Supabase.
 - Guest access; original app and its history remain at `/classic.html`.
 - French learning: 36 lessons in six stages, vocabulary, grammar, sentence building, listening, 12 guided conversations, six stories, a phrasebook and reference shelf. Local review reminders and learner progress. Open `/french.html`.
+- Tamil and Kannada: 12 beginner lessons each, picture-symbol flashcards, native script with roman reading aids, meaning quizzes, stage badges, saved place and short dialogues. Open `/tamil.html` or `/kannada.html`. Audio needs a matching device voice. See [course scope](docs/LANGUAGE-COURSES.md).
 - French speech playback, temporary local record/replay and separately opted-in browser recognition. Device/browser support varies; recognition is not a pronunciation grade.
 
 ## Authentication status
 
-**Production sign-in is disabled until provider configuration is complete.** The public Supabase project configuration is connected and the Google OAuth client is created; Google activation and email sender setup remain incomplete. There is no fake login. Owner instructions stay in [the project activation guide](docs/AUTH-SETUP.md), outside deployed public assets. There is no public setup page.
+**Google sign-in is enabled; email codes remain disabled pending sender setup.** The public Supabase configuration and Google provider were checked. Real Google consent/callback completion has not been verified by the automated tests. There is no fake login. Owner instructions stay in [the project activation guide](docs/AUTH-SETUP.md), outside deployed public assets. There is no public setup page.
 
 Google sign-in requests only basic identity scopes, never inbox access. Email codes support Gmail, Outlook, Yahoo and other receiving addresses once custom SMTP is configured.
 

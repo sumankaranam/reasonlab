@@ -64,3 +64,5 @@ Public usage requests are same-origin JSON, bounded and allowlisted; they are st
 This owner report does not enable advertising, marketing email, child profiling, or email OTP sign-in.
 
 Landing update: root loads count as hub; reasoning now lives at `/kids.html`. Existing pre-hub root counts remain kids. Migration `0002_hub_usage.sql` adds a separate hub table and the `usage_totals` union view without changing old totals. Both counters are retained for about 90 days.
+
+Tamil/Kannada release: migration `0003_language_usage.sql` adds course counters to the report view and 90-day retention. It preserves existing counters. Apply all migrations with `wrangler d1 migrations apply reasonlab-usage --remote`; the existing migrations are idempotent. Sender and registration setup above remain required.

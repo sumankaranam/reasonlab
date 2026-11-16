@@ -138,3 +138,11 @@ Hub paths: Language learning → French/course availability; Reasoning & memory 
 Usage now categorizes root as `hub` and `/kids[.html]` as `kids`. Migration `0002_hub_usage.sql` adds `hub_usage` and a union view `usage_totals`; it does not rewrite historical reasoning counts. Worker inserts into fixed allowlisted tables and daily reports query the view. Both tables receive 90-day cleanup. Historical root traffic before this release remains under kids.
 
 `tests/browser/landing.mjs` covers new/returning guests, signed-in hub (mocked), three paths, unavailable languages, navigation guards, age gate, blocked storage and all-theme 320px layout. Existing profile/French/theme/privacy suites now use `/kids.html` for reasoning checks. Contrast coverage includes welcome, hub and course picker.
+
+## Tamil and Kannada beginner courses (2026-11-16)
+
+`/tamil.html` and `/kannada.html` share `indic.js`, `indic-engine.js`, `indic.css` and the original curriculum in `indic-data.js`. The course selector is global; French retains its existing engine and progress. Each new course has 12 lessons grouped into three stages, native-script vocabulary, roman reading aids, picture symbols, meaning checks and guided dialogue. This is a beginner course, not a fluency certification.
+
+Shared adult identity, child slots and themes are reused. Course progress is separate by verified adult/guest, language and learner slot; it remains browser-local. Native voice playback requires a matching device voice; availability is not guaranteed. No microphone recording or speech grading is added for these courses.
+
+Migration `0003_language_usage.sql` adds fixed Tamil/Kannada aggregate counters in `language_usage` and extends `usage_totals` without modifying historical counts. The report retention job cleans this table too. Sender setup remains deferred.

@@ -23,6 +23,7 @@ export function reportText(window,rows,registrations){
 export async function runReport(env,now=Date.now(),fetcher=fetch){
   const window=previousDay(now);
   await env.USAGE_DB.prepare('DELETE FROM daily_usage WHERE day < ?').bind(dayKey(now-90*86400000)).run();
+  await env.USAGE_DB.prepare('DELETE FROM language_usage WHERE day < ?').bind(dayKey(now-90*86400000)).run();
   await env.USAGE_DB.prepare('DELETE FROM hub_usage WHERE day < ?').bind(dayKey(now-90*86400000)).run();
   await env.USAGE_DB.prepare('DELETE FROM sent_reports WHERE day < ?').bind(dayKey(now-90*86400000)).run();
   if(!env.RESEND_API_KEY){console.log('Daily report pending sender setup');return {status:'sender-not-configured'};}

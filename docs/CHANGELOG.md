@@ -138,3 +138,12 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - Local unit and mobile/contrast/navigation/privacy regression checks pass; authenticated browser flows use mocks.
 
 - Released as Cloudflare `8470712f-05df-4248-adf8-4f371368bb24`. All 78 automated tests pass; live landing and expanded all-theme contrast suites pass.
+
+## 2026-11-16 — Tamil and Kannada adventures
+
+- Added two beginner courses with 12 lessons each, native script, roman reading aids, picture cards, meaning checks and short dialogues.
+- Shared language picker and hub now offer French, Tamil and Kannada; other planned languages retain Coming soon labels.
+- New course progress stays separate by language, adult/guest and learner slot. Device voice support is optional and clearly disclosed.
+- Added non-destructive language usage aggregation; daily email sender configuration remains pending.
+
+- Verified 83 automated tests, local mobile course flows, shared landing/theme navigation and six-theme contrast checks. Auth identities and unavailable voice behavior mocked. Remote aggregate migration applied.
