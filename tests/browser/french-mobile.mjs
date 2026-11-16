@@ -37,7 +37,7 @@ try{
  for(const view of ['home','library','phrasebook','studio','progress']){await page.setViewportSize({width:320,height:740});await clickNav(view);await overflow();}
  await page.locator('#print').waitFor();await page.evaluate(()=>window.dispatchEvent(new Event('beforeprint')));assert.equal(await page.locator('details:not([open])').count(),0);await page.pdf({path:'work/french-family-report.pdf',format:'A4'});await page.evaluate(()=>window.dispatchEvent(new Event('afterprint')));assert.ok(await page.locator('details:not([open])').count());
  page.once('dialog',d=>d.accept());await page.locator('#delete-progress').click();assert.ok(await page.getByText('0 of 36 lessons explored',{exact:false}).count());
- await page.goto(base+'/account.html');await page.getByText('Sign-in is coming soon.').waitFor();assert.equal(await page.locator('a[href*="signin-setup"]').count(),0);
+ await page.goto(base+'/account.html');await page.getByRole('heading',{name:'Sign in or create an account',exact:true}).waitFor();assert.equal(await page.locator('a[href*="signin-setup"]').count(),0);
  const missing=await page.request.get(base+'/signin-setup.html');assert.equal(missing.status(),404);
  await page.goto(base+'/');await page.locator('[data-french]').waitFor();await page.locator('[data-french]').click();await page.locator('#french').waitFor();
  assert.deepEqual(errors,[]);console.log('PASS French mobile journey, activity/retry/skip, storage/learner isolation, conversations/stories/checkpoints, search/studio gates, export/print/delete, owner-page removal and home integration.');

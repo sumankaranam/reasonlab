@@ -89,3 +89,11 @@ Dates use Asia/Kolkata. Update this log at tested feature/fix checkpoints, along
 - No credentials or storage changes. Real consent/callback and signed-in account verification remain pending.
 
 Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 tests and auth SDK build pass; vendor bundle unchanged. Live mobile smoke passed Google button/adult gate, disabled email, real redirect to Google, cancellation error UI and French guest navigation. Actual Google consent/callback and signed-in identity remain user-verification steps.
+
+## 2026-11-16 — Child nicknames, avatars and sign-out
+
+- Added optional post-login profile setup with ten original colorful avatars and three named learner slots. No child email/photo required.
+- Shared top banner on Kids, French and Discovery shows selected child, profile editing and guarded sign-out. Existing learner progress is preserved; settings and names remain local to the adult account on this browser.
+- 65 unit tests and local mocked-auth mobile onboarding/profile/guard checks pass.
+
+- Released as Cloudflare `1c9d7aba-1b25-4373-857f-b1d677d3550e`; deployed mobile profile checks pass. Auth remains mocked in profile QA; no real Google consent claimed.

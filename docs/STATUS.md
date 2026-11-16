@@ -60,7 +60,7 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 
 ## Deployment
 
-Current recorded Cloudflare version: `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac` (Google sign-in activation). Runtime matches the Google activation checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
+Current recorded Cloudflare version: `1c9d7aba-1b25-4373-857f-b1d677d3550e` (child nickname/avatar profiles and guarded sign-out). Runtime matches the child-profile checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
 Validation: all 62 tests and reproducible auth build pass. Live mobile smoke confirms enabled Google button, adult gate, disabled email, actual Supabase redirect to accounts.google.com, cancellation-error display and French guest navigation. No consent or actual login was completed.
 Hosting is static assets, Worker name `reasonlab`; no new paid resources created.
 The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf6786abdad7961619ec297653a9312` (verify current main before work).
@@ -85,3 +85,7 @@ npm run deploy
 Use existing Cloudflare authentication or the normal Wrangler login. Do not copy machine-local auth files into the repository. Read `docs/ARCHITECTURE.md` before changing scoring, identity or memory timing.
 
 Current authentication checkpoint: Google provider verified enabled; app Google flag true, email flag false. Real consent/callback validation remains pending. See `docs/TECHNICAL-HANDOFF.md`.
+
+## Child profile milestone
+
+Adult account onboarding now offers a nickname and ten colorful original avatars (five girl and five boy designs, all selectable by anyone). Up to three existing learner slots can be named. Selected child appears above Kids, French and Discovery with edit profiles and sign-out controls. Same-device account separation only. 65 automated tests and local/deployed mobile profile suites pass; browser identity is mocked. Deployed as `1c9d7aba-1b25-4373-857f-b1d677d3550e`.
