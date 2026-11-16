@@ -115,3 +115,7 @@ Added 12 beginner lessons per language, in three stages: picture-symbol cards, n
 
 - Released as Cloudflare `68994e5e-ccc4-4b8e-808e-3cf192c54ccc`. Live Tamil/Kannada mobile and landing/navigation suites pass; account identities and missing speech voices are mocked. Production voice availability remains device-dependent.
 - Deployed six-theme solid-background contrast regression suite also passes, including both new courses.
+
+## Reasoning Adventures — 2026-11-17 checkpoint
+
+The new pure engine provides four areas, three levels, daily/weekly/focused sets, validated local summaries, first-attempt weekly evidence, suggestions and badges. Nine new engine tests pass (92 total), including independent solution checks across 80 seeds, all levels and all modes/areas. UI is implemented and under browser verification; not yet deployed. See `REASONING-ADVENTURES.md`.

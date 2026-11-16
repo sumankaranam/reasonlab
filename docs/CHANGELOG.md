@@ -150,3 +150,9 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 
 - Released as Cloudflare `68994e5e-ccc4-4b8e-808e-3cf192c54ccc`. Live Tamil/Kannada mobile and landing/navigation suites pass; account identities and missing speech voices are mocked. Production voice availability remains device-dependent.
 - Deployed six-theme solid-background contrast regression suite also passes, including both new courses.
+
+## 2026-11-17 — Reasoning Adventures engine checkpoint
+
+- Added deterministic original templates for patterns, logic, visual reasoning and memory, with three difficulty levels and explanations.
+- Added bounded summary validation, isolated storage keys, independent weekly evidence, practice suggestions and completion badges.
+- Nine engine tests pass, including independent answer checks across many seeds and rejection of assisted/interrupted/repeated evidence. UI integration/browser validation is in progress.
