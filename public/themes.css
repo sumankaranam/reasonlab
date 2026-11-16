@@ -21,3 +21,10 @@ html[data-theme=ocean] .theme-scene{background:#b6e6ec}
 @media(max-width:700px){.theme-dock{margin:12px 12px 0;padding:16px;gap:10px}.theme-copy strong{font-size:1.05rem}.theme-scene{width:135px;max-width:35%}.theme-copy label{display:block;margin-bottom:4px}.theme-copy select{width:100%;font-size:13px;padding:8px}.theme-eyebrow{font-size:9px}}
 @media(max-width:380px){.theme-dock{flex-wrap:wrap}.theme-copy{flex-basis:100%}.theme-scene{max-width:100%;width:180px;margin:auto}.theme-copy select{width:auto}}
 @media print{.theme-dock{display:none}html[data-theme] body{background:white}}
+
+.language-choice{margin-top:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.language-choice small{flex-basis:100%;font-size:12px}.language-choice button{min-height:44px;padding:9px 12px}.language-choice select{min-width:0}
+html[data-theme]:not([data-theme=classic]) header,html[data-theme]:not([data-theme=classic]) footer{border-color:var(--theme-border)}
+html[data-theme]:not([data-theme=classic]) .card,html[data-theme]:not([data-theme=classic]) dialog,html[data-theme]:not([data-theme=classic]) .learner-bar,html[data-theme]:not([data-theme=classic]) .fr-context{border-color:var(--theme-border)}
+html[data-theme]:not([data-theme=classic]) .learner-bar,html[data-theme]:not([data-theme=classic]) .fr-context,html[data-theme]:not([data-theme=classic]) .notice,html[data-theme]:not([data-theme=classic]) .next-adventure,html[data-theme]:not([data-theme=classic]) .learning-plan{background:var(--theme-soft);color:var(--theme-ink)}
+html[data-theme]:not([data-theme=classic]) nav .active,html[data-theme]:not([data-theme=classic]) .text-btn{color:var(--theme-accent)}
+@media(max-width:700px){.language-choice{display:block}.language-choice button{margin-top:8px}.language-choice small{display:block;margin-top:8px}}

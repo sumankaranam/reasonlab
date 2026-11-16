@@ -59,7 +59,7 @@ Up to 150 kids-session summaries are retained per account/guest store. Classic h
 
 ## Validation
 
-68 automated tests cover generation across grades/stages, answer correctness, scoring, evidence thresholds, isolation, progression, French content/review/audio lifecycle, and authentication integration with mocked provider responses. Mobile French browser checks cover activity flows, saved state, speaking gates, denial handling, reports and 320/390px layouts. Audio hardware is simulated in automated checks. Live email delivery and Google consent require the owner's configured service and authorised test accounts. The exercises have not been psychometrically validated.
+69 automated tests cover generation across grades/stages, answer correctness, scoring, evidence thresholds, isolation, progression, French content/review/audio lifecycle, and authentication integration with mocked provider responses. Mobile French browser checks cover activity flows, saved state, speaking gates, denial handling, reports and 320/390px layouts. Audio hardware is simulated in automated checks. Live email delivery and Google consent require the owner's configured service and authorised test accounts. The exercises have not been psychometrically validated.
 
 ## For coding agents
 
@@ -83,4 +83,4 @@ Checkpoint, plan and progress are separate for each anonymous learner within the
 
 ## Child profiles and themes
 
-Adult accounts can name up to three learner slots with nicknames and choose from ten original avatars. Shared banners show the selected child and a guarded sign-out control. Six illustrated themes—Classic Garden, Unicorn Rainbow, Racing Cars, Fairy-tale Castle, Space Explorers and Ocean Friends—are saved per learner on the current device. Guests can choose themes too. See `docs/ARCHITECTURE.md` for storage and module details.
+Adult accounts can name up to three learner slots with nicknames and choose from ten original avatars. Shared banners show the selected child and a guarded sign-out control. Six illustrated themes—Classic Garden, Unicorn Rainbow, Racing Cars, Fairy-tale Castle, Space Explorers and Ocean Friends—use one website-wide choice on the current device, including Classic and Account. Guests can choose themes too. The language selector offers French; Spanish, German, Hindi and Japanese are marked Coming soon. See `docs/ARCHITECTURE.md` for storage and module details.

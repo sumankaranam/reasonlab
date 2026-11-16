@@ -60,7 +60,7 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 
 ## Deployment
 
-Current recorded Cloudflare version: `e935bf71-5c97-4c90-8faf-dc2a92a4974c` (six illustrated learner themes). Runtime matches the themes checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
+Current recorded Cloudflare version: `0be0321c-c29d-465b-b742-08be6c6dd78b` (website-wide themes and language selection). Runtime matches the global-theme checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
 Validation: all 62 tests and reproducible auth build pass. Live mobile smoke confirms enabled Google button, adult gate, disabled email, actual Supabase redirect to accounts.google.com, cancellation-error display and French guest navigation. No consent or actual login was completed.
 Hosting is static assets, Worker name `reasonlab`; no new paid resources created.
 The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf6786abdad7961619ec297653a9312` (verify current main before work).
@@ -90,6 +90,6 @@ Current authentication checkpoint: Google provider verified enabled; app Google 
 
 Adult account onboarding now offers a nickname and ten colorful original avatars (five girl and five boy designs, all selectable by anyone). Up to three existing learner slots can be named. Selected child appears above Kids, French and Discovery with edit profiles and sign-out controls. Same-device account separation only. 65 automated tests and local/deployed mobile profile suites pass; browser identity is mocked. Deployed as `1c9d7aba-1b25-4373-857f-b1d677d3550e`.
 
-## Kid-focused themes
+## Website-wide themes and language selector
 
-Six original illustrated themes are available at the top of Kids, French, Discovery and Account, including guests. Each learner saves a separate choice. Adult profile editing also includes the theme. 68 unit tests plus local theme/profile mobile browser checks pass; visual screenshots reviewed at 320px. No external art services or paid dependencies. Deployed as `e935bf71-5c97-4c90-8faf-dc2a92a4974c`; live theme browser suite passed.
+Six original illustrated themes now use one device-wide preference across Kids, French, Discovery, Account, Classic and the 404 screen. Switching learners/accounts does not reset the theme. Profile setup no longer has a separate theme choice. A course selector shows French available now, with Spanish/German/Hindi/Japanese Coming soon; interface instructions remain English. 69 unit tests and local/deployed all-page theme/navigation checks pass. Deployment: `0be0321c-c29d-465b-b742-08be6c6dd78b`.

@@ -105,3 +105,11 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - 68 unit tests and local theme/profile browser suites pass, including mobile layouts, storage failures and account/learner separation.
 
 - Deployed Cloudflare version `e935bf71-5c97-4c90-8faf-dc2a92a4974c`; live theme browser suite passed.
+
+## 2026-11-16 — Global themes and language selection
+
+- Replaced per-learner themes with one browser-wide website theme; extended to Classic and the missing-page screen, plus broader controls/cards/dialog styling.
+- Added a language-to-learn selector everywhere: French available, Spanish/German/Hindi/Japanese marked Coming soon. French navigation respects unfinished-activity guards. No interface translation or additional curriculum added.
+- 69 unit tests and local all-page theme/mobile/navigation checks pass. Child learning history remains scoped and unchanged.
+
+- Cloudflare release `0be0321c-c29d-465b-b742-08be6c6dd78b`; deployed all-page theme/navigation suite passes.
