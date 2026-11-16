@@ -55,7 +55,7 @@ No child names, birth dates, school names or child accounts are requested. Optio
 
 Auth tokens use the current tab's sessionStorage. Learning summaries use localStorage, separated by authenticated user ID or guest. Guest history is not automatically imported. Results do not sync across devices and are not uploaded to an application server. Local storage is not encrypted; login is not a security boundary against someone with browser/device access. Sign out on shared devices.
 
-Up to 150 kids-session summaries are retained per account/guest store. Classic history is separate. Active sessions do not survive reloads. Exported reports include responses and memory stimuli. No analytics, ads or AI API; Cloudflare processes normal hosting request metadata.
+Up to 150 kids-session summaries are retained per account/guest store. Classic history is separate. Unfinished Kids/Classic sessions do not survive reloads; French activities have resumable checkpoints. Exported reports include responses and memory stimuli. Aggregate page/estimated-visit counts are collected with browser opt-out; no child identifiers or answers enter usage totals. No ads or AI API. Cloudflare processes normal hosting request metadata.
 
 ## Validation
 
