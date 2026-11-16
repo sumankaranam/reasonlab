@@ -129,3 +129,12 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - Owner deferred sender setup. No actual report emailed or Supabase registration query executed. Setup instructions retained in non-public docs. 77 tests, local privacy/collection browser checks and Worker dry-run pass.
 
 - Deployed `bce0e87c-abb1-421a-8d83-51b0e055171f` with daily cloud trigger. Live browser privacy checks and actual aggregate write/read-rejection/404 smoke pass; D1 contains the one QA event. No email sent; sender and registration setup deferred.
+
+## 2026-11-16 — Welcome page and three-path activity hub
+
+- Added adult sign-in/guest welcome, returning-user hub and language availability picker. Reasoning moved to `/kids.html` with unchanged learner/history keys.
+- Added guarded Activity hub navigation across learning sections; preserved French resume and Discovery age restrictions. Theme controls follow primary navigation content on the hub.
+- Added separate hub aggregate counter/view without rewriting prior reasoning counts. Daily reporting remains pending sender/Supabase setup.
+- Local unit and mobile/contrast/navigation/privacy regression checks pass; authenticated browser flows use mocks.
+
+- Released as Cloudflare `8470712f-05df-4248-adf8-4f371368bb24`. All 78 automated tests pass; live landing and expanded all-theme contrast suites pass.

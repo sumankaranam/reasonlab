@@ -1,5 +1,5 @@
 // Aggregate page counts only. Never send account identity, child data or URL queries.
-const pages={'/':'kids','/index':'kids','/index.html':'kids','/french':'french','/french.html':'french','/discover':'discovery','/discover.html':'discovery','/account':'account','/account.html':'account','/classic':'classic','/classic.html':'classic'};
+const pages={'/':'hub','/index':'hub','/index.html':'hub','/kids':'kids','/kids.html':'kids','/french':'french','/french.html':'french','/discover':'discovery','/discover.html':'discovery','/account':'account','/account.html':'account','/classic':'classic','/classic.html':'classic'};
 let attempted=false;
 export async function recordUsage(){
   if(attempted||document.visibilityState!=='visible'||!pages[location.pathname]||navigator.globalPrivacyControl||navigator.doNotTrack==='1')return;

@@ -59,7 +59,7 @@ Up to 150 kids-session summaries are retained per account/guest store. Classic h
 
 ## Validation
 
-77 automated tests cover generation across grades/stages, answer correctness, scoring, evidence thresholds, isolation, progression, French content/review/audio lifecycle, and authentication integration with mocked provider responses. Mobile French browser checks cover activity flows, saved state, speaking gates, denial handling, reports and 320/390px layouts. Audio hardware is simulated in automated checks. Live email delivery and Google consent require the owner's configured service and authorised test accounts. The exercises have not been psychometrically validated.
+78 automated tests cover generation across grades/stages, answer correctness, scoring, evidence thresholds, isolation, progression, French content/review/audio lifecycle, and authentication integration with mocked provider responses. Mobile French browser checks cover activity flows, saved state, speaking gates, denial handling, reports and 320/390px layouts. Audio hardware is simulated in automated checks. Live email delivery and Google consent require the owner's configured service and authorised test accounts. The exercises have not been psychometrically validated.
 
 ## For coding agents
 
@@ -88,3 +88,7 @@ Adult accounts can name up to three learner slots with nicknames and choose from
 ## Owner usage reports
 
 Aggregate daily page views and estimated tab visits are collected without child/account identifiers, with browser opt-out controls. A 9 AM India-time cloud schedule is prepared for an owner email; Resend sender and private Supabase registration-count setup remain pending. See [daily report setup](docs/DAILY-REPORT-SETUP.md). Visits are not unique people; collection starts at deployment.
+
+## Welcome and navigation
+
+Start at `/`: choose adult sign-in or guest exploration, then Language learning, Reasoning & memory, or Interests & personality. Returning adults and guests in the same tab go to the activity hub. French is available; other language courses are marked Coming soon. Reasoning is at `/kids.html`; existing progress is preserved. Every learning section has guarded navigation back to the hub.

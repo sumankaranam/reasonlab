@@ -4,7 +4,7 @@ const base=process.env.FR_BASE||'http://127.0.0.1:5188';
 const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH});
 try{
 const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
-await page.goto(base);await page.locator('#learning-theme').waitFor();
+await page.goto(base+'/kids.html');await page.locator('#learning-theme').waitFor();
 for(const id of ['classic','unicorn','racing','fairytale','space','ocean']){await page.locator('#learning-theme').selectOption(id);assert.equal(await page.locator('html').getAttribute('data-theme'),id);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);}
 await page.locator('#learning-theme').selectOption('unicorn');await page.locator('#profile').selectOption('2');assert.equal(await page.locator('#learning-theme').inputValue(),'unicorn');
 for(const path of ['/french.html','/discover.html','/account.html','/classic.html','/404.html','/']){await page.goto(base+path);await page.locator('#learning-theme').waitFor();assert.equal(await page.locator('#learning-theme').inputValue(),'unicorn',path);assert.equal(await page.locator('#learning-language option:disabled').count(),4);assert.equal(await page.locator('#learning-language').inputValue(),'fr');assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);}

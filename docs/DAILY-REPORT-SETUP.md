@@ -4,7 +4,7 @@ Updated 2026-11-16. Recipient: sumanmighty@gmail.com. Schedule: 9:00 AM Asia/Kol
 
 ## What is implemented
 
-- A first-party `/api/usage` endpoint stores date/page aggregate totals in Cloudflare D1 `reasonlab-usage` (binding `USAGE_DB`). Five page labels only: Kids, French, Discovery, Account, Classic. No identity, IP, user agent, child name, answers, audio or URL query stored in this database. Cloudflare still handles network metadata.
+- A first-party `/api/usage` endpoint stores date/page aggregate totals in Cloudflare D1 `reasonlab-usage` (binding `USAGE_DB`). Six page labels only: Hub, Kids, French, Discovery, Account, Classic. No identity, IP, user agent, child name, answers, audio or URL query stored in this database. Cloudflare still handles network metadata.
 - Browser page loads count page views. A new tab or a subsequent page load after 30 minutes without a recorded load in that tab counts an estimated visit. A tab-local timestamp stays in sessionStorage; it is never sent. These are not unique people or reliably deduplicated sessions. Multiple tabs/devices, restored tabs, bots, blockers and spoofed requests affect results. Do not call them exact visitors or use them for billing.
 - Browser opt-out, Do Not Track and Global Privacy Control skip collection. Storage failures skip collection; learning remains usable. Only one event per document, including when a hidden page first becomes visible. Dynamic in-page lesson navigation does not count as a new page view.
 - Counts start at deployment; no past traffic can be recovered. First day includes setup/QA traffic and may be partial. Aggregate retention is approximately 90 days, cleaned by the daily scheduled job.
@@ -29,10 +29,10 @@ Open Cloudflare D1 → **reasonlab-usage** → Console and run:
 
 ```sql
 SELECT day, SUM(visits) AS estimated_tab_visits, SUM(page_views) AS page_views
-FROM daily_usage GROUP BY day ORDER BY day DESC LIMIT 30;
+FROM usage_totals GROUP BY day ORDER BY day DESC LIMIT 30;
 ```
 
-To see the breakdown: `SELECT * FROM daily_usage ORDER BY day DESC, page;`.
+To see the breakdown: `SELECT * FROM usage_totals ORDER BY day DESC, page;`.
 
 Supabase Authentication → Users shows adult accounts. Do not mistake child nickname profiles (browser-only) for registrations. Counts are owner-only in provider dashboards; the public website has no stats read endpoint.
 
@@ -62,3 +62,5 @@ Public usage requests are same-origin JSON, bounded and allowlisted; they are st
 - https://supabase.com/docs/guides/auth/users
 
 This owner report does not enable advertising, marketing email, child profiling, or email OTP sign-in.
+
+Landing update: root loads count as hub; reasoning now lives at `/kids.html`. Existing pre-hub root counts remain kids. Migration `0002_hub_usage.sql` adds a separate hub table and the `usage_totals` union view without changing old totals. Both counters are retained for about 90 days.

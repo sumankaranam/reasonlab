@@ -26,6 +26,7 @@ export function themeScene(id){
   return `<svg viewBox="0 0 320 120" aria-hidden="true" focusable="false">${scenes[validTheme(id)]}</svg>`;
 }
 export function mountTheme(userId=null,slot=1,navigate=fn=>fn()){
+  document.querySelectorAll('header a[data-hub]').forEach(link=>link.onclick=e=>{e.preventDefault();e.stopPropagation();navigate(()=>location.assign('/#explore'));});
   const privacyLink=document.querySelector('footer a[href="/usage-privacy.html"]');if(privacyLink)privacyLink.onclick=e=>{e.preventDefault();navigate(()=>location.assign('/usage-privacy.html'));};
   let dock=document.querySelector('#theme-dock');if(!dock){dock=document.createElement('section');dock.id='theme-dock';dock.className='theme-dock no-print';const header=document.querySelector('header');if(header)header.after(dock);else document.body.prepend(dock);}
   let current=readTheme(userId,slot);

@@ -23,10 +23,11 @@ export function reportText(window,rows,registrations){
 export async function runReport(env,now=Date.now(),fetcher=fetch){
   const window=previousDay(now);
   await env.USAGE_DB.prepare('DELETE FROM daily_usage WHERE day < ?').bind(dayKey(now-90*86400000)).run();
+  await env.USAGE_DB.prepare('DELETE FROM hub_usage WHERE day < ?').bind(dayKey(now-90*86400000)).run();
   await env.USAGE_DB.prepare('DELETE FROM sent_reports WHERE day < ?').bind(dayKey(now-90*86400000)).run();
   if(!env.RESEND_API_KEY){console.log('Daily report pending sender setup');return {status:'sender-not-configured'};}
   if(await env.USAGE_DB.prepare('SELECT day FROM sent_reports WHERE day = ?').bind(window.date).first())return {status:'already-sent'};
-  const {results}=await env.USAGE_DB.prepare('SELECT page, page_views, visits FROM daily_usage WHERE day = ? ORDER BY page_views DESC').bind(window.date).all();
+  const {results}=await env.USAGE_DB.prepare('SELECT page, page_views, visits FROM usage_totals WHERE day = ? ORDER BY page_views DESC').bind(window.date).all();
   let counts=null;try{counts=await registrationCounts(env,window,fetcher);}catch{console.log('Registration totals unavailable; report will explicitly mark missing data');}
   const response=await fetcher('https://api.resend.com/emails',{method:'POST',headers:{Authorization:`Bearer ${env.RESEND_API_KEY}`,'Content-Type':'application/json','Idempotency-Key':`reasonlab-daily-${window.date}`},body:JSON.stringify({from:env.REPORT_FROM||'ReasonLab <onboarding@resend.dev>',to:['sumanmighty@gmail.com'],subject:`ReasonLab daily stats — ${window.date}`,text:reportText(window,results,counts)}),signal:AbortSignal.timeout(15000)});
   if(!response.ok)throw Error('Daily email delivery request failed');

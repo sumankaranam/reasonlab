@@ -8,7 +8,8 @@ Buildless HTML/CSS/ES modules served by Cloudflare Workers Static Assets. A smal
 
 | File | Responsibility |
 | --- | --- |
-| `public/index.html` | Kids shell and navigation; loads `kids.js` |
+| `public/index.html`, `public/landing.js`, `public/landing.css` | Welcome page, three-path activity hub and language picker |
+| `public/kids.html` | Reasoning/Kids shell; loads existing `kids.js` |
 | `public/kids.js` | Kids UI, session state machine, memory timing, history, reports |
 | `public/kids-engine.js` | Pure grade/stage generators, scoring, evidence and progression |
 | `public/classic.html`, `public/app.js`, `public/engine.js` | Original general-purpose app and isolated history |
@@ -127,3 +128,13 @@ Pastel featured cards explicitly reset the original dark-card white heading/body
 `worker/index.js` handles only a bounded same-origin JSON write endpoint; other requests delegate to ASSETS preserving the existing missing-page response. `wrangler.jsonc` uses selective `/api/*` worker-first routing, a USAGE_DB D1 binding and 03:30 UTC cron. D1 stores only per-day/page totals and accepted-report dates, with ~90-day retention. Static files bypass Worker execution when found.
 
 `worker/reporting.js` queries previous India-day totals, optionally calls a service-role-only Supabase aggregate RPC, and sends a fixed-recipient owner email via Resend. Missing registration credentials show unavailable. Missing sender credentials skip email. The RPC is prepared in `scripts/supabase-reporting.sql`, not yet installed. No public stats-read or email-send endpoint exists. No secrets in public code/config; secrets are Cloudflare-only. No actual registration or email provider success is claimed until owner setup. See `DAILY-REPORT-SETUP.md` for exact setup, metrics limitations, quotas and duplicate/missed-run behavior.
+
+## Welcome and activity hub (2026-11-16)
+
+Root `/` now shows adult sign-in or guest exploration first. Guest selection stores only a tab-local `reasonlab-explore=yes` preference; verified adults skip the welcome screen. `/#explore` is the activity hub, `/#languages` is the course picker. They are navigation states, not access controls. Guest learning remains available without login. Supabase identity is still verified by the shared service; errors fall back to explicit guest access. No new redirect parameter or OAuth callback path was introduced.
+
+Hub paths: Language learning → French/course availability; Reasoning & memory → `/kids.html`; Interests & personality → `/discover.html`. The 16+ self-declaration for personality preferences remains in Discovery. Reasoning is labeled practice, not a clinical IQ score. Existing localStorage keys, learner IDs, grades and history are unchanged. Account/profile buttons return to the hub or named activity. Header Activity hub links use existing leave/pause guards; French checkpoints are saved while reasoning/Discovery confirm discarding unfinished responses. Personalization controls sit below the hub content so the first decision remains clear.
+
+Usage now categorizes root as `hub` and `/kids[.html]` as `kids`. Migration `0002_hub_usage.sql` adds `hub_usage` and a union view `usage_totals`; it does not rewrite historical reasoning counts. Worker inserts into fixed allowlisted tables and daily reports query the view. Both tables receive 90-day cleanup. Historical root traffic before this release remains under kids.
+
+`tests/browser/landing.mjs` covers new/returning guests, signed-in hub (mocked), three paths, unavailable languages, navigation guards, age gate, blocked storage and all-theme 320px layout. Existing profile/French/theme/privacy suites now use `/kids.html` for reasoning checks. Contrast coverage includes welcome, hub and course picker.

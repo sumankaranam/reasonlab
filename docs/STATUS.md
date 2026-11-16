@@ -5,7 +5,8 @@ Updated: 2026-11-16 (Asia/Kolkata).
 ## Entry points
 
 - Repository: https://github.com/sumankaranam/reasonlab
-- Live Kids app: https://reasonlab.simstart.workers.dev/
+- Live welcome/activity hub: https://reasonlab.simstart.workers.dev/
+- Reasoning/Kids: https://reasonlab.simstart.workers.dev/kids.html
 - Classic: https://reasonlab.simstart.workers.dev/classic.html
 - Adult account: https://reasonlab.simstart.workers.dev/account.html
 - Read `AGENTS.md` for the user-requested checkpoint workflow.
@@ -60,7 +61,7 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 
 ## Deployment
 
-Current recorded Cloudflare version: `bce0e87c-abb1-421a-8d83-51b0e055171f` (aggregate usage collection and prepared owner-report schedule). Runtime matches the reporting checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
+Current recorded Cloudflare version: `8470712f-05df-4248-adf8-4f371368bb24` (welcome page, activity hub and language picker). Runtime matches the landing-page checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
 Validation: all 62 tests and reproducible auth build pass. Live mobile smoke confirms enabled Google button, adult gate, disabled email, actual Supabase redirect to accounts.google.com, cancellation-error display and French guest navigation. No consent or actual login was completed.
 Hosting: Worker `reasonlab`, asset-first static pages plus `/api/usage`, D1 `reasonlab-usage`, and daily cron. Worker/D1 service quotas apply; no plan upgrade or payment was performed.
 The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf6786abdad7961619ec297653a9312` (verify current main before work).
@@ -101,3 +102,7 @@ Daily Discovery contrast fixed; shared captions and navigation text darkened. Lo
 ## Daily owner report preparation
 
 Aggregate visit/page-view collection, privacy opt-out and a cloud-scheduled previous-day report at 9 AM India time are implemented. D1 schema created remotely. The owner deferred Resend setup: no sender secret, no live emails. Supabase aggregate SQL and private key setup also remain pending, so new adult-registration totals are unavailable. 77 automated tests plus local browser collection/privacy checks pass; Worker dry-run succeeds. See `DAILY-REPORT-SETUP.md`. Deployed `bce0e87c-abb1-421a-8d83-51b0e055171f` with 03:30 UTC cron. Live privacy suite passed; actual write returned 204, read rejected 405, 404 routing preserved, and D1 verified one QA aggregate event. No real email/Supabase count verification yet.
+
+## Welcome and activity navigation
+
+Root is now a welcome screen with Adult sign in / Explore as a guest. Returning guests in the same tab and verified adults see a three-path hub. Language learning has a French/Coming soon picker; reasoning has its own `/kids.html` route; Discovery preserves the 16+ personality gate. Activity hub links respect unfinished-session guards. Existing storage/profile data unchanged. Aggregate hub counts are separated with a non-destructive D1 migration. 78 automated tests and local landing, contrast, French mobile/edge, profiles, themes and usage suites pass. Screenshots reviewed at 320/390px. Deployed `8470712f-05df-4248-adf8-4f371368bb24`; live landing and all-theme contrast suites pass. Provider identities are mocked in authenticated browser tests.
