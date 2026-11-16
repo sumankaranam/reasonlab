@@ -1,1 +1,27 @@
-{"name":"reasonlab","compatibility_date":"2026-11-01","workers_dev":true,"assets":{"directory":"./public","not_found_handling":"404-page"}}
+{
+  "name": "reasonlab",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "main": "worker/index.js",
+  "d1_databases": [
+    {
+      "binding": "USAGE_DB",
+      "database_name": "reasonlab-usage",
+      "database_id": "2868a92a-45a1-4082-bb03-0282ed6c5137",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "30 3 * * *"
+    ]
+  }
+}

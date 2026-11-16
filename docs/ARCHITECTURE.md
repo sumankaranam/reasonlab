@@ -4,7 +4,7 @@ Updated: 2026-11-16 (Asia/Kolkata). Start with `STATUS.md` for current activatio
 
 ## Runtime
 
-Buildless HTML/CSS/ES modules served by Cloudflare Workers Static Assets. No custom Worker handler, application API, database, LLM calls or analytics. The one bundled dependency is the official Supabase JS client, generated with esbuild for optional adult authentication.
+Buildless HTML/CSS/ES modules served by Cloudflare Workers Static Assets. A small Worker now provides aggregate-only usage collection, D1 daily totals and scheduled owner reports. No runtime LLM calls. Most assets remain asset-first. The one bundled dependency is the official Supabase JS client, generated with esbuild for optional adult authentication.
 
 | File | Responsibility |
 | --- | --- |
@@ -119,3 +119,11 @@ The language-to-learn selector offers French and visibly disabled Coming soon en
 ## Contrast regression coverage
 
 Pastel featured cards explicitly reset the original dark-card white heading/body text. Shared muted text, eyebrow labels, footer copy, hero captions and French plan captions use darker colors. `tests/browser/theme-contrast.mjs` measures visible rendered text against opaque ancestor backgrounds on six page surfaces × six themes, using 4.5:1 normal and 3:1 large-text thresholds. It excludes gradients/transparency, SVG and native select rendering; this is a targeted regression test, not a full accessibility certification. Saves findings and a Daily Discovery screenshot in ignored `work/`.
+
+## Daily aggregate usage and owner reports (2026-11-16)
+
+`usage.js` is imported once by the shared theme module and submits fixed page category plus visit-start boolean to `/api/usage`. It never reads auth or child profile state. Tab-local last-page-load timestamp implements approximate 30-minute visits; no visitor ID is generated. Opt-out/GPC/DNT/storage failures skip collection. `usage-privacy.html` discloses counting and provides a device opt-out; footer navigation keeps existing session guards.
+
+`worker/index.js` handles only a bounded same-origin JSON write endpoint; other requests delegate to ASSETS preserving the existing missing-page response. `wrangler.jsonc` uses selective `/api/*` worker-first routing, a USAGE_DB D1 binding and 03:30 UTC cron. D1 stores only per-day/page totals and accepted-report dates, with ~90-day retention. Static files bypass Worker execution when found.
+
+`worker/reporting.js` queries previous India-day totals, optionally calls a service-role-only Supabase aggregate RPC, and sends a fixed-recipient owner email via Resend. Missing registration credentials show unavailable. Missing sender credentials skip email. The RPC is prepared in `scripts/supabase-reporting.sql`, not yet installed. No public stats-read or email-send endpoint exists. No secrets in public code/config; secrets are Cloudflare-only. No actual registration or email provider success is claimed until owner setup. See `DAILY-REPORT-SETUP.md` for exact setup, metrics limitations, quotas and duplicate/missed-run behavior.

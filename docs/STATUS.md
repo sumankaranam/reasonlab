@@ -60,9 +60,9 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 
 ## Deployment
 
-Current recorded Cloudflare version: `d5407829-9de8-407c-9c0a-8b53b33cfc38` (all-theme text contrast corrections). Runtime matches the contrast checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
+Current recorded Cloudflare version: `bce0e87c-abb1-421a-8d83-51b0e055171f` (aggregate usage collection and prepared owner-report schedule). Runtime matches the reporting checkpoint in Git. Previous French runtime: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`.
 Validation: all 62 tests and reproducible auth build pass. Live mobile smoke confirms enabled Google button, adult gate, disabled email, actual Supabase redirect to accounts.google.com, cancellation-error display and French guest navigation. No consent or actual login was completed.
-Hosting is static assets, Worker name `reasonlab`; no new paid resources created.
+Hosting: Worker `reasonlab`, asset-first static pages plus `/api/usage`, D1 `reasonlab-usage`, and daily cron. Worker/D1 service quotas apply; no plan upgrade or payment was performed.
 The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf6786abdad7961619ec297653a9312` (verify current main before work).
 
 ## Next actions
@@ -97,3 +97,7 @@ Six original illustrated themes now use one device-wide preference across Kids, 
 ## Theme contrast and launch planning
 
 Daily Discovery contrast fixed; shared captions and navigation text darkened. Local rendered solid-background text checks pass on six page surfaces across all six themes (not a full accessibility audit). See `LAUNCH-AND-MONETIZATION.md` for proposed beta/monetization steps; no advertising or payments are integrated. Deployed `d5407829-9de8-407c-9c0a-8b53b33cfc38`; live contrast suite passes.
+
+## Daily owner report preparation
+
+Aggregate visit/page-view collection, privacy opt-out and a cloud-scheduled previous-day report at 9 AM India time are implemented. D1 schema created remotely. The owner deferred Resend setup: no sender secret, no live emails. Supabase aggregate SQL and private key setup also remain pending, so new adult-registration totals are unavailable. 77 automated tests plus local browser collection/privacy checks pass; Worker dry-run succeeds. See `DAILY-REPORT-SETUP.md`. Deployed `bce0e87c-abb1-421a-8d83-51b0e055171f` with 03:30 UTC cron. Live privacy suite passed; actual write returned 204, read rejected 405, 404 routing preserved, and D1 verified one QA aggregate event. No real email/Supabase count verification yet.

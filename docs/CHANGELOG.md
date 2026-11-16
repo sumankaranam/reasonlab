@@ -121,3 +121,11 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - Added `LAUNCH-AND-MONETIZATION.md` with beta launch, parent-paid options, advertising constraints and scaling guidance. No ads, tracking or billing added.
 
 - Cloudflare deployment `d5407829-9de8-407c-9c0a-8b53b33cfc38`; deployed contrast suite passes across all six themes and six main page surfaces.
+
+## 2026-11-16 — Aggregate visits and scheduled owner reports
+
+- Added first-party aggregate page views and estimated tab visits, no individual visitor/child records, browser opt-out/GPC/DNT and a public explanation.
+- Created aggregate D1 storage with 90-day retention and configured 9 AM India-time scheduled owner email. Prepared server-only registration-count RPC and Resend integration with deduplication and missing-data labels.
+- Owner deferred sender setup. No actual report emailed or Supabase registration query executed. Setup instructions retained in non-public docs. 77 tests, local privacy/collection browser checks and Worker dry-run pass.
+
+- Deployed `bce0e87c-abb1-421a-8d83-51b0e055171f` with daily cloud trigger. Live browser privacy checks and actual aggregate write/read-rejection/404 smoke pass; D1 contains the one QA event. No email sent; sender and registration setup deferred.

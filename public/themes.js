@@ -1,3 +1,4 @@
+import './usage.js';
 import {progressKeys} from './auth-core.js';
 
 export const themes = [
@@ -25,6 +26,7 @@ export function themeScene(id){
   return `<svg viewBox="0 0 320 120" aria-hidden="true" focusable="false">${scenes[validTheme(id)]}</svg>`;
 }
 export function mountTheme(userId=null,slot=1,navigate=fn=>fn()){
+  const privacyLink=document.querySelector('footer a[href="/usage-privacy.html"]');if(privacyLink)privacyLink.onclick=e=>{e.preventDefault();navigate(()=>location.assign('/usage-privacy.html'));};
   let dock=document.querySelector('#theme-dock');if(!dock){dock=document.createElement('section');dock.id='theme-dock';dock.className='theme-dock no-print';const header=document.querySelector('header');if(header)header.after(dock);else document.body.prepend(dock);}
   let current=readTheme(userId,slot);
   function render(){const theme=themes.find(t=>t.id===current);document.documentElement.dataset.theme=current;dock.innerHTML=`<div class="theme-copy"><span class="theme-eyebrow">YOUR LEARNING WORLD</span><strong>${theme.title}</strong><label for="learning-theme">Website theme</label><select id="learning-theme">${themes.map(t=>`<option value="${t.id}" ${t.id===current?'selected':''}>${t.icon} ${t.name}</option>`).join('')}</select><div class="language-choice"><label for="learning-language">Language to learn</label><select id="learning-language"><option value="fr">French · Available now</option><option disabled>Spanish · Coming soon</option><option disabled>German · Coming soon</option><option disabled>Hindi · Coming soon</option><option disabled>Japanese · Coming soon</option></select><button type="button" class="secondary" id="open-language">${location.pathname.startsWith('/french')?'Learning French':'Learn French →'}</button><small>More languages coming soon. App instructions are in English.</small></div><span id="theme-status" role="status" aria-live="polite"></span></div><div class="theme-scene">${themeScene(current)}</div>`;dock.querySelector('#open-language').onclick=()=>{if(!location.pathname.startsWith('/french'))navigate(()=>location.assign('/french.html'));};dock.querySelector('#learning-theme').onchange=e=>{current=validTheme(e.target.value);let saved=true;try{saveTheme(userId,slot,current);}catch{saved=false;}render();dock.querySelector('#theme-status').textContent=saved?'Theme saved across all pages on this device.':'Preview only: browser storage is unavailable.';};}render();
