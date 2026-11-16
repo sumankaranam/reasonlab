@@ -1,0 +1,23 @@
+:root[data-theme]{--theme-bg:#f7f8f2;--theme-soft:#eaf1df;--theme-accent:#174e43;--theme-border:#bfd1b8;--theme-ink:#193b34;background:var(--theme-bg)}
+:root[data-theme=unicorn]{--theme-bg:#fff5fc;--theme-soft:#f2e4fb;--theme-accent:#753c86;--theme-border:#dcb9df;--theme-ink:#482e52}
+:root[data-theme=racing]{--theme-bg:#f2f7ff;--theme-soft:#e0ecff;--theme-accent:#244c86;--theme-border:#b4c9e8;--theme-ink:#223c60}
+:root[data-theme=fairytale]{--theme-bg:#faf5ff;--theme-soft:#eee2fa;--theme-accent:#67418c;--theme-border:#d4bee8;--theme-ink:#49335f}
+:root[data-theme=space]{--theme-bg:#f3f4ff;--theme-soft:#e1e5fb;--theme-accent:#394b8c;--theme-border:#b7c1ea;--theme-ink:#283663}
+:root[data-theme=ocean]{--theme-bg:#effbf9;--theme-soft:#d7f1ed;--theme-accent:#146478;--theme-border:#a2d3d1;--theme-ink:#204d56}
+.theme-dock{max-width:1136px;margin:18px auto 0;padding:18px 28px;border:1px solid var(--theme-border);border-radius:24px;background:var(--theme-soft);color:var(--theme-ink);display:flex;align-items:center;justify-content:space-between;gap:24px;overflow:hidden}.theme-copy{flex:1;min-width:0}.theme-copy strong{display:block;font-size:1.35rem;margin:5px 0 12px}.theme-eyebrow{font-size:10px;letter-spacing:1.5px;font-weight:800}.theme-copy label{font-size:12px;font-weight:650;margin-right:10px}.theme-copy select{max-width:100%;min-height:44px;background:white;color:#253e38;border:1px solid var(--theme-border);border-radius:12px;padding:8px 12px}.theme-scene{width:270px;max-width:40%;flex-shrink:0;border-radius:20px}.theme-scene svg{width:100%;display:block}#theme-status{display:block;font-size:12px;margin-top:5px}#theme-status:empty{display:none}
+html[data-theme]:not([data-theme=classic]){--green:var(--theme-accent);--line:var(--theme-border);--lime:var(--theme-soft)}
+html[data-theme]:not([data-theme=classic]) body{background:var(--theme-bg)}
+html[data-theme]:not([data-theme=classic]) .child-banner{background:linear-gradient(110deg,var(--theme-soft),#fff);border:1px solid var(--theme-border)}
+html[data-theme]:not([data-theme=classic]) .primary{background:var(--theme-accent);color:#fff;border-color:var(--theme-accent)}
+html[data-theme]:not([data-theme=classic]) .secondary{color:var(--theme-accent);border-color:var(--theme-border);background:#fff}
+html[data-theme]:not([data-theme=classic]) .hero-art,html[data-theme]:not([data-theme=classic]) .journey-cover{background:var(--theme-soft);border-color:var(--theme-border)}
+html[data-theme]:not([data-theme=classic]) .card.featured{background:var(--theme-soft);border-color:var(--theme-border)}
+html[data-theme]:not([data-theme=classic]) h1 em{color:var(--theme-accent)}
+html[data-theme=space] .theme-scene{background:#344276}
+html[data-theme=unicorn] .theme-scene{background:#f8eafb}
+html[data-theme=racing] .theme-scene{background:#c9e7ff}
+html[data-theme=fairytale] .theme-scene{background:#f6e7fb}
+html[data-theme=ocean] .theme-scene{background:#b6e6ec}
+@media(max-width:700px){.theme-dock{margin:12px 12px 0;padding:16px;gap:10px}.theme-copy strong{font-size:1.05rem}.theme-scene{width:135px;max-width:35%}.theme-copy label{display:block;margin-bottom:4px}.theme-copy select{width:100%;font-size:13px;padding:8px}.theme-eyebrow{font-size:9px}}
+@media(max-width:380px){.theme-dock{flex-wrap:wrap}.theme-copy{flex-basis:100%}.theme-scene{max-width:100%;width:180px;margin:auto}.theme-copy select{width:auto}}
+@media print{.theme-dock{display:none}html[data-theme] body{background:white}}

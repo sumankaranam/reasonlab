@@ -97,3 +97,11 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - 65 unit tests and local mocked-auth mobile onboarding/profile/guard checks pass.
 
 - Released as Cloudflare `1c9d7aba-1b25-4373-857f-b1d677d3550e`; deployed mobile profile checks pass. Auth remains mocked in profile QA; no real Google consent claimed.
+
+## 2026-11-16 — Illustrated learner themes
+
+- Added Classic Garden, Unicorn Rainbow, Racing Cars, Fairy-tale Castle, Space Explorers and Ocean Friends with original SVG scene artwork and coordinated UI colors.
+- Theme selector available to guests and adults; choices persist separately by learner/account across Kids, French, Discovery and Account. Profile editor includes a theme choice. Activity state and semantic answer colors are preserved.
+- 68 unit tests and local theme/profile browser suites pass, including mobile layouts, storage failures and account/learner separation.
+
+- Deployed Cloudflare version `e935bf71-5c97-4c90-8faf-dc2a92a4974c`; live theme browser suite passed.

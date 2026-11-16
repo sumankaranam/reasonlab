@@ -1,0 +1,19 @@
+import assert from 'node:assert/strict';
+const {chromium}=await import('../../work/browser-check/node_modules/playwright/index.mjs');
+const base=process.env.FR_BASE||'http://127.0.0.1:5188';
+const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH});
+try{
+const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto(base);await page.locator('#learning-theme').waitFor();
+for(const id of ['classic','unicorn','racing','fairytale','space','ocean']){await page.locator('#learning-theme').selectOption(id);assert.equal(await page.locator('html').getAttribute('data-theme'),id);assert.equal(await page.locator('#theme-dock svg').count(),1);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);}
+await page.locator('#learning-theme').selectOption('unicorn');await page.reload();assert.equal(await page.locator('#learning-theme').inputValue(),'unicorn');
+await page.locator('#profile').selectOption('2');assert.equal(await page.locator('#learning-theme').inputValue(),'classic');await page.locator('#learning-theme').selectOption('racing');await page.locator('#profile').selectOption('1');assert.equal(await page.locator('#learning-theme').inputValue(),'unicorn');
+for(const path of ['/french.html','/discover.html']){await page.goto(base+path);await page.locator('#learning-theme').waitFor();assert.equal(await page.locator('#learning-theme').inputValue(),'unicorn');}
+await page.goto(base+'/french.html');await page.locator('[data-lesson="sound-hello"]').first().click();await page.locator('[data-cards="sound-hello"]').first().click();await page.locator('#learning-theme').selectOption('space');assert.equal(await page.locator('.flashcard').count(),1);
+await page.setViewportSize({width:320,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:'work/theme-space-mobile.png'});
+await page.goto(base);await page.locator('#learning-theme').selectOption('unicorn');await page.screenshot({path:'work/theme-unicorn-mobile.png'});
+await context.route('**/auth-client.js',r=>r.fulfill({contentType:'text/javascript',body:`export const authConfig={googleEnabled:true,emailEnabled:false},configured=true,initializationError=null;export const service={user:async()=>({id:'11111111-1111-4111-8111-111111111111',email:'adult@example.test'}),signOut:async()=>{}};export const onAccountChange=()=>{};`}));
+await page.goto(base+'/account.html');await page.locator('#child-name').waitFor();assert.equal(await page.locator('#learning-theme').inputValue(),'classic');await page.locator('#child-name').fill('Alex');await page.locator('#child-theme').selectOption('fairytale');await page.locator('#child-form button[type=submit]').click();assert.equal(await page.locator('#learning-theme').inputValue(),'fairytale');await page.goto(base+'/french.html');await page.locator('#learning-theme').waitFor();assert.equal(await page.locator('#learning-theme').inputValue(),'fairytale');
+const blocked=await browser.newContext();await blocked.addInitScript(()=>{Storage.prototype.setItem=()=>{throw Error('blocked');};});const bp=await blocked.newPage();await bp.goto(base);await bp.locator('#learning-theme').selectOption('ocean');await bp.getByText('Preview only: browser storage is unavailable.').waitFor();assert.equal(await bp.locator('html').getAttribute('data-theme'),'ocean');await blocked.close();
+assert.deepEqual(errors,[]);console.log('PASS six themes, artwork, saved choices, learner/guest/account isolation, cross-page continuity, profile editor, in-activity switching, 320px layout and storage failure. Account identity mocked.');
+}finally{await browser.close();}
