@@ -46,7 +46,7 @@ node tests/browser/french-edge.mjs
 
 `FR_BASE` overrides the default local URL for deployed checks. `PLAYWRIGHT_EXECUTABLE_PATH` selects an existing Chromium executable. `PLAYWRIGHT_MODULE` optionally selects a different installed Playwright module. QA outputs go to ignored `work/`; the dependency directory already creates that folder. The edge check injects simulated voice/mic adapters and never requests access to real hardware. Some Windows sandbox profiles require running the local server and browser outside the sandbox to allow loopback traffic.
 
-Deployment: `c3aac00a-7a21-4df1-9adb-fef255e5fefe`. Runtime source: `782be4214ca57dab880b88e0f41ca15590c23a5c`; GitHub CI succeeded. Both public setup paths and the non-public documentation path return 404.
+Initial French deployment: `c3aac00a-7a21-4df1-9adb-fef255e5fefe`. Initial runtime source: `782be4214ca57dab880b88e0f41ca15590c23a5c`; GitHub CI succeeded. Both public setup paths and the non-public documentation path return 404.
 
 ## Guided journey upgrade (2026-11-16)
 
@@ -59,3 +59,5 @@ Picture flashcards have a French front, listen/slow controls, a revealed English
 One active checkpoint per learner is saved atomically alongside completed progress. Resume never restarts microphone/recognition or retains audio. Exported progress includes the plan, mission records and flashcard summary, but omits unfinished typed responses. To reproduce journey QA, use the same environment overrides as the other browser scripts and run `node tests/browser/french-journey.mjs`.
 
 See `FRENCH-LEARNING-PATH.md` for the full chapter/lesson map and exact stamp rules. Live deployment status remains in `STATUS.md`.
+
+Journey release: Cloudflare `8f991798-c434-49c4-80fa-2553e27c6ba1`, runtime source `4a94cc80c4f461acf8f298312c12b75ec9ee7950`. GitHub CI and all three deployed browser suites passed on 2026-11-16. No actual provider login or real microphone hardware was tested.

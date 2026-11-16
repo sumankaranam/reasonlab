@@ -30,13 +30,13 @@ The public owner activation link and `signin-setup.html` have been removed. Owne
 
 Validation: 46 automated tests pass; local and deployed browser checks pass at 390px and 320px for lesson/retry/skip, correct scoring, assisted-listening exclusion, writing/token building, review/checkpoint/role-play/story UI, saved-state isolation, phrase search, studio gates/denial, export/print/delete, blocked storage, exit guards and home navigation. Audio lifecycle is simulated; real hardware quality remains unverified. See `FRENCH-DESIGN.md` for architecture and reproduction.
 
-## French guided journey upgrade (tested; deployment pending)
+## French guided journey upgrade (live and verified)
 
 Added six ordered conversation chapters, 25 illustrated picture topics and scene art for every lesson, reversible flashcards, six new conversation missions, a flexible weekly plan, and a recommended next step. An active lesson/deck auto-saves its place, typed answer, token choices and first-answer/retry state. Returning learners see their resume control before the long course map. Ten derived achievements include six chapter stamps and a final passport; all-skip attempts cannot satisfy lesson/mission requirements.
 
 Existing French progress migrates without losing results. Plans, checkpoints, cards and mission records share the existing account/guest + learner isolation. Same-device resume works without registration. Actual Google/email activation and cloud sync remain incomplete; account isolation is tested with a mocked verified identity, not real provider login.
 
-Validation: 62 automated tests pass. The new journey browser suite and adapted existing mobile/edge suites pass locally, including picture cards, reload/resume, typed/token/first-answer preservation, learner/account separation, achievements, old progress, 320/390px layouts and storage-failure behavior. No new backend or paid API was added.
+Validation: 62 automated tests pass. The new journey browser suite and adapted existing mobile/edge suites pass locally and on the deployed site, including picture cards, reload/resume, typed/token/first-answer preservation, learner/account separation, achievements, old progress, 320/390px layouts and storage-failure behavior. No new backend or paid API was added.
 
 ## Not active / blockers
 
@@ -62,7 +62,7 @@ No IQ calculator or validated age/grade/peer comparison exists. Feedback thresho
 
 ## Deployment
 
-Current recorded Cloudflare version: `c3aac00a-7a21-4df1-9adb-fef255e5fefe` (French learning and public setup cleanup). Runtime code commit: `782be4214ca57dab880b88e0f41ca15590c23a5c`. GitHub CI passed: https://github.com/sumankaranam/reasonlab/actions/runs/43755637641 .
+Current recorded Cloudflare version: `8f991798-c434-49c4-80fa-2553e27c6ba1` (resumable French journey, picture flashcards and conversation achievements). Runtime code commit: `4a94cc80c4f461acf8f298312c12b75ec9ee7950`. GitHub CI passed: https://github.com/sumankaranam/reasonlab/actions/runs/43794807883 .
 Hosting is static assets, Worker name `reasonlab`; no new paid resources created.
 The GitHub repository was initially empty. Initial code checkpoint: `18a8d76f3cf6786abdad7961619ec297653a9312` (verify current main before work).
 
