@@ -164,3 +164,5 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - Preserved active puzzles during same-account authentication refresh; account changes discard active work and reload the correct local history. Memory stimuli are hidden before answering; interruptions cannot supply independent evidence.
 - Integrated the hub and legacy grade practice links; adventures share existing reasoning aggregate counters. Updated architecture and handoff documentation.
 - 92 automated tests and dedicated mobile, landing/navigation and expanded six-theme contrast checks pass. Browser account identities and clock are mocked.
+
+- Deployed Reasoning Adventures as Cloudflare `12aad834-0370-4243-8113-0d071b595031`. Live 320px adventure, landing/navigation and expanded six-theme contrast suites pass. The first adventure run timed out waiting for initial rendering; a diagnostic rerun passed without page errors. The initial timeout cause was not established. Auth and clock remain mocked for the dedicated browser suite.

@@ -81,7 +81,7 @@ try {
   page.on('pageerror', error => errors.push(error.message));
   await page.clock.install({time:baseTime});
   await page.goto(base + '/adventures.html');
-  await page.locator('#adv-daily').waitFor();
+  try { await page.locator('#adv-daily').waitFor(); } catch (error) { console.error({url:page.url(),errors,body:(await page.locator('body').innerText()).slice(0,1500)}); throw error; }
   assert.equal(await page.locator('.adv-journey').count(), 4);
   assert.equal(await page.locator('#adv-level').inputValue(), '1');
   await page.locator('#adv-grade').selectOption('6');
