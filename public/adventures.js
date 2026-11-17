@@ -396,7 +396,7 @@ function dashboard(focus = true) {
     </section>
     <section class="adv-panel">
       <h2>Saved adventures</h2>
-      <p>${history.length} completed ${history.length === 1 ? 'adventure' : 'adventures'} for this learner. Progress stays in this browser.</p>
+      <p>${history.length} completed ${history.length === 1 ? 'adventure' : 'adventures'} for this learner. Progress stays in this browser. Adults can enable cloud saving in Account.</p>
       <div class="actions"><button id="adv-dashboard-map" class="primary">Adventure map</button>
       ${history.length ? '<button id="adv-clear" class="secondary">Clear this learner’s history</button>' : ''}</div>
     </section>
@@ -500,7 +500,8 @@ async function refreshIdentity() {
   user = nextUser;
   const saved = read(settingsKey())?.slot;
   const preferred = read(progressKeys(user?.id ?? null).settings)?.profile;
-  setLearner(slots.includes(saved) ? saved : slots.includes(preferred) ? preferred : 1);
+  const requested=Number(new URL(location.href).searchParams.get('learner'));
+  setLearner(slots.includes(requested) ? requested : slots.includes(saved) ? saved : slots.includes(preferred) ? preferred : 1);
   map(false);
 }
 

@@ -1,5 +1,6 @@
 // Aggregate page counts only. Never send account identity, child data or URL queries.
 const pages={'/adventures':'kids','/adventures.html':'kids','/tamil':'tamil','/tamil.html':'tamil','/kannada':'kannada','/kannada.html':'kannada','/':'hub','/index':'hub','/index.html':'hub','/kids':'kids','/kids.html':'kids','/french':'french','/french.html':'french','/discover':'discovery','/discover.html':'discovery','/account':'account','/account.html':'account','/classic':'classic','/classic.html':'classic'};
+if(typeof location!=='undefined'&&['/review','/review.html'].includes(location.pathname)){pages[location.pathname]=({fr:'french',ta:'tamil',kn:'kannada'})[new URL(location.href).searchParams.get('lang')]||'french';}
 let attempted=false;
 export async function recordUsage(){
   if(attempted||document.visibilityState!=='visible'||!pages[location.pathname]||navigator.globalPrivacyControl||navigator.doNotTrack==='1')return;

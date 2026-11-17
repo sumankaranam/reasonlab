@@ -1,3 +1,4 @@
+import {handleProgress} from './progress.js';
 import {dayKey,runReport} from './reporting.js';
 export const allowedPages=['tamil','kannada','hub','kids','french','discovery','account','classic'];
 export function validEvent(value){return value&&Object.keys(value).length===2&&allowedPages.includes(value.page)&&typeof value.visit==='boolean';}
@@ -6,6 +7,7 @@ export default {
   async fetch(request,env){
     const url=new URL(request.url);
     if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);
+    if(url.pathname==='/api/progress')return handleProgress(request,env);
     if(url.pathname!=='/api/usage')return reply(404);
     if(request.method!=='POST')return reply(405);
     if(request.headers.get('Origin')!==url.origin||request.headers.get('Content-Type')!=='application/json')return reply(403);

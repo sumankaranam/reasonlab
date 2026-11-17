@@ -154,3 +154,9 @@ Migration `0003_language_usage.sql` adds fixed Tamil/Kannada aggregate counters 
 New summary keys derive from the existing account/guest history namespace with `:adventure:<slot>`. Only summaries are persisted, not active answers or memory stimuli. Active work uses a discard guard. Shared adult authentication, profile avatars and global themes are reused. Page counts aggregate under the existing `kids` category, so no database migration is needed.
 
 Evidence is restricted to first completed weekly attempts per period and level, independent of hints/interruption; later retries cannot replace earlier results. Feedback requires two eligible weeks/six answers per area. See `REASONING-ADVENTURES.md` for product thresholds, timing limitations and extension rules.
+
+## My Learning Today, vocabulary review and cloud progress (2026-11-17)
+
+The hub now reads per-learner completion/review summaries through `today-core.js`, showing a next activity and an earned learning garden. `review-core.js` owns trusted vocabulary IDs and bounded schedules; `review.js` owns five-card review sessions and optional locale-matched voice playback. See `LEARNING-TODAY-AND-REVIEW.md`.
+
+Optional adult cloud saving uses `/api/progress`, a new D1 `learning_progress` table, and server verification of Supabase access tokens. `cloud-core.js` projects allowlisted local records; `cloud-sync.js` handles opt-in, revisions/digests, startup hydration and conflicts. `cloud-account.js` exposes consent, save/restore/replace/disable/delete controls. The auth wrapper hydrates opted-in account data before course reads. Personality/Classic/guest/drafts/audio remain outside cloud scope. See `CLOUD-PROGRESS.md` for security boundaries and deletion semantics.

@@ -166,3 +166,11 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - 92 automated tests and dedicated mobile, landing/navigation and expanded six-theme contrast checks pass. Browser account identities and clock are mocked.
 
 - Deployed Reasoning Adventures as Cloudflare `12aad834-0370-4243-8113-0d071b595031`. Live 320px adventure, landing/navigation and expanded six-theme contrast suites pass. The first adventure run timed out waiting for initial rendering; a diagnostic rerun passed without page errors. The initial timeout cause was not established. Auth and clock remain mocked for the dedicated browser suite.
+
+## 2026-11-17 — Daily learning home, vocabulary review and cloud saving
+
+- Added My Learning Today with per-learner next steps, course continuation, review links, reasoning badges and a growing learning garden.
+- Added five-word French/Tamil/Kannada reviews with due-first scheduling, trusted visuals and matching-language voice fallback.
+- Added opt-in adult cloud saves with verified server identity, account-scoped allowlisted snapshots, revision conflicts, explicit restore/replace and deletion tombstones. No new secret credentials needed; personality/Classic/guest/unfinished work excluded.
+- Updated account/profile ordering, privacy explanations, architecture and handoff docs. Applied additive D1 migration 0004.
+- 106 automated tests and local browser/contrast checks pass; authenticated two-device tests use mocked auth/transport. Real-account production acceptance remains unverified.

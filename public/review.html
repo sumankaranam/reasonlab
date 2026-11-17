@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Revisit French, Tamil and Kannada words with a short daily deck.">
+  <title>ReasonLab · Word review</title>
+  <link rel="icon" href="/icon.svg">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/child-profiles.css">
+  <link rel="stylesheet" href="/themes.css">
+  <link rel="stylesheet" href="/review.css">
+  <script type="module" src="/review.js"></script>
+</head>
+<body class="review-page">
+  <a class="skip-link" href="#review">Skip to word review</a>
+  <header>
+    <a class="brand" href="/"><span class="logo">r.</span>ReasonLab</a>
+    <nav aria-label="Review navigation">
+      <a href="/#explore">Activity hub</a>
+      <a id="course-link" hidden>Language course</a>
+      <a id="account-link" href="/account.html">Adult sign in</a>
+    </nav>
+  </header>
+  <main id="review" tabindex="-1">
+    <div class="review-intro">
+      <h1>Word review</h1>
+      <p>Take your time with up to five words from your course each day.</p>
+    </div>
+    <div id="review-controls" hidden>
+      <label>Language <select id="review-language"></select></label>
+      <label>Learner <select id="review-learner"></select></label>
+    </div>
+    <p id="review-identity" role="status">Getting your review ready…</p>
+    <section id="review-deck" class="review-card" aria-label="Review deck" hidden></section>
+    <p id="review-save" role="status"></p>
+    <p class="small">Adults can enable cloud saving for review schedules in Account.</p>
+  </main>
+  <footer><a href="/#explore">Activity hub</a><a href="/usage-privacy.html">Visit statistics &amp; opt out</a></footer>
+  <noscript>Enable JavaScript to review words.</noscript>
+</body>
+</html>

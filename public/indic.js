@@ -7,6 +7,7 @@ import {PASS, slots, blankProgress, storageKey, quizOptions, quizScore, readProg
 
 const language = document.documentElement.dataset.course;
 const course = courses[language];
+const learnerQuery = new URLSearchParams(location.search).get('learner');
 const find = selector => document.querySelector(selector);
 const app = find('#indic');
 const exit = find('#exit');
@@ -91,7 +92,7 @@ document.addEventListener('visibilitychange', () => {
 
 function updateSaveStatus() {
   saveStatus.textContent = storageOK
-    ? 'Progress stays in this browser for this course and learner. It does not sync across devices.'
+    ? 'Saved in this browser. Adults can enable cloud saving for completed progress in Account. Unfinished activities stay on this device.'
     : 'Progress could not be saved in this browser. Keep this page open to keep your place.';
 }
 
@@ -226,6 +227,7 @@ function path({focus = true} = {}) {
         <div class="actions">
           ${active ? `<button class="primary" id="resume">Resume ${esc(modes[progress.activity.mode].toLowerCase())} · ${esc(active.title)}</button>`
             : `<button class="primary" data-lesson="${esc(nextLesson.id)}">${completed === 0 ? 'Open first lesson' : `Open lesson · ${esc(nextLesson.title)}`}</button>`}
+          <a class="secondary" href="/review.html?lang=${language}&amp;learner=${slot}">Review ${esc(course.name)} words</a>
         </div>
       </div>
       <p class="course-script" lang="${language}">${esc(course.native)}</p>
@@ -237,7 +239,7 @@ function path({focus = true} = {}) {
       </div>
       ${user ? `<label for="learner-slot">Learner <select id="learner-slot">
         ${slots.map(n => `<option value="${n}" ${n === slot ? 'selected' : ''}>${esc(profiles[n]?.name || `Learner ${n}`)}</option>`).join('')}
-      </select></label>` : '<p>Guest practice</p>'}
+      </select></label>` : `<p>Guest practice · Learner ${slot}</p>`}
     </section>
     <div class="indic-stages">
       ${Array.from(stageGroups, ([stage, lessons]) => {
@@ -432,6 +434,7 @@ async function refreshIdentity() {
       // Use the first learner when saved settings cannot be read.
     }
   }
+  if (/^[123]$/.test(learnerQuery)) slot = Number(learnerQuery);
   load();
   showHeader();
   path({focus: false});

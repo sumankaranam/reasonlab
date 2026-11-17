@@ -4,6 +4,10 @@ Mobile-friendly reasoning, French/Tamil/Kannada learning and interest exploratio
 
 ## Features
 
+- My Learning Today: per-learner next steps, language continuation, due word reviews and a growing learning garden.
+- Five-word spaced vocabulary review in French, Tamil and Kannada.
+- Optional adult cloud saving across devices, with explicit conflict choices and cloud deletion. See [cloud progress](docs/CLOUD-PROGRESS.md) for included data and verification limits.
+
 - Reasoning Adventures: four illustrated puzzle worlds, three difficulty levels, five-puzzle daily sets, twelve-puzzle weekly challenges, focused practice, explanations, achievements and a learner progress dashboard at `/adventures.html`. Existing grade practice remains at `/kids.html`.
 
 - Ten grade starting points, three stages each: Discover, Build and Stretch.
@@ -24,7 +28,7 @@ Google sign-in requests only basic identity scopes, never inbox access. Email co
 
 ## Run and test
 
-Requires Node.js 22 or newer:
+Requires Node.js 22.13 or newer (the cloud database tests use node:sqlite):
 
 ```sh
 npm ci

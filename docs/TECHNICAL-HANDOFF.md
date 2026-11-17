@@ -46,3 +46,7 @@ See `LANGUAGE-COURSES.md` for scope and review limitations. Keep French data/eng
 ## Reasoning Adventures extension
 
 Entry `/adventures.html`; existing grade-specific `/kids.html` retained. Read `REASONING-ADVENTURES.md` before changing generation, scoring, memory timing or evidence rules. Main tests: `tests/adventure.test.mjs`, `tests/browser/adventures.mjs`, shared landing and theme-contrast suites. No runtime AI dependency or new provider setup. Histories are local and separate from legacy Kids. Owner email reports continue to require the deferred sender setup.
+
+## Daily home, review and cloud milestone
+
+Read `CLOUD-PROGRESS.md` and `LEARNING-TODAY-AND-REVIEW.md`. Migration 0004 must precede API deployment. Public ownership/setup UI remains absent: Account has parent data controls, not provider configuration. New progress API uses only the public Supabase config and verifies each caller; do not add service secrets to browser code. Optional cloud saves deliberately exclude unfinished work and Discovery/Classic. Before changing DTOs, add a version/migration strategy and preserve account/key boundaries.
