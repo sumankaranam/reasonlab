@@ -107,6 +107,18 @@ const sceneArt = {
   'story-chat':pair(art.book,art.park),
 };
 const lessonTopics = {alphabet:'The French alphabet', 'sound-hello':'A greeting and a friendly wave', introductions:'People meeting and saying hello', numbers:'Counting from zero to twenty', colors:'A palette of bright colors', articles:'Books and an apple', family:'Family and friends', school:'School and a backpack', food:'Bread and an apple', feelings:'Happy and tired faces', days:'A calendar', 'avoir-etre':'People describing themselves', 'er-verbs':'People talking together', questions:'People asking a question', negation:'An apple with a no symbol', 'gender-agreement':'A small house and a tall tree', 'where-things-are':'A book on a table', directions:'A map with a dotted route', time:'A clock', weather:'The sun and rain', shopping:'A shop with clothes', routine:'A clock and a school bag', 'passe-compose':'A book and a calendar', imparfait:'A park with trees', 'future-plans':'A map and the sun', connectors:'People linking ideas', opinions:'Friends sharing ideas', 'pros-cons':'A map and a house', 'story-sequence':'A book and a clock', possibilities:'A map and the sun', repair:'A friendly wave', 'plans-talk':'Friends meeting', 'opinions-chat':'Friends sharing ideas', 'directions-chat':'A map with a dotted route', 'shopping-chat':'A shop with clothes', 'story-chat':'A book and a park'};
+sceneArt['library-loans']=art.book; lessonTopics['library-loans']='Books to borrow';
+sceneArt['club-signup']=pair(art.family,art.school); lessonTopics['club-signup']='Friends joining a club';
+sceneArt['weekend-invite']=pair(art.calendar,art.family); lessonTopics['weekend-invite']='A weekend invitation';
+sceneArt['recipe-steps']=pair(art.cake,art.book); lessonTopics['recipe-steps']='A recipe and a cake';
+sceneArt['market-ingredients']=pair(art.shop,art.apple); lessonTopics['market-ingredients']='Shopping for ingredients';
+sceneArt['garden-help']=pair(art.park,art.water); lessonTopics['garden-help']='Watering a garden';
+sceneArt['train-trip']=pair(art.map,art.clock); lessonTopics['train-trip']='A journey and departure time';
+sceneArt['trail-walk']=pair(art.park,art.map); lessonTopics['trail-walk']='A nature trail';
+sceneArt['museum-choice']=art.museum; lessonTopics['museum-choice']='A museum to explore';
+sceneArt['lost-property']=pair(art.backpack,art.hello); lessonTopics['lost-property']='Asking about a lost backpack';
+sceneArt['poster-project']=pair(art.colors,art.pencil); lessonTopics['poster-project']='Making a colorful poster';
+sceneArt['project-update']=pair(art.family,art.calendar); lessonTopics['project-update']='Sharing project progress';
 export const pictureLessonIds = Object.freeze(Object.keys(lessonTopics));
 export function lessonPicture(id) {
   const title = Object.hasOwn(lessonTopics,id) ? lessonTopics[id] : `Scene for ${String(id || 'French lesson').replace(/[-_]+/g,' ')}`;

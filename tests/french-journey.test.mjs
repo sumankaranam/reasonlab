@@ -6,8 +6,8 @@ import {VERSION,contentVersion,journeyChapters,missions,createJourney,cleanJourn
 const independent=(pct=80)=>({pct,answered:4,assisted:0,skipped:0});
 const cleanProgress=()=>({lessons:{}});
 
-test('six chapters cover all lessons once and open with conversational essentials',()=>{
- assert.equal(journeyChapters.length,6);
+test('eight chapters cover all lessons once and open with conversational essentials',()=>{
+ assert.equal(journeyChapters.length,8);
  assert.equal(journeyChapters[0].lessonIds[0],'sound-hello');
  assert.equal(journeyChapters[0].lessonIds[1],'introductions');
  assert.equal(journeyChapters[0].lessonIds[2],'feelings');
@@ -15,8 +15,8 @@ test('six chapters cover all lessons once and open with conversational essential
  for(const c of journeyChapters){assert.equal(c.lessonIds.length,6);assert.equal(c.canDo.length,3);assert.ok(c.homeActivity);assert.ok(c.daysHint>0);assert.ok(missions.some(m=>m.id===c.missionId&&m.chapterId===c.id));}
 });
 
-test('six original missions have coherent, bilingual, child-safe choice turns',()=>{
- assert.equal(missions.length,6);
+test('eight original missions have coherent, bilingual, child-safe choice turns',()=>{
+ assert.equal(missions.length,8);
  assert.deepEqual(missions.map(m=>m.chapterId),journeyChapters.map(c=>c.id));
  for(const m of missions){assert.ok(m.turns.length>=4&&m.turns.length<=6);for(const t of m.turns){assert.ok(t.speaker&&t.fr&&t.en&&t.reply&&t.explanation);assert.equal(t.choices.length,2);assert.ok(Number.isInteger(t.answer)&&t.answer>=0&&t.answer<t.choices.length);assert.ok(t.choices.every(c=>c.fr&&c.en));}}
  assert.match(missions[0].turns[1].fr,/Noé/);

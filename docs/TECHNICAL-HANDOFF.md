@@ -50,3 +50,7 @@ Entry `/adventures.html`; existing grade-specific `/kids.html` retained. Read `R
 ## Daily home, review and cloud milestone
 
 Read `CLOUD-PROGRESS.md` and `LEARNING-TODAY-AND-REVIEW.md`. Migration 0004 must precede API deployment. Public ownership/setup UI remains absent: Account has parent data controls, not provider configuration. New progress API uses only the public Supabase config and verifies each caller; do not add service secrets to browser code. Optional cloud saves deliberately exclude unfinished work and Discovery/Classic. Before changing DTOs, add a version/migration strategy and preserve account/key boundaries.
+
+## 2026-11-18 expanded language courses
+
+French now has 48 lessons and Kannada 24. Read `FRENCH-LEARNING-PATH.md` and `LANGUAGE-COURSES.md` for coverage. Append content IDs and word order; existing review IDs are index-based. Run `course-compatibility.test.mjs`, both expansion tests, and French/Indic browser suites for curriculum changes. The legacy French distractor pool is intentionally stable for resumable seeded activities. No new auth, speech service, database migration or provider setup is introduced.

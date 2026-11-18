@@ -139,3 +139,9 @@ Implemented personalized next steps, selected-learner course links and a learnin
 Released as Cloudflare `5f3f34ec-ea06-4ec6-8ac4-b9fdc8eb385c`. Live Today, vocabulary review, cloud-control and expanded contrast suites pass (authenticated cloud transport is mocked in browser checks). Actual production API probes return 401 without credentials, 401 for an invalid token, and 403 for cross-origin requests. No authenticated real-account save/restore has been performed.
 
 Live testing found Workers does not support server fetch redirect mode `error`; switched to `manual`, which rejects redirects without forwarding credentials. Temporary diagnostics removed. Updated the Today browser URL assertion for Cloudflare's extensionless canonical redirects. All seven cloud tests pass after the runtime fix; total suite previously passed 106 tests.
+
+## 2026-11-18 — French and Kannada expansion
+
+Added 12 original lessons to each course: French 48 across eight chapters/stages; Kannada 24 across six stages. French also adds four conversations, two stories and two five-turn missions, with scene context retained during practice/resume. New lessons use existing cards, pronunciation controls, review catalog, progress, badges and optional cloud saving. Existing French/Kannada lesson data and Tamil are preserved. Legacy French seeded exercises use the original distractor pool.
+
+Validation: 114 unit tests pass, including frozen lesson/exercise compatibility and both new curricula. Local mobile suites pass for French journey, French core, Indic (including completing and reloading a new Kannada lesson), landing and expanded French card/chat resume at 320px. Identity checks use mocks; this is not a fresh live Google-login or cloud-save acceptance test. Deployment pending final release verification.

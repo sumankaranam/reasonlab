@@ -110,13 +110,15 @@ try {
   await page.goto(base + '/kannada.html');
   await heading('Learn Kannada').waitFor();
   await page.screenshot({path: 'work/kannada-path-mobile.png', fullPage: true});
-  await page.getByText('0 of 12 lessons complete').waitFor();
+  await page.getByText('0 of 24 lessons complete').waitFor();
+  assert.equal(await page.locator('.lesson-row').count(), 24);
+  assert.equal(await page.locator('.indic-stage').count(), 6);
   const kannada = courses.kn.lessons[0];
   await openQuiz(kannada);
   await takeQuiz(kannada, 2);
   await heading('Quiz score · 50%').waitFor();
   await page.locator('#result-path').click();
-  await page.getByText('0 of 12 lessons complete').waitFor();
+  await page.getByText('0 of 24 lessons complete').waitFor();
   await lessonButton(kannada.id).click();
   await page.locator('[data-mode="dialogue"]').click();
   assert.equal(await page.locator('.word-script').textContent(), kannada.dialogue[0].text);
@@ -125,6 +127,17 @@ try {
   await page.locator('#exit[open]').waitFor();
   await page.locator('#stay').click();
   assert.equal(await page.locator('.word-script').textContent(), kannada.dialogue[1].text);
+
+  await page.goto(base + '/kannada.html');
+  const expanded = courses.kn.lessons.at(-1);
+  await openQuiz(expanded);
+  await page.getByRole('button', {name: 'Start new activity', exact: true}).click();
+  await takeQuiz(expanded);
+  await heading('Quiz score · 100%').waitFor();
+  await page.locator('#result-path').click();
+  await page.reload();
+  await page.getByText('1 of 24 lessons complete').waitFor();
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
 
   await page.evaluate(id => {
     sessionStorage.setItem('test-account', id);

@@ -1,6 +1,6 @@
 # French learning path and conversation passport
 
-Updated 2026-11-16. This is an original practice curriculum, not a validated placement test or fluency qualification. Every chapter is explorable; the next-step recommendation follows the order below.
+Updated 2026-11-18. This is an original practice curriculum, not a validated placement test or fluency qualification. Every chapter is explorable; the next-step recommendation follows the order below.
 
 ## A visit in four steps
 
@@ -164,3 +164,15 @@ Stamps measure performance in these guided exercises. They do not certify sponta
 One current activity checkpoint is auto-saved for each learner. It preserves question/card number, original responses, retry feedback, typed text, sentence tokens and help state. Switching learners/accounts keeps their checkpoints separate. Starting a different activity asks before replacing the active checkpoint. Completing or deleting an activity clears it.
 
 The data lives on this device, separated by verified adult account or guest. Google/email activation remains incomplete. No child email/name is requested, no audio is persisted, and there is no cross-device sync. Existing completed French results migrate automatically. Unfinished typed responses are not included in progress exports.
+
+## Chapter 7: Community and hobbies
+
+Six lessons: Library loans, Join a club, Invite a friend, Follow a recipe, Shop for ingredients, and Help in a garden. Practise borrowing politely, making invitations, following steps, and sharing practical tasks.
+
+## Chapter 8: Outings and projects
+
+Six lessons: At the train station, On the nature trail, Choose a museum activity, Find a lost item, Make a group poster, and Give a project update. Practise asking for information, making choices, asking a trusted adult for help, and describing shared work.
+
+The expanded course has 48 lessons across eight chapters, with eight chapter missions, 16 guided conversations and eight stories. Existing lesson IDs and saved seeded exercises stay stable. New chapters use the same lesson goals, flashcards, resume controls and completion badges as earlier chapters. This remains supported practice, not evidence of independent fluency.
+
+Grammar reference checks: [OQLF imperative](https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/26559572/imperatif) and [TV5MONDE comparisons](https://apprendre.tv5monde.com/fr/aides/grammaire-le-comparatif-et-le-superlatif). Activities are original; reference checks do not replace comprehensive native-educator review.

@@ -19,7 +19,7 @@ const esc = value => String(value).replace(/[&<>"']/g, c => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
 }[c]));
 const modes = {cards: 'Flashcards', quiz: 'Quiz', dialogue: 'Dialogue'};
-const stages = {1: 'First words', 2: 'Everyday life', 3: 'Putting it together'};
+const stages = {1: 'First words', 2: 'Everyday life', 3: 'Putting it together', 4: 'Life at home', 5: 'Out and about', 6: 'Making plans and keeping in touch'};
 let user;
 let slot = 1;
 let key;

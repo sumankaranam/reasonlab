@@ -7,7 +7,7 @@ const seedSet = [1, 2, 17, 99, 2026, 0x7fffffff, 0xffffffff];
 const unique = (items) => new Set(items).size === items.length;
 
 test('French content has unique lessons, complete stages, and learner-friendly original models', () => {
-  assert.equal(stages.length, 6);
+  assert.equal(stages.length, 8);
   assert.ok(unique(stages.map((stage) => stage.id)));
   assert.ok(unique(lessons.map((lesson) => lesson.id)));
   for (const stage of stages) {

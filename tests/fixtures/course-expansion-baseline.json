@@ -1,0 +1,428 @@
+{
+  "french": [
+    {
+      "id": "alphabet",
+      "hash": "e9c3920fc4e65d0e491b8aa45efb26779f516397c04f9daccff51ec819d1d836",
+      "exercises": [
+        "6cea80836082c69d30f75be7b4510de4c0b1a6f35cf22a7d4e22b3e67fe71c2a",
+        "463ba7e3d40ebb75d72f0af8388db4b5faff5dcb84bc27661fed11daf2bc6991",
+        "69dac5ff0c43a9923383a5485a1bdeb55c30cb00d6afe502d78d3f7a3edbfa43"
+      ]
+    },
+    {
+      "id": "sound-hello",
+      "hash": "af9f8f211daaecda9d7a839ae03a5a76201f3437451478a2169cf15eb4098dd3",
+      "exercises": [
+        "22959f3be685064ec84e76d75ee0178d03dfce97a7ab822960aac16efdb3209d",
+        "fd92289470b5dc2a3052c93944f019225cdd9c12bdff80382f9a178a7893ab9e",
+        "678fd5b058fea203d4d4416f0774306f12a92c41fb9a8776b06bbafef4f10d23"
+      ]
+    },
+    {
+      "id": "introductions",
+      "hash": "153889282c5668bdedce15db18a41dbb2456bfabde28abcd5ab644cc61730028",
+      "exercises": [
+        "b71ca12a73f46e566a851d88cc09c97e0b9a0a45160da10adfd991c89af81d77",
+        "fed21be338b36624e7772b014c5cfec30de468173a80e12b2465b89e1b147e8c",
+        "ccb2f713a2f6fc5eb7a2fec1fd1b43523e5d763541b619da157493d0e6eaedc3"
+      ]
+    },
+    {
+      "id": "numbers",
+      "hash": "343ecbdebb5dc360040bf855ed15f39fa7e0c2caf82254eced68ce210ae4d07e",
+      "exercises": [
+        "db1dac1f26b14a3087e24bf28b6e6de79774947c12d480fa1a57364a5ee8ed62",
+        "0743dec45a203183a8290f396131071c8594316e70433420ffe61aea6a907c1d",
+        "342ee2345909d01c430315a67d8ddf2e2ba161e6a4d1f63c7b195f52f82cd18b"
+      ]
+    },
+    {
+      "id": "colors",
+      "hash": "a863dcef038dbd4cd44eee32df0b92b84d0020ec4be3c95b62e87be6d12fb4b7",
+      "exercises": [
+        "2f9bd260586e7758f73e820e175c41321eb0c49a573ca1315441e354d6cd2fb8",
+        "1792fc813d0656f1497062a2452a9d0c23cd1a4430a8ff95261a15481c5bd2fe",
+        "5b5aa4c92cb7184e519717e36854ffca1665c30f92ca041a22c3f5946989389a"
+      ]
+    },
+    {
+      "id": "articles",
+      "hash": "712bdd98e3c5583bf0a2d3abe7722ce746feace83efd89f432dcb9cb2dc707af",
+      "exercises": [
+        "c8a0dd0dd1f76321cc1cd9e32a72a7c85fdef3eded426b03eeb0a663fa293b71",
+        "bbbee75bf1cabd4d10006bdea14da52024c4bc726a2633d5655574808cb65d32",
+        "eac80dbfb711ff1c397b371b6c7a65cc7e239a6b9fd50f0a68166d797047263a"
+      ]
+    },
+    {
+      "id": "family",
+      "hash": "a51ddaab0d89e524dbebc5478a83b823dc9e1d3ffa9fa93d4b52e3a46eeb6ac9",
+      "exercises": [
+        "da5dde7bed7cf566961a340bf6de54c25b0f5f8211a0850b0826b3b9d32049ae",
+        "0c2e9269cdc6d0eecd990fc236ac8a7bdf5b6b9e96caef28b092eb87d1e4f8e0",
+        "c06a9da9e38e366271a0df238d86fd09a891e501e89c244c4cf778a5ed78cb24"
+      ]
+    },
+    {
+      "id": "school",
+      "hash": "c8e420dbaa97f434219ca3b99eb8f36b9a750c50b9505ef6e13066ddf88570e9",
+      "exercises": [
+        "7c088014b030e6404e9258548dfe1c06ae97b747eab3c237cdc185678052cfcf",
+        "60103f4c376439d8da8694cc027cfcdd3c368fa55ce68682106ea99bc13bb048",
+        "0868645554e12a9af03e5e10dc7d243f17bd50b8efff818ff0d8546888d4a340"
+      ]
+    },
+    {
+      "id": "food",
+      "hash": "3c2ef7725d026c4ab0eb6948d99d78147c0ffb0dafe64ce5ffc20e0ae0731187",
+      "exercises": [
+        "b2689cdd7671e294adff3750119d09be400ab722f0561914ec1729f36c640867",
+        "1724fddb63d0f26659f1029df97ea9994930b4eef2ff564aacf1cb1524c73eff",
+        "5d9948fe819800095afd75cf9108073b9ac8b44bb06927e2bdb340017d487556"
+      ]
+    },
+    {
+      "id": "feelings",
+      "hash": "b0399909090bd46b53e594b574c4ca9e8bc09de0076d17233c13b58534b4d9bc",
+      "exercises": [
+        "4715713e864462dd1b8893e7bc8ba21877f529f3e8ef6fe50774a141f63604a1",
+        "9f0cd063cea662226509b3679732089531801af2b26d5a79ca9df15a7b247db1",
+        "2d7c843f71ccab0e022f585618d2b947bb34eae2467318825afec87f264bd833"
+      ]
+    },
+    {
+      "id": "days",
+      "hash": "126bd36dd2285240bb8d0acd853b58de30703121e3235d87c40aac30940e6cfd",
+      "exercises": [
+        "d959f786271c97f037392f8a0d18088884424040d75c25da6ff5f83633646b39",
+        "cf802ba103907c8d0fc2e16ae19c2258069ab8638804929d0947820b35ac9a09",
+        "8e9b3382cc41c925bd7ffbcc2d167f003179675297c09753fc01e820e0a0ee1e"
+      ]
+    },
+    {
+      "id": "avoir-etre",
+      "hash": "f88a94961729faaf68ccf61a1bd1b72315a87edea0060ea66d97145d9d8d36df",
+      "exercises": [
+        "09c36ac696b0db247e65a90dda60194d300ad674563bdd7abdd92c3d916b7f1f",
+        "29c2dcd62d7eef0405a64a373ea8ead671e5fb3a34c51c45691378d321b4a7f4",
+        "0319899abdcbaf6436fcecd99b4c21b26b695b15fea2f7a0bfc015a182c295e9"
+      ]
+    },
+    {
+      "id": "er-verbs",
+      "hash": "6e259d3c3ae934d50bb2f45cce1ef7b6630552680528e9f51798c9adfa5efdb1",
+      "exercises": [
+        "433ca8caa8ee025dcf3473266438d2e87b9a988a4e059ccd2e7b10c75bef7c43",
+        "4e13773cd4963afb4e9eeb1555a1b40e822ccb8908ecec4d9e55cdce8324d58f",
+        "4611c02b2bc3297d82df1ce12e9a506d7aa9b6262cf8c68123aed1d3f1296f91"
+      ]
+    },
+    {
+      "id": "questions",
+      "hash": "f1e0142c75bbaf37b5b1735aa51cc1acb377bc48ad339610c85e96574c7b0449",
+      "exercises": [
+        "0afc57e9ad31e1b6d2191a09e8cdb750e2d59abb00df6bc74d649e86a27cc7ff",
+        "e145befec3023db7b07426d257d0ddee5782aa23f4be5a1e0a84ca76a1fe8b72",
+        "dedeadb6b34eb3f29eb7421d2011a8894b924b311c84d79af2531cec7d25bdef"
+      ]
+    },
+    {
+      "id": "negation",
+      "hash": "ac0874639251b0ccc55e6e37183297274b189ffafe78cc06325b3f02f1df937b",
+      "exercises": [
+        "fc34e55f8f6be76689258430ae52c7b2d6b0d38cc71299fcfff1b0125c5b54ea",
+        "1059a9ccf0feabe6fe9013377148d6c5ad272997e67d98e7c8d881b10a8e94a5",
+        "a086e4d45a19e2ca83e6abd4b923870c77be68b2dc0dd41757958f1104dfc2b2"
+      ]
+    },
+    {
+      "id": "gender-agreement",
+      "hash": "e6a692ccd73076df49a30eab8fa3af9e672e63784d082bf59f7ec1f6f0d1d973",
+      "exercises": [
+        "e46dd68ed9aecbcc3cf5b2b1862498ebdd8750d53adb50321d5517b2cfd55d6e",
+        "bd9d2941a1955a6c077f0c78fff0eec131aa1b33b378a43865c89d51704f3d15",
+        "4dea1a27d3365407c0ff961faa9e4f59e9efd6b9f8d5e58fae7268ec7c975767"
+      ]
+    },
+    {
+      "id": "where-things-are",
+      "hash": "666fdad3316a9cabd39624d26a754bab827e3221c8246e20e991fd45898ca654",
+      "exercises": [
+        "ba9967d8297c3523bb02867e745cdac46026f94eeb101aba1b373821161a5873",
+        "8faf9324a2d7c0d06b6374d14800579ec38fc8e1f419e24cbf38772c5f522c18",
+        "8df9b885bb8b0deebe1e018c811af6ecbc608ec4972fccff9c6c7d90d977b567"
+      ]
+    },
+    {
+      "id": "directions",
+      "hash": "8193874fc7eccb932f34449d7a85dbc185bc3ec6482d63eff9eb30640a4478d1",
+      "exercises": [
+        "159faec462d646a48f763debb69e1b073bac782261093cec5c5c8a332c0c783f",
+        "1677d9d7800b330b681a8b1d1fc635682663bad586052cf3879043f2c4dab475",
+        "3d66dc8eeceecc2a0970ca893a3fecd40a64832a8080981ff3f2d33cbc44f0d9"
+      ]
+    },
+    {
+      "id": "time",
+      "hash": "de50f241dc3e5f4c343c7792d9dc1b6b8ff129b69a546376bd94d2d1e6eef085",
+      "exercises": [
+        "df7f9ae2835e2c9025e6187f22ea1a2ca5f3f7e372296b486e9040b352de56c5",
+        "e7b617e75fc2125bb7300b1681553f7725b93b5972d1cadd92d8418e5fd3f08b",
+        "09f33a69d327f5a6ccd32e81cbe2f2b58b665018e8d9e021f9fe97c377102ea1"
+      ]
+    },
+    {
+      "id": "weather",
+      "hash": "c07010fefad4dc743a5b8a2e868ee74d9d087b335dbc6389fc2c5b9174fc075c",
+      "exercises": [
+        "067e3f6558764d2dabaa16cc89b21fe910abd7d961ce6707873bb3c2f46fb31d",
+        "c555788b4dee4ca0f35040b3ce788ba73ffc9a7ddcb05f6339235fd1a6e717da",
+        "76712518759b10693ec8a199b9d6c8583e0e64b09a82f9099215bbd63b26788b"
+      ]
+    },
+    {
+      "id": "shopping",
+      "hash": "2ee06a98b0d1c41d6a718c94c327cc3f82813c5bb8e53b4fadf4b09038b8d76a",
+      "exercises": [
+        "c76bd162192570de5a71b48d2ca7d9f8af43b8ea8d4efaf25697ddbb1af298fd",
+        "2e72fd5f9528b089416749b862200704f1e8731244d1ba04c987c969f31954f4",
+        "759dab298a820887563d4a52cae59cac1799a073db65b84cfedacf2758a862aa"
+      ]
+    },
+    {
+      "id": "routine",
+      "hash": "409694824b47bcfd5ca1dd3333ad141f7ca82c9de1bc506e3a5ecfa537337b7c",
+      "exercises": [
+        "ab145c7e395c4ac7222d33eeea69b948930aee9fd47e57f858db1efd9c008fb1",
+        "8832ed4ebaf1c6fdbee636297303efcb33be6f09e84d120b8fc7fc947c1477ea",
+        "890da6beda8664e90b62d9a7aeeb7d7e37687268f78584b72bf6781e7f2d5b0f"
+      ]
+    },
+    {
+      "id": "passe-compose",
+      "hash": "1fd6daa316fedf82223a6b999a391fbbfc01ba06e6570ab902f953eb0cdf4084",
+      "exercises": [
+        "81172c943c9cfc12fbb28c3713c4076e33e2458dd95878502d2efb6540b8c235",
+        "eb924a1ae681d3746324ef6554f2eef14cf2a3b35968e0aa6de984f43ecf7c73",
+        "2472ad077ea1200c65fadf5c3007a6c5a4aa74c38938149ab226c0efc06a3628"
+      ]
+    },
+    {
+      "id": "imparfait",
+      "hash": "c193bcab02d50a8f901517a339b6e7480549067f297dfe07a25d37fb808fcdc5",
+      "exercises": [
+        "205fcc2b26ae62f70f7893419d6fe203046370e298d573c1f928ed418d1e83ba",
+        "c35b907b9556d939e8305eddfe7afbb7a2abdb3fe23bcb8e5d20c9af6dd4b982",
+        "f1e61486b4367303e93dca512d9ad3a4f838c84aac77663a3d0aea81e4172aae"
+      ]
+    },
+    {
+      "id": "future-plans",
+      "hash": "c637fac33ea7835fb82d62ad89a65da1876a433ede9e32d74b565f6ae885ccf3",
+      "exercises": [
+        "fcf68b756021eddb29d34d6dccddaccb64b585c488c2fa905438891706221acb",
+        "215bd34a36525c969ae34d06c7db0cc81833c1252b7e261c59af56d7c59ca375",
+        "9650da3c81d6f09c00dcd8658074bb9c880f887b3bef915d34dfcbab2ca51b06"
+      ]
+    },
+    {
+      "id": "connectors",
+      "hash": "5f1e6bf78d89f008d337e8dc4a778e850e3b290f4d6c0840cfa55b616fe56680",
+      "exercises": [
+        "c4c865aa0ba175bc2e791d502909b4c59d1db3f9facf8189e746dbeb06235779",
+        "afbe2babe574c42dba14e55dda0c9e1c166d11a7a03dabae8cbcfcd127c56cf3",
+        "4c899a75eccda3995d54ff868ad56bcf217c690b422a5762f661c234e2b111a2"
+      ]
+    },
+    {
+      "id": "opinions",
+      "hash": "7817952f215966d509f11fba56614ebeaf6c28e852afc3d4fcdc38554fb637f2",
+      "exercises": [
+        "35f0f565ada474b2916104b09b543105f809d197b1d60349efeb3a9e8637357e",
+        "b42b42e93625d73e99e9ca37241ceddfa3657669599c88b13b8d00119dcb6fae",
+        "12116b94604c911c3c2ff233161f73c366ab9ebc20ab8c2db8dfd7ed8dc8c6aa"
+      ]
+    },
+    {
+      "id": "pros-cons",
+      "hash": "82637952bf77d3d117ff770af08e5eae9df535cfe84b521399187578f4a07112",
+      "exercises": [
+        "3e1dc6e40d1d8ab3aeef0612674a32f189acf3aa67f4b8b27b375c54a43d1f29",
+        "1c8a2e46d89b8990d30df8625c1ddf16d992ab51a7cc328fdb06f1a4ea9e905a",
+        "1ed24f7b0cff0e416f9bf341c7d43a10ac195e1fa7df0287297aba8e0a6470b1"
+      ]
+    },
+    {
+      "id": "story-sequence",
+      "hash": "9f402a4e5d9c727fb25e5acb36e7abac144760ac27a2df487739f13f512426e9",
+      "exercises": [
+        "0a0cf961da50a6eb491ad1b5b8195794db41df8ace209ec5ed70ecd673c60086",
+        "d4cc005e3e8a4e1a1c34a6fbece841bb29fcf78ec3d087dd2324c2697b9a9df3",
+        "122bc96e2325e5e8de319e994caeacf1e7c715f5da40fc191a1f655b4a0b9156"
+      ]
+    },
+    {
+      "id": "possibilities",
+      "hash": "3af4431afd6ed4af6e19636eb34c16060e964b4f7bf739bc259854b3783086f4",
+      "exercises": [
+        "d1388510c944b049300a09113108f93e0b8a223d0184f0ab1e5e92b684927baf",
+        "100dff03db83cf927d28f104c803c0455abd30c58f2c9fc6694fc917becc509c",
+        "1c71496d216cd6866b114d8b2d7f977dd0fc5471c102fde3fd601ce3fdc558eb"
+      ]
+    },
+    {
+      "id": "repair",
+      "hash": "18ad2e2e9171e4f73216630bf241afc951d2fa2821aa25fbe861681a6540d9f2",
+      "exercises": [
+        "62cae03dfdf0a65a135d1b04b5d32d7241c9abb0cd4f5b22e74478edf647adba",
+        "f3ac09178adeeceea7e8ec83dff7e20fef6607fd691239a26bacbe613b4f204b",
+        "c4c2e06805df41345d0a3b29d5ff9d376332e764d3c950ca3fe5fddcb1d1e008"
+      ]
+    },
+    {
+      "id": "plans-talk",
+      "hash": "f4816ea6112aee52d17d279765168f4f317b565e3204d1b246edf3b1b637f414",
+      "exercises": [
+        "92cf1b05e5e5e08818aecdfdf47e36b9782271d397a822316b19f65dbc97802e",
+        "0026eb48630682fd2cbd35fa1fbf9dde315c4d4b6b35a7e36e52d76142615164",
+        "41321afd6b189c4cc3f773173750bb22d854733cfe7f08f3b1e932c071cebab0"
+      ]
+    },
+    {
+      "id": "opinions-chat",
+      "hash": "7449664d2f6c3e5341f7e30d3bd9e208d68a22cc6812920816d5eda8d506de56",
+      "exercises": [
+        "03e252b6f92adcb1f80689f545c85babdfdde80d9248f2ba8e00b7837f66653e",
+        "11565557d624186473bfc31a8ded2e0fc0aee9431fb66294056d37878cabe860",
+        "bce8063a545f452de9326be8fc3ccb2a3e18cfb37ca17f219cc24e408b30705c"
+      ]
+    },
+    {
+      "id": "directions-chat",
+      "hash": "eed4aee8837d5d21a5fb583413f595d4a969b469b947e915107237e4f42ee1d1",
+      "exercises": [
+        "3ad2f0305f656709c6f7cb79f26b778d10bde08fda96d641095054fe7bea9c7b",
+        "b0f2215419594377b315855cbcc4c692e8fb474e774a5296781a7f1777207ef0",
+        "8b5a16d519ff39426b138b9ab6b2783cbe311594def3e1a694bce257680491e0"
+      ]
+    },
+    {
+      "id": "shopping-chat",
+      "hash": "b2d37e916e37715deb88b85e0dcd7a01d5b493e7399bb62e8e34c9bbc5f5c43e",
+      "exercises": [
+        "aa1a6aa75fe757018f78ef8996d6487077c35dd37754f2c1dca5b9287dc87167",
+        "f5140ece43bf9fc56429d624f26da858ddda2504e20fa00d52bc820328d5e8c2",
+        "540ed9df11df91bc822044588fcb91c9da6b5976f381f41c332db0dccd3f48ff"
+      ]
+    },
+    {
+      "id": "story-chat",
+      "hash": "6a6d37511d3fc770290840a369ba10116da584f9beb65e29275b9dea1e2558ac",
+      "exercises": [
+        "81f369055cdf8c89cbd7f6a66ab7a39ac181a7c10382f5687591ab3e6400e99a",
+        "4abaf5cf58d2578df55f4b02bfda759643d2a270633981b80207525d3e571c07",
+        "06b7194033e6343f36882992c78d4f3b046846c5392c89f5a5cdbf20794963fb"
+      ]
+    }
+  ],
+  "kannada": [
+    {
+      "id": "kn-hello",
+      "hash": "18b3590d017c6b59d47c97bd97496628ed4f9ea937a0d7b1d44fc3fc464c7147"
+    },
+    {
+      "id": "kn-about-me",
+      "hash": "ade39de9e502f8930c464cb08e175325bb3274160b6d37bb55dc95c9a48cf5a2"
+    },
+    {
+      "id": "kn-family",
+      "hash": "c6d7c3cfbc0e0a7b75cac0667426fae76a7d126863168be2a44e3995ce67237c"
+    },
+    {
+      "id": "kn-numbers",
+      "hash": "b5f756c339a83bd6c8a2bb74c4211169eb425c6de2b041fde0ec38ab319a63dc"
+    },
+    {
+      "id": "kn-colors",
+      "hash": "34dedb5392b9a639d289930db69ab7ebfc0901d4681ce4522f36b5994e8d1668"
+    },
+    {
+      "id": "kn-animals",
+      "hash": "2d2b836f72fb5a314c0c1825e4f3612731f97e848963d5617846dd24a0002e3c"
+    },
+    {
+      "id": "kn-food",
+      "hash": "295a90dce8a59f0df63aedf6fbdd91aca2f15f476befc03be0046e21fb93dc6c"
+    },
+    {
+      "id": "kn-school",
+      "hash": "40a0440232b7bd9bb1a79f70c10f6e6df1b6938da886b0771f0203e78425cce7"
+    },
+    {
+      "id": "kn-polite",
+      "hash": "e3998ca0554d2864183f0ef430ded7907c86788e38175d96187c15e97bc9ad58"
+    },
+    {
+      "id": "kn-directions",
+      "hash": "40ccecb8f210d2cc373816bb3810b6d39a7576d74becbeaef4de7a58a0ce6c06"
+    },
+    {
+      "id": "kn-routine",
+      "hash": "4253c9f7e0cfbdf2c24c656309b759f631c5dc45869ca6f80be8281f748eab3e"
+    },
+    {
+      "id": "kn-chat",
+      "hash": "d87a6b76fff98a8c651c5cffc813add8e3af50556b48a77e73421d064640f062"
+    }
+  ],
+  "tamil": [
+    {
+      "id": "ta-hello",
+      "hash": "6a1c5d1295ae153a1cfaf08271b53fbd9d7745813478f98d090e93a441822ddb"
+    },
+    {
+      "id": "ta-about-me",
+      "hash": "72768674ab80ed3140122226575db078197bc07c4881c61a1c3be75ca2fafd14"
+    },
+    {
+      "id": "ta-family",
+      "hash": "88473f3572d7ae9d0777d2aa17c2981ff794499f0f321b94f8667410a6a057a7"
+    },
+    {
+      "id": "ta-numbers",
+      "hash": "64de7ed064719cc587cec776a28ae56fb1767a5fde8b29a65898316e252ab336"
+    },
+    {
+      "id": "ta-colors",
+      "hash": "6a9d9dfa2f591bf59ceebda4f3e8c719a3be943837488b63a96c183125f953b4"
+    },
+    {
+      "id": "ta-animals",
+      "hash": "cafa0d9f2bed511640e045e1d13cdf8c44d3e2e79c183af6bf628ef320c67669"
+    },
+    {
+      "id": "ta-food",
+      "hash": "a1ef5d80b7ec6709ffcfcd4c7e1448248a2029f3aa28280aebae8ec824a7837c"
+    },
+    {
+      "id": "ta-school",
+      "hash": "93728613962e31dee7b78e6d0b59386ceb2bdef197d7ebf71799815e194dae5f"
+    },
+    {
+      "id": "ta-polite",
+      "hash": "dcc39162fb18045c631430d9863a9d2ed1cbd536581d5719afaf1766ffcd328a"
+    },
+    {
+      "id": "ta-directions",
+      "hash": "e087dd92289a1c7d06611a1f665f2751a6896d2d0a15b47ee49954bdf54cc615"
+    },
+    {
+      "id": "ta-routine",
+      "hash": "4310b32fa7709ceac2ff5e1995bd6212988ca965ff3d95d7efcf2710fe0742ef"
+    },
+    {
+      "id": "ta-chat",
+      "hash": "660134e46c75bc06238767505f7bb5ed65856368b7378f8b852e243c105426e6"
+    }
+  ]
+}

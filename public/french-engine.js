@@ -15,7 +15,10 @@ export function assess(task,response){
 }
 export function shuffled(items,seed=1){let n=(Number(seed)>>>0)||1;const r=()=>{n^=n<<13;n^=n>>>17;n^=n<<5;return (n>>>0)/4294967296;};const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 export function makeExercises(lesson,allLessons,seed=1,mode='mixed'){
- const vocabulary=allLessons.flatMap(l=>l.words),tasks=[];
+ // Keep seeded sessions from the original course stable when new stages are appended.
+ const legacyStages=new Set(['first-words','everyday','explorer','storyteller','connector','conversation']);
+ const pool=legacyStages.has(lesson.stage)?allLessons.filter(l=>legacyStages.has(l.stage)):allLessons;
+ const vocabulary=pool.flatMap(l=>l.words),tasks=[];
  lesson.words.forEach((w,i)=>{
   const choices=[w.en,...shuffled([...new Set(vocabulary.map(x=>x.en))].filter(x=>normalize(x)!==normalize(w.en)),seed+i).slice(0,3)];
   const listening=mode==='listening'||(mode==='mixed'&&i%3===1);

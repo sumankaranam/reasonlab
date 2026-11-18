@@ -89,7 +89,165 @@ export const courses = {
       ], [d('ನಾನು ಬೆಳಗ್ಗೆ ಬೇಗ ಏಳುತ್ತೇನೆ.', 'Nānu beḷagge bēga ēḷuttēne.', 'I wake up early in the morning.'), d('ಶಾಲೆಯ ನಂತರ ಓದುತ್ತೇನೆ.', 'Śāleya nantara ōduttēne.', 'I study after school.'), d('ನೀವು ರಾತ್ರಿ ಏನು ಮಾಡುತ್ತೀರಿ?', 'Nīvu rātri ēnu māḍuttīri?', 'What do you do at night?')]),
       lesson('kn-chat', 'A simple conversation', 3, '💬', [
         v('ಇಂದು', 'indu', 'Today', '📅'), v('ಚೆನ್ನಾಗಿದೆ', 'cennāgide', 'Good / nice', '✨'), v('ಇಷ್ಟ', 'iṣṭa', 'Like', '❤️'), v('ಆಟ', 'āṭa', 'Play / game', '⚽'), v('ನಾಳೆ', 'nāḷe', 'Tomorrow', '🌤️')
-      ], [d('ಇಂದು ಶಾಲೆ ಹೇಗಿತ್ತು?', 'Indu śāle hēgittu?', 'How was school today?'), d('ಚೆನ್ನಾಗಿತ್ತು. ಸ್ನೇಹಿತರ ಜೊತೆ ಆಟವಾಡಿದೆ.', 'Cennāgittu. Snēhitar jote āṭavāḍide.', 'It was good. I played with friends.'), d('ನಾಳೆ ಮತ್ತೆ ಸಿಗೋಣ!', 'Nāḷe matte sigōṇa!', 'See you again tomorrow!')])
+      ], [d('ಇಂದು ಶಾಲೆ ಹೇಗಿತ್ತು?', 'Indu śāle hēgittu?', 'How was school today?'), d('ಚೆನ್ನಾಗಿತ್ತು. ಸ್ನೇಹಿತರ ಜೊತೆ ಆಟವಾಡಿದೆ.', 'Cennāgittu. Snēhitar jote āṭavāḍide.', 'It was good. I played with friends.'), d('ನಾಳೆ ಮತ್ತೆ ಸಿಗೋಣ!', 'Nāḷe matte sigōṇa!', 'See you again tomorrow!')]),
+      lesson('kn-home', 'Rooms at home', 4, '🏠', [
+        v('ಮನೆ', 'mane', 'Home', '🏠'),
+        v('ಕೋಣೆ', 'kōṇe', 'Room', '🚪'),
+        v('ಅಡಿಗೆಮನೆ', 'aḍigemane', 'Kitchen', '🍳'),
+        v('ಮಲಗುವ ಕೋಣೆ', 'malaguva kōṇe', 'Bedroom', '🛏️'),
+        v('ಬಾಗಿಲು', 'bāgilu', 'Door', '🚪'),
+        v('ಕಿಟಕಿ', 'kiṭaki', 'Window', '🪟')
+      ], [
+        d('ಬನ್ನಿ, ಇದು ನಮ್ಮ ಮನೆ.', 'Banni, idu namma mane.', 'Come in. This is our home.'),
+        d('ಅಡಿಗೆಮನೆ ಎಲ್ಲಿದೆ?', 'Aḍigemane ellide?', 'Where is the kitchen?'),
+        d('ಅಡಿಗೆಮನೆ ಬಲಕ್ಕಿದೆ.', 'Aḍigemane balakkide.', 'The kitchen is on the right.'),
+        d('ಈ ಕೋಣೆಯಲ್ಲಿ ದೊಡ್ಡ ಕಿಟಕಿ ಇದೆ!', 'Ī kōṇeyalli doḍḍa kiṭaki ide!', 'There’s a big window in this room!')
+      ]),
+      lesson('kn-clothes', 'What to wear', 4, '👕', [
+        v('ಬಟ್ಟೆ', 'baṭṭe', 'Clothing', '👚'),
+        v('ಅಂಗಿ', 'aṅgi', 'Shirt', '👕'),
+        v('ಪ್ಯಾಂಟ್', 'pyāṇṭ', 'Trousers', '👖'),
+        v('ಟೋಪಿ', 'ṭōpi', 'Hat', '🧢'),
+        v('ಚಪ್ಪಲಿ', 'cappali', 'Sandals', '🩴'),
+        v('ಹಾಕಿಕೊಳ್ಳಿ', 'hākikoḷḷi', 'Put it on (polite)', '🧥')
+      ], [
+        d('ನನ್ನ ನೀಲಿ ಅಂಗಿ ಎಲ್ಲಿದೆ?', 'Nanna nīli aṅgi ellide?', 'Where is my blue shirt?'),
+        d('ಅದು ಮಲಗುವ ಕೋಣೆಯಲ್ಲಿದೆ.', 'Adu malaguva kōṇeyallide.', 'It’s in the bedroom.'),
+        d('ಈ ಟೋಪಿಯನ್ನೂ ಹಾಕಿಕೊಳ್ಳಲೇ?', 'Ī ṭōpiyannū hākikoḷḷalē?', 'Shall I put on this hat too?'),
+        d('ಹೌದು, ಹಾಕಿಕೊಳ್ಳಿ. ಹೊರಗೆ ಬಿಸಿಲಿದೆ.', 'Haudu, hākikoḷḷi. Horage bisilide.', 'Yes, put it on. It’s sunny outside.')
+      ]),
+      lesson('kn-weather', 'Weather and seasons', 4, '🌦️', [
+        v('ಮಳೆ', 'maḷe', 'Rain', '🌧️'),
+        v('ಬಿಸಿಲು', 'bisilu', 'Sunshine', '☀️'),
+        v('ಚಳಿ', 'caḷi', 'Cold weather', '🥶'),
+        v('ಬೇಸಿಗೆ', 'bēsige', 'Summer', '🏖️'),
+        v('ಮಳೆಗಾಲ', 'maḷegāla', 'Rainy season', '🌦️'),
+        v('ಛತ್ರಿ', 'chatri', 'Umbrella', '☂️')
+      ], [
+        d('ಹೊರಗೆ ಮಳೆ ಬರುತ್ತಿದೆಯಾ?', 'Horage maḷe baruttideyā?', 'Is it raining outside?'),
+        d('ಹೌದು, ಈಗ ಮಳೆಗಾಲ.', 'Haudu, īga maḷegāla.', 'Yes, it’s the rainy season now.'),
+        d('ಹಾಗಾದರೆ ಛತ್ರಿ ತೆಗೆದುಕೊಂಡು ಹೋಗೋಣ.', 'Hāgādare chatri tegedukoṇḍu hōgōṇa.', 'Then let’s take an umbrella.'),
+        d('ಸರಿ, ಛತ್ರಿ ಬಾಗಿಲಿನ ಹತ್ತಿರ ಇದೆ.', 'Sari, chatri bāgilina hattira ide.', 'Okay, the umbrella is near the door.')
+      ]),
+      lesson('kn-feelings', 'Body and feelings', 4, '🙂', [
+        v('ಕೈ', 'kai', 'Hand', '✋'),
+        v('ಕಾಲು', 'kālu', 'Leg', '🦵'),
+        v('ಕಣ್ಣು', 'kaṇṇu', 'Eye', '👁️'),
+        v('ನನಗೆ ಖುಷಿಯಾಗಿದೆ', 'nanage khuṣiyāgide', 'I’m happy', '😊'),
+        v('ನನಗೆ ದಣಿವಾಗಿದೆ', 'nanage daṇivāgide', 'I’m tired', '😮‍💨'),
+        v('ನನಗೆ ಭಯವಾಗುತ್ತಿದೆ', 'nanage bhayavāguttide', 'I’m scared', '😨')
+      ], [
+        d('ನೃತ್ಯ ಹೇಗಿತ್ತು?', 'Nṛtya hēgittu?', 'How was the dance?'),
+        d('ತುಂಬಾ ಚೆನ್ನಾಗಿತ್ತು! ನನಗೆ ಖುಷಿಯಾಗಿದೆ.', 'Tumbā cennāgittu! Nanage khuṣiyāgide.', 'It was great! I’m happy.'),
+        d('ನನಗೂ ಖುಷಿಯಾಗಿದೆ. ಈಗ ಸ್ವಲ್ಪ ದಣಿವಾಗಿದೆ.', 'Nanagū khuṣiyāgide. Īga svalpa daṇivāgide.', 'I’m happy too. I’m a little tired now.'),
+        d('ಬನ್ನಿ, ಇಲ್ಲಿ ಕುಳಿತುಕೊಳ್ಳೋಣ.', 'Banni, illi kuḷitukoḷḷōṇa.', 'Come, let’s sit here.')
+      ]),
+      lesson('kn-time', 'Days and clock times', 5, '🕒', [
+        v('ಸೋಮವಾರ', 'sōmavāra', 'Monday', '📅'),
+        v('ಶನಿವಾರ', 'śanivāra', 'Saturday', '📅'),
+        v('ಭಾನುವಾರ', 'bhānuvāra', 'Sunday', '📅'),
+        v('ಸಂಜೆ', 'sanje', 'Evening', '🌆'),
+        v('ಎಷ್ಟು ಗಂಟೆಗೆ?', 'eṣṭu gaṇṭege?', 'At what time?', '🕒'),
+        v('ಐದು ಗಂಟೆಗೆ', 'aidu gaṇṭege', 'At five o’clock', '🕔')
+      ], [
+        d('ತರಗತಿ ಯಾವ ದಿನ?', 'Taragati yāva dina?', 'What day is the class?'),
+        d('ಶನಿವಾರ.', 'Śanivāra.', 'Saturday.'),
+        d('ಎಷ್ಟು ಗಂಟೆಗೆ?', 'Eṣṭu gaṇṭege?', 'At what time?'),
+        d('ಸಂಜೆ ಐದು ಗಂಟೆಗೆ.', 'Sanje aidu gaṇṭege.', 'At five in the evening.')
+      ]),
+      lesson('kn-market', 'Shopping at the market', 5, '🛒', [
+        v('ಮಾರುಕಟ್ಟೆ', 'mārukaṭṭe', 'Market', '🛒'),
+        v('ತರಕಾರಿ', 'tarakāri', 'Vegetables', '🥕'),
+        v('ಟೊಮ್ಯಾಟೊ', 'ṭomyāṭo', 'Tomato', '🍅'),
+        v('ಬೆಲೆ ಎಷ್ಟು?', 'bele eṣṭu?', 'How much does it cost?', '🏷️'),
+        v('ಅರ್ಧ ಕಿಲೋ', 'ardha kilō', 'Half a kilo', '⚖️'),
+        v('ಕೊಡಿ', 'koḍi', 'Please give', '🤲')
+      ], [
+        d('ಟೊಮ್ಯಾಟೊ ಬೆಲೆ ಎಷ್ಟು?', 'Ṭomyāṭo bele eṣṭu?', 'How much are the tomatoes?'),
+        d('ಒಂದು ಕಿಲೋಗೆ ನಲವತ್ತು ರೂಪಾಯಿ.', 'Ondu kilōge nalavattu rūpāyi.', 'Forty rupees for one kilo.'),
+        d('ಅರ್ಧ ಕಿಲೋ ಕೊಡಿ.', 'Ardha kilō koḍi.', 'Half a kilo, please.'),
+        d('ತಗೊಳ್ಳಿ. ಇಪ್ಪತ್ತು ರೂಪಾಯಿ.', 'Tagoḷḷi. Ippattu rūpāyi.', 'Here you are. Twenty rupees.')
+      ]),
+      lesson('kn-travel', 'Taking the bus', 5, '🚌', [
+        v('ಬಸ್', 'bas', 'Bus', '🚌'),
+        v('ಬಸ್ ನಿಲ್ದಾಣ', 'bas nildāṇa', 'Bus stop', '🚏'),
+        v('ರೈಲು', 'railu', 'Train', '🚆'),
+        v('ಟಿಕೆಟ್', 'ṭikeṭ', 'Ticket', '🎫'),
+        v('ಇಲ್ಲೇ ಇಳಿಯಿರಿ', 'illē iḷiyiri', 'Get off right here (polite)', '🚶'),
+        v('ಮುಂದಿನ ನಿಲ್ದಾಣ', 'mundina nildāṇa', 'Next stop', '📍')
+      ], [
+        d('ಈ ಬಸ್ ಮಾರುಕಟ್ಟೆಗೆ ಹೋಗುತ್ತದೆಯಾ?', 'Ī bas mārukaṭṭege hōguttadeyā?', 'Does this bus go to the market?'),
+        d('ಹೌದು, ಮಾರುಕಟ್ಟೆ ಮುಂದಿನ ನಿಲ್ದಾಣ.', 'Haudu, mārukaṭṭe mundina nildāṇa.', 'Yes, the market is the next stop.'),
+        d('ಮಾರುಕಟ್ಟೆಗೆ ಒಂದು ಟಿಕೆಟ್ ಕೊಡಿ.', 'Mārukaṭṭege ondu ṭikeṭ koḍi.', 'One ticket to the market, please.'),
+        d('ತಗೊಳ್ಳಿ. ಮಾರುಕಟ್ಟೆ ಬಂತು. ಇಲ್ಲೇ ಇಳಿಯಿರಿ.', 'Tagoḷḷi. Mārukaṭṭe bantu. Illē iḷiyiri.', 'Here you are. We’re at the market. Get off here.')
+      ]),
+      lesson('kn-sports', 'Games and sports', 5, '⚽', [
+        v('ಚೆಂಡು', 'ceṇḍu', 'Ball', '⚽'),
+        v('ಕ್ರಿಕೆಟ್', 'krikeṭ', 'Cricket', '🏏'),
+        v('ಫುಟ್‌ಬಾಲ್', 'phuṭbāl', 'Football', '⚽'),
+        v('ಮೈದಾನ', 'maidāna', 'Playing field', '🏟️'),
+        v('ತಂಡ', 'taṇḍa', 'Team', '🤝'),
+        v('ಆಡೋಣ', 'āḍōṇa', 'Let’s play', '🎮')
+      ], [
+        d('ನಿಮಗೆ ಯಾವ ಆಟ ಇಷ್ಟ?', 'Nimage yāva āṭa iṣṭa?', 'Which game do you like?'),
+        d('ನನಗೆ ಕ್ರಿಕೆಟ್ ಇಷ್ಟ. ನಿಮಗೆ?', 'Nanage krikeṭ iṣṭa. Nimage?', 'I like cricket. How about you?'),
+        d('ನನಗೂ ಕ್ರಿಕೆಟ್ ಇಷ್ಟ. ಮೈದಾನದಲ್ಲಿ ಆಡೋಣವಾ?', 'Nanagū krikeṭ iṣṭa. Maidānadalli āḍōṇavā?', 'I like cricket too. Shall we play on the field?'),
+        d('ಸರಿ, ನಾನು ಚೆಂಡು ತರುತ್ತೇನೆ.', 'Sari, nānu ceṇḍu taruttēne.', 'Okay, I’ll bring the ball.')
+      ]),
+      lesson('kn-invite', 'Inviting a friend', 6, '💌', [
+        v('ಭಾನುವಾರ ಬಿಡುವಿದೆಯಾ?', 'bhānuvāra biḍuvideyā?', 'Are you free on Sunday?', '📅'),
+        v('ನಮ್ಮ ಮನೆಗೆ ಬನ್ನಿ', 'namma manege banni', 'Come over to our house', '🏠'),
+        v('ಊಟಕ್ಕೆ', 'ūṭakke', 'For a meal', '🍽️'),
+        v('ಖಂಡಿತ', 'khaṇḍita', 'Definitely', '✅'),
+        v('ಬರುತ್ತೇನೆ', 'baruttēne', 'I’ll come', '🚶'),
+        v('ಮಧ್ಯಾಹ್ನ', 'madhyāhna', 'Afternoon / noon', '☀️')
+      ], [
+        d('ಭಾನುವಾರ ಬಿಡುವಿದೆಯಾ?', 'Bhānuvāra biḍuvideyā?', 'Are you free on Sunday?'),
+        d('ಹೌದು, ಭಾನುವಾರ ಬಿಡುವಿದೆ.', 'Haudu, bhānuvāra biḍuvide.', 'Yes, I’m free on Sunday.'),
+        d('ಮಧ್ಯಾಹ್ನ ಊಟಕ್ಕೆ ನಮ್ಮ ಮನೆಗೆ ಬನ್ನಿ.', 'Madhyāhna ūṭakke namma manege banni.', 'Come over to our house for lunch.'),
+        d('ಧನ್ಯವಾದಗಳು. ಖಂಡಿತ ಬರುತ್ತೇನೆ!', 'Dhanyavādagaḷu. Khaṇḍita baruttēne!', 'Thank you. I’ll definitely come!')
+      ]),
+      lesson('kn-yesterday', 'What I did yesterday', 6, '📅', [
+        v('ನಿನ್ನೆ', 'ninne', 'Yesterday', '📅'),
+        v('ಹೋದೆ', 'hōde', 'I went', '🚶'),
+        v('ನೋಡಿದೆ', 'nōḍide', 'I saw / watched', '👀'),
+        v('ಕೊಂಡೆ', 'koṇḍe', 'I bought', '🛍️'),
+        v('ಬಂದೆ', 'bande', 'I came', '👋'),
+        v('ಆಮೇಲೆ', 'āmēle', 'After that', '➡️')
+      ], [
+        d('ನಿನ್ನೆ ಎಲ್ಲಿಗೆ ಹೋದಿರಿ?', 'Ninne ellige hōdiri?', 'Where did you go yesterday?'),
+        d('ಮಾರುಕಟ್ಟೆಗೆ ಹೋದೆ. ಅಲ್ಲಿ ಟೊಮ್ಯಾಟೊ ಕೊಂಡೆ.', 'Mārukaṭṭege hōde. Alli ṭomyāṭo koṇḍe.', 'I went to the market. I bought tomatoes there.'),
+        d('ಆಮೇಲೆ ಏನು ಮಾಡಿದಿರಿ?', 'Āmēle ēnu māḍidiri?', 'What did you do after that?'),
+        d('ಮನೆಗೆ ಬಂದೆ. ಸಂಜೆ ಒಂದು ಸಿನಿಮಾ ನೋಡಿದೆ.', 'Manege bande. Sanje ondu sinimā nōḍide.', 'I came home. I watched a film in the evening.')
+      ]),
+      lesson('kn-tomorrow', 'Plans for tomorrow', 6, '🌤️', [
+        v('ನಾಳೆ ಬೆಳಗ್ಗೆ', 'nāḷe beḷagge', 'Tomorrow morning', '🌅'),
+        v('ಹೋಗುತ್ತೇನೆ', 'hōguttēne', 'I’ll go', '🚶'),
+        v('ಭೇಟಿಯಾಗೋಣ', 'bhēṭiyāgōṇa', 'Let’s meet', '🤝'),
+        v('ಎಲ್ಲಿ ಭೇಟಿಯಾಗೋಣ?', 'elli bhēṭiyāgōṇa?', 'Where shall we meet?', '📍'),
+        v('ಅಲ್ಲೇ', 'allē', 'Right there', '📌'),
+        v('ಒಟ್ಟಿಗೆ', 'oṭṭige', 'Together', '👫')
+      ], [
+        d('ನಾಳೆ ಬೆಳಗ್ಗೆ ಏನು ಮಾಡುತ್ತೀರಿ?', 'Nāḷe beḷagge ēnu māḍuttīri?', 'What are you doing tomorrow morning?'),
+        d('ಮೈದಾನಕ್ಕೆ ಹೋಗುತ್ತೇನೆ. ಒಟ್ಟಿಗೆ ಹೋಗೋಣವಾ?', 'Maidānakke hōguttēne. Oṭṭige hōgōṇavā?', 'I’m going to the playing field. Shall we go together?'),
+        d('ಸರಿ. ಎಲ್ಲಿ ಭೇಟಿಯಾಗೋಣ?', 'Sari. Elli bhēṭiyāgōṇa?', 'Sure. Where shall we meet?'),
+        d('ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ ಭೇಟಿಯಾಗೋಣ.', 'Bas nildāṇada hattira bhēṭiyāgōṇa.', 'Let’s meet near the bus stop.'),
+        d('ಸರಿ, ನಾಳೆ ಬೆಳಗ್ಗೆ ಅಲ್ಲೇ ಸಿಗೋಣ.', 'Sari, nāḷe beḷagge allē sigōṇa.', 'Okay, see you there tomorrow morning.')
+      ]),
+      lesson('kn-help', 'Asking for help', 6, '🤝', [
+        v('ಸಹಾಯ ಮಾಡಿ', 'sahāya māḍi', 'Please help', '🤝'),
+        v('ತೋರಿಸುತ್ತೀರಾ?', 'tōrisuttīrā?', 'Could you show me?', '👆'),
+        v('ದಾರಿ', 'dāri', 'Way / route', '🧭'),
+        v('ನನಗೆ ಅರ್ಥವಾಗಲಿಲ್ಲ', 'nanage arthavāgalilla', 'I didn’t understand', '🤔'),
+        v('ಇನ್ನೊಮ್ಮೆ ಹೇಳಿ', 'innomme hēḷi', 'Please say it once more', '🔁'),
+        v('ಈಗ ಅರ್ಥವಾಯಿತು', 'īga arthavāyitu', 'Now I understand', '💡')
+      ], [
+        d('ಕ್ಷಮಿಸಿ, ಬಸ್ ನಿಲ್ದಾಣಕ್ಕೆ ದಾರಿ ತೋರಿಸುತ್ತೀರಾ?', 'Kṣamisi, bas nildāṇakke dāri tōrisuttīrā?', 'Excuse me, could you show me the way to the bus stop?'),
+        d('ನೇರವಾಗಿ ಹೋಗಿ, ಮಾರುಕಟ್ಟೆಯ ಹತ್ತಿರ ಎಡಕ್ಕೆ ತಿರುಗಿ.', 'Nēravāgi hōgi, mārukaṭṭeya hattira eḍakke tirugi.', 'Go straight and turn left near the market.'),
+        d('ನನಗೆ ಅರ್ಥವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಇನ್ನೊಮ್ಮೆ ಹೇಳಿ.', 'Nanage arthavāgalilla. Dayaviṭṭu innomme hēḷi.', 'I didn’t understand. Please say it once more.'),
+        d('ಆ ಮಾರುಕಟ್ಟೆ ಕಾಣುತ್ತಿದೆಯಾ? ಅಲ್ಲಿ ಎಡಕ್ಕೆ ತಿರುಗಿ.', 'Ā mārukaṭṭe kāṇuttideyā? Alli eḍakke tirugi.', 'Can you see that market? Turn left there.'),
+        d('ಈಗ ಅರ್ಥವಾಯಿತು. ಧನ್ಯವಾದಗಳು!', 'Īga arthavāyitu. Dhanyavādagaḷu!', 'Now I understand. Thank you!')
+      ])
     ]
   }
 };

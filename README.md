@@ -16,7 +16,7 @@ Mobile-friendly reasoning, French/Tamil/Kannada learning and interest exploratio
 - Explanations, downloadable feedback, three anonymous learner slots, learning map and stage suggestions.
 - Optional adult Google sign-in and email one-time code integration through Supabase.
 - Guest access; original app and its history remain at `/classic.html`.
-- French learning: 36 lessons in six stages, vocabulary, grammar, sentence building, listening, 12 guided conversations, six stories, a phrasebook and reference shelf. Local review reminders and learner progress. Open `/french.html`.
+- French learning: 48 lessons in eight stages, vocabulary, grammar, sentence building, listening, 12 guided conversations, six stories, a phrasebook and reference shelf. Local review reminders and learner progress. Open `/french.html`.
 - Tamil and Kannada: 12 beginner lessons each, picture-symbol flashcards, native script with roman reading aids, meaning quizzes, stage badges, saved place and short dialogues. Open `/tamil.html` or `/kannada.html`. Audio needs a matching device voice. See [course scope](docs/LANGUAGE-COURSES.md).
 - French speech playback, temporary local record/replay and separately opted-in browser recognition. Device/browser support varies; recognition is not a pronunciation grade.
 

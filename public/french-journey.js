@@ -10,7 +10,9 @@ const lessonOrder = [
   'time','weather','shopping','routine','future-plans','connectors',
   'passe-compose','imparfait','story-sequence','opinions','pros-cons',
   'possibilities','repair','plans-talk','opinions-chat','directions-chat',
-  'shopping-chat','story-chat'
+  'shopping-chat','story-chat',
+  'library-loans','club-signup','weekend-invite','recipe-steps','market-ingredients','garden-help',
+  'train-trip','trail-walk','museum-choice','lost-property','poster-project','project-update'
 ];
 const byId = new Map(courseLessons.map(l => [l.id, l]));
 const chapterDefs = [
@@ -19,11 +21,13 @@ const chapterDefs = [
   ['ask-and-find','Ask questions and find things','Ask clear questions, describe objects, and follow simple directions.','Find a place or object by asking and listening for useful details.',['Ask where something is.','Use a simple negative.','Follow a short direction.'],'Give an imaginary toy one French direction: à gauche, à droite, or tout droit.',5],
   ['daily-plans','Daily life and plans','Talk about time, weather, shopping, routines, and tomorrow.','Make a simple plan and explain what you need for the day.',['Say what the weather is like.','Ask for something politely.','Describe a plan for tomorrow.'],'Choose tomorrow’s weather and say one item you would take.',6],
   ['stories-and-choices','Stories and choices','Describe past events, compare options, and share a reason.','Tell what happened and connect ideas with useful time words.',['Say what happened yesterday.','Give a reason for a choice.','Put events in order.'],'Tell a tiny three-part story using d’abord, ensuite, and finalement.',7],
-  ['conversation-builder','Keep a conversation going','Repair a misunderstanding, negotiate plans, and tell a connected story.','Respond flexibly when a plan changes or a word is missing.',['Ask someone to repeat.','Suggest and adjust a plan.','Share a connected past story.'],'Role-play changing a pretend meeting time and agree on a new one.',7]
+  ['conversation-builder','Keep a conversation going','Repair a misunderstanding, negotiate plans, and tell a connected story.','Respond flexibly when a plan changes or a word is missing.',['Ask someone to repeat.','Suggest and adjust a plan.','Share a connected past story.'],'Role-play changing a pretend meeting time and agree on a new one.',7],
+  ['community-and-hobbies','Community and hobbies','Take part in activities around the neighbourhood.','Make a plan with a friend and ask for what you need.',['Ask about borrowing a book or joining a club.','Suggest another day for an activity.','Follow a recipe and ask for a measured amount.'],'Pretend to plan a club snack. Choose two ingredients and say how much you need.',7],
+  ['outings-and-projects','Outings and projects','Ask for travel information and work on a shared project.','Compare choices, solve a small problem, and give a progress update.',['Check a departure time and platform.','Describe a missing item.','Say what your group has finished and what remains.'],'Plan a pretend nature poster together. Say who will draw and who will write.',7]
 ];
 export const journeyChapters = chapterDefs.map(([id,title,goal,description,canDo,homeActivity,daysHint],i)=>({
   id,title,goal,description,lessonIds:lessonOrder.slice(i*6,i*6+6),
-  missionId:['first-chat','everyday-chat','find-the-library','market-order','park-story','change-the-plan'][i],
+  missionId:['first-chat','everyday-chat','find-the-library','market-order','park-story','change-the-plan','sign-up-for-an-activity','finish-the-nature-display'][i],
   canDo,homeActivity,daysHint
 }));
 
@@ -58,7 +62,19 @@ export const missions=[
   turn('Jules','La médiathèque est fermée aujourd’hui.','The library is closed today.', [['Dommage. Où pouvons-nous aller ?','That is a shame. Where can we go?'],['Je m’appelle fermé.','My name is closed.']],0,'Le parc est ouvert, mais il peut pleuvoir.','Ask for another option.'),
   turn('Maya','On pourrait se retrouver au musée.','We could meet at the museum.', [['Bonne idée. À quelle heure ?','Good idea. What time?'],['Je suis une heure.','I am an hour.']],0,'Vers trois heures ?','Respond to the suggestion and make the plan specific.'),
   turn('Jules','Trois heures, ça marche. Où est l’entrée ?','Three o’clock works. Where is the entrance?', [['Devant la grande porte, près du jardin.','In front of the big door, near the garden.'],['Hier, je vais à la maison.','Yesterday, I go home.']],0,'Parfait, je t’attends là.','Confirm the meeting details.'),
-  turn('Maya','D’accord. Si je suis en retard, je t’envoie un message.','All right. If I am late, I will send you a message.', [['Merci, à tout à l’heure !','Thanks, see you later!'],['Je ne sais jamais un musée.','I never know a museum.']],0,'À tout à l’heure !','A practical backup keeps the changed plan clear.') ]}
+  turn('Maya','D’accord. Si je suis en retard, je t’envoie un message.','All right. If I am late, I will send you a message.', [['Merci, à tout à l’heure !','Thanks, see you later!'],['Je ne sais jamais un musée.','I never know a museum.']],0,'À tout à l’heure !','A practical backup keeps the changed plan clear.') ]},
+ {id:'sign-up-for-an-activity',title:'Sign up for a cooking workshop',chapterId:'community-and-hobbies',scene:'You want to join the cooking workshop at the library. You are free only on Sunday, and you can bring apples.',goal:'Ask to sign up, choose a session and check what to bring.',turns:[
+  turn('Camille','Bonjour ! Qu’est-ce qui vous intéresse ?','Hello! What are you interested in?',[['Je voudrais m’inscrire à l’atelier de dessin.','I would like to sign up for the drawing workshop.'],['Je voudrais m’inscrire à l’atelier de cuisine.','I would like to sign up for the cooking workshop.']],1,'Il reste des places samedi et dimanche.','Use m’inscrire à to ask to sign up. Cuisine identifies the cooking workshop.'),
+  turn('Camille','Il reste des places samedi et dimanche.','There are still places available on Saturday and Sunday.',[['Dimanche, ça me va. À quelle heure ?','Sunday works for me. What time?'],['Samedi, ça me va. À quelle heure ?','Saturday works for me. What time?']],0,'La séance de dimanche commence à dix heures.', 'Choose the day you are free and ask for the time.'),
+  turn('Camille','La séance de dimanche commence à dix heures.','The Sunday session starts at ten.',[['Il faut apporter quoi pour la recette ?','What do we need to bring for the recipe?'],['Il faut arriver à neuf heures ?','Do we need to arrive at nine?']],0,'Il faut apporter un kilo de pommes ou une barquette de fraises.', 'Il faut asks here what the recipe requires.'),
+  turn('Camille','Il faut apporter un kilo de pommes ou une barquette de fraises.','Bring either a kilo of apples or a small tray of strawberries.',[['Je peux apporter une barquette de fraises.','I can bring a small tray of strawberries.'],['Je peux apporter un kilo de pommes.','I can bring a kilo of apples.']],1,'Très bien, je vous inscris pour dimanche.', 'Offer to bring the quantity of apples requested.'),
+  turn('Camille','Très bien, je vous inscris pour dimanche.','Great, I’ll sign you up for Sunday.',[['Merci. À dimanche, à dix heures !','Thank you. See you Sunday at ten!'],['Merci. À samedi, à dix heures !','Thank you. See you Saturday at ten!']],0,'À dimanche !', 'Thank Camille and confirm the day and time.') ]},
+ {id:'finish-the-nature-display',title:'Finish a nature display',chapterId:'outings-and-projects',scene:'Your partner will finish the poster while you count photos. You have sorted three photos, including one of the footbridge.',goal:'Agree on jobs, report progress and confirm that the display is ready.',turns:[
+  turn('Nadia','J’ai déjà choisi les photos du sentier. Il reste à les compter.','I’ve already chosen the trail photos. We still need to count them.',[['Je peux compter les photos pendant que tu termines l’affiche.','I can count the photos while you finish the poster.'],['Je peux terminer l’affiche pendant que tu comptes les photos.','I can finish the poster while you count the photos.']],0,'D’accord. Il y a de la place pour trois photos sur l’affiche.', 'Use je peux to offer to do your part. Pendant que links the two tasks.'),
+  turn('Nadia','D’accord. Il y a de la place pour trois photos sur l’affiche.','All right. There is room for three photos on the poster.',[['J’ai déjà trié quatre photos.','I’ve already sorted four photos.'],['J’ai déjà trié trois photos.','I’ve already sorted three photos.']],1,'Parfait, on peut mettre les trois. Tu as une photo de la passerelle ?', 'Report the number of photos you have sorted.'),
+  turn('Nadia','Parfait, on peut mettre les trois. Tu as une photo de la passerelle ?','Perfect, we can use all three. Do you have a photo of the footbridge?',[['Oui, la voici. On voit la rivière derrière.','Yes, here it is. You can see the river behind it.'],['Non, il faut encore en prendre une.','No, we still need to take one.']],0,'Super ! Il reste à écrire une légende pour cette photo.', 'Show the photo and describe what is visible in it.'),
+  turn('Nadia','Super ! Il reste à écrire une légende pour cette photo.','Great! We still need to write a caption for this photo.',[['Je propose « Le train entre en gare ».','I suggest “The train arrives at the station”.'],['Je propose « La passerelle au-dessus de la rivière ».','I suggest “The footbridge over the river”.']],1,'Parfait, je l’écris. Voilà, l’affiche est prête.', 'Choose a caption that describes the photo.'),
+  turn('Nadia','Parfait, je l’écris. Voilà, l’affiche est prête.','Perfect, I’ll write it. There, the poster is ready.',[['Super, on peut la présenter à la classe.','Great, we can show it to the class.'],['Il reste à choisir les trois photos.','We still need to choose the three photos.']],0,'Oui, allons-y !', 'Respond to the finished poster with the next step.') ]}
 ];
 
 export function createJourney(){return {version:VERSION,draft:null,missions:{},flashcards:{},plan:{minutes:5,days:3},badges:[]};}
@@ -79,7 +95,7 @@ export function validDraft(raw,lessonList=courseLessons){
  const lessonIds=new Set(lessonList.map(l=>l.id));
  if(!validId(raw.kind,raw.id,lessonIds)||!finite(raw.seed,0,4294967295)||!Number.isInteger(raw.seed)||!Number.isInteger(raw.index)||!finite(raw.index,0,100))return null;
  if(!['mixed','reading','listening','text'].includes(raw.mode)||!finite(raw.updatedAt,0,Number.MAX_SAFE_INTEGER))return null;
- if(raw.kind==='daily'&&(!Array.isArray(raw.lessonIds)||raw.lessonIds.length<1||raw.lessonIds.length>36||!raw.lessonIds.every(id=>lessonIds.has(id))))return null;
+ if(raw.kind==='daily'&&(!Array.isArray(raw.lessonIds)||raw.lessonIds.length<1||raw.lessonIds.length>lessonList.length||!raw.lessonIds.every(id=>lessonIds.has(id))))return null;
  if(raw.kind!=='daily'&&raw.lessonIds!=null)return null;
  if(!Array.isArray(raw.answers)||raw.answers.length>100||!raw.answers.every(a=>a===null||(a&&boundedText(a.response,250)&&typeof a.skipped==='boolean'&&typeof a.assisted==='boolean')))return null;
  if(raw.feedback!=null&&(!raw.feedback||!boundedText(raw.feedback.response,250)||typeof raw.feedback.skipped!=='boolean'||typeof raw.feedback.assisted!=='boolean'))return null;
@@ -125,14 +141,14 @@ export function earnedBadges(progress,journey){
  const lessonEntries=Object.entries(progress?.lessons||{}),firstLesson=lessonEntries.some(([,r])=>r?.best>=70);
  const passed=missions.some(m=>chapterStatus(journeyChapters.find(c=>c.id===m.chapterId),progress,journey).missionPassed);
  const vocab=Object.values(journey?.flashcards||{}).some(r=>r.total>=5);
- const chapterBadges=journeyChapters.map(c=>({id:`chapter:${c.id}`,title:c.title,description:`Reach 70% first-answer accuracy on all six lessons and complete “${missions.find(m=>m.id===c.missionId).title}” without help at 70% or higher.`,earned:chapterStatus(c,progress,journey).complete}));
+ const chapterBadges=journeyChapters.map(c=>({id:`chapter:${c.id}`,title:c.title,description:`Reach 70% first-answer accuracy on all ${c.lessonIds.length} lessons and complete “${missions.find(m=>m.id===c.missionId).title}” without help at 70% or higher.`,earned:chapterStatus(c,progress,journey).complete}));
  const complete=chapterBadges.every(b=>b.earned);
  return [
   {id:'first-lesson',title:'First lesson',description:'Reach 70% first-answer accuracy on one lesson.',earned:firstLesson},
   {id:'first-conversation',title:'First conversation',description:'Complete a guided mission without help at 70% or higher.',earned:passed},
   {id:'vocabulary-review',title:'Vocabulary review',description:'Rate at least five reviewed cards for yourself.',earned:vocab},
   ...chapterBadges,
-  {id:'journey-complete',title:'Journey passport',description:'Complete all six chapters and their guided missions.',earned:complete}
+  {id:'journey-complete',title:'Journey passport',description:`Complete all ${journeyChapters.length} chapters and their guided missions.`,earned:complete}
  ];
 }
 export function recommendedStep(progress,journey){
