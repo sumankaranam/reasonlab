@@ -35,3 +35,7 @@ Production acceptance with two devices: sign in to the same adult account, enabl
 ## Owner deployment
 
 Use authenticated Wrangler: `wrangler d1 migrations apply reasonlab-usage --remote`, then deploy the existing Worker. Keep Google OAuth and email sender configuration separate. Email reports still need the previously deferred Resend setup. No paid service was added by this feature.
+
+## Workers runtime note
+
+The server-side Supabase request uses `redirect: manual`; a non-OK redirect is rejected. Cloudflare Workers rejects `redirect: error` with TypeError even though Node and browsers support it. See [Workers Request API](https://developers.cloudflare.com/workers/runtime-apis/request/). This runtime difference was found and fixed during production rejection checks. Client browser fetch can retain `error`.

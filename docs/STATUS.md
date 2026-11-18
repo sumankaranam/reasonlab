@@ -133,3 +133,9 @@ All 92 automated tests pass. Dedicated 320px browser checks pass for first-answe
 Implemented personalized next steps, selected-learner course links and a learning garden based on retained completed activities. French/Tamil/Kannada vocabulary review offers up to five due/new words per day with self-ratings and spaced schedules. Optional parent-controlled cloud saves now include profiles and completed progress, with explicit restore/replace/delete controls; guest, Discovery/Classic, audio and unfinished answers stay local. Migration 0004 applied remotely without changing existing records.
 
 106 automated tests pass (including real in-memory SQLite conditional-write checks). Local Today/review/profile and two-device cloud-account browser flows pass; cloud transport/auth and device voices are mocked where applicable. Six-theme contrast checks include the new home/review/privacy surfaces. 320px screenshots reviewed. Actual Google-authenticated production save/restore still needs a real-account acceptance check; public rejection checks and deployment details are recorded below when released.
+
+## 2026-11-18 — Daily home/cloud release verification
+
+Released as Cloudflare `5f3f34ec-ea06-4ec6-8ac4-b9fdc8eb385c`. Live Today, vocabulary review, cloud-control and expanded contrast suites pass (authenticated cloud transport is mocked in browser checks). Actual production API probes return 401 without credentials, 401 for an invalid token, and 403 for cross-origin requests. No authenticated real-account save/restore has been performed.
+
+Live testing found Workers does not support server fetch redirect mode `error`; switched to `manual`, which rejects redirects without forwarding credentials. Temporary diagnostics removed. Updated the Today browser URL assertion for Cloudflare's extensionless canonical redirects. All seven cloud tests pass after the runtime fix; total suite previously passed 106 tests.

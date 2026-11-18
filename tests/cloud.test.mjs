@@ -39,7 +39,7 @@ function harness() {
   }; }}};
   async function auth(url, init) {
     assert.equal(String(url), 'https://krbuoncrksahcrnufprg.supabase.co/auth/v1/user');
-    assert.equal(init.redirect, 'error');
+    assert.equal(init.redirect, 'manual');
     const id = init.headers.Authorization === 'Bearer adult.two' ? other.id : account.id;
     if (init.headers.Authorization === 'Bearer denied') return Response.json({}, {status: 401});
     if (init.headers.Authorization === 'Bearer unavailable') throw Error('offline');
@@ -223,4 +223,4 @@ test('logging out before token retrieval finishes cancels the old account operat
   assert.equal(device.getItem('reasonlab-cloud:' + account.id), null);
 });
 
-test('anonymous Supabase identities cannot access adult cloud progress',async()=>{const response=await handleProgress(new Request('https://example.test/api/progress',{headers:{Origin:'https://example.test',Authorization:'Bearer anonymous'}}),{},async()=>Response.json({id:'11111111-1111-4111-8111-111111111111',is_anonymous:true}));assert.equal(response.status,401);});
+test('anonymous Supabase identities cannot access adult cloud progress',async()=>{const response=await handleProgress(new Request('https://example.test/api/progress',{headers:{Origin:'https://example.test',Authorization:'Bearer anonymous'}}),{},async(_url,options)=>{assert.equal(options.redirect,'manual');return Response.json({id:'11111111-1111-4111-8111-111111111111',is_anonymous:true});});assert.equal(response.status,401);});

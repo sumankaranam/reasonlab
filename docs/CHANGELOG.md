@@ -174,3 +174,9 @@ Activation release: Cloudflare `cf0fcba0-d9cd-4ad9-a2a8-0744f2b7aaac`. All 62 te
 - Added opt-in adult cloud saves with verified server identity, account-scoped allowlisted snapshots, revision conflicts, explicit restore/replace and deletion tombstones. No new secret credentials needed; personality/Classic/guest/unfinished work excluded.
 - Updated account/profile ordering, privacy explanations, architecture and handoff docs. Applied additive D1 migration 0004.
 - 106 automated tests and local browser/contrast checks pass; authenticated two-device tests use mocked auth/transport. Real-account production acceptance remains unverified.
+
+## 2026-11-18 — Daily home/cloud release verification
+
+Released as Cloudflare `5f3f34ec-ea06-4ec6-8ac4-b9fdc8eb385c`. Live Today, vocabulary review, cloud-control and expanded contrast suites pass (authenticated cloud transport is mocked in browser checks). Actual production API probes return 401 without credentials, 401 for an invalid token, and 403 for cross-origin requests. No authenticated real-account save/restore has been performed.
+
+Live testing found Workers does not support server fetch redirect mode `error`; switched to `manual`, which rejects redirects without forwarding credentials. Temporary diagnostics removed. Updated the Today browser URL assertion for Cloudflare's extensionless canonical redirects. All seven cloud tests pass after the runtime fix; total suite previously passed 106 tests.

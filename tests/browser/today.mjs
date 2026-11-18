@@ -54,7 +54,7 @@ try {
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, theme);
   }
   await page.getByRole('link', {name: 'Continue Tamil'}).click();
-  await page.waitForURL('**/tamil.html?learner=3');
+  await page.waitForURL(/\/tamil(?:\.html)?\?learner=3$/);
   await page.getByText('1 of 12 lessons', {exact: false}).first().waitFor();
   await page.goto(base + '/#languages');
   await page.locator('.language-grid').waitFor();

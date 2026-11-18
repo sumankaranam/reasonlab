@@ -35,7 +35,7 @@ async function readBody(request) {
   }
 }
 
-export async function handleProgress(request, env, fetcher = fetch) {
+export async function handleProgress(request, env, fetcher = (...args) => globalThis.fetch(...args)) {
   const method = request.method;
   if (!['GET', 'PUT', 'DELETE'].includes(method)) return error(405, 'Method not allowed');
   const origin = request.headers.get('Origin');
@@ -51,9 +51,9 @@ export async function handleProgress(request, env, fetcher = fetch) {
   }
   let user;
   try {
-    const response = await fetcher(new URL('/auth/v1/user', authConfig.url), {
+    const response = await fetcher(new URL('/auth/v1/user', authConfig.url).href, {
       headers: {Authorization: authorization, apikey: authConfig.publishableKey},
-      redirect: 'error',
+      redirect: 'manual',
       signal: AbortSignal.timeout(8000)
     });
     if ([400, 401, 403].includes(response.status)) return error(401, 'Sign in required');
